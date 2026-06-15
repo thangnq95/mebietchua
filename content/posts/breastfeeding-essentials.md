@@ -1,132 +1,110 @@
 ---
-title: "10 Breastfeeding Essentials Every New Mom Needs"
+title: "10 Món Đồ Cần Có Khi Cho Con Bú"
 date: 2026-06-12
 draft: false
-tags: ["breastfeeding", "newborn", "checklist"]
-description: "The 10 breastfeeding essentials that make nursing easier and more comfortable. From nipple cream to nursing pillows — here's what actually helps."
+tags: ["cho-con-bu", "so-sinh", "checklist"]
+description: "10 món đồ giúp việc cho con bú dễ chịu và đỡ mệt hơn. Từ kem đầu ti đến gối cho bú - đây là những thứ thật sự hữu ích."
 cover:
   image: "/images/posts/breastfeeding-essentials.webp"
-  alt: "Breastfeeding essentials arranged on a nursery dresser"
+  alt: "Đồ dùng cho mẹ cho con bú đặt trên tủ phòng em bé"
 ---
 
-Breastfeeding comes with a learning curve. The right products won't make it effortless, but they will make it significantly more comfortable. Here are the 10 essentials worth having from day one.
+Cho con bú là một hành trình có nhiều thứ phải học. Đồ phù hợp không làm mọi thứ hoàn hảo, nhưng sẽ giúp mẹ dễ chịu hơn rất nhiều. Dưới đây là 10 món đáng có từ ngày đầu.
 
-## 1. Breast Pump
+## 1. Máy hút sữa
 
-Even if you plan to breastfeed exclusively, a pump lets you build a freezer stash, relieve engorgement, and share feeding duties with your partner.
+Ngay cả khi mẹ định cho bú hoàn toàn, một máy hút sữa vẫn giúp trữ sữa, giảm căng tức và chia sẻ việc cho ăn với người thân.
 
-**Top picks:** Momcozy M5 (wearable), Spectra S1 (electric)
+**Gợi ý hàng đầu:** Momcozy M5 (đeo được), Spectra S1 (điện)
 
 {{< amazon url="https://shopee.vn/search?keyword=momcozy-hands-free-wearable-double-sealed-baby-like" text="Xem trên Shopee →" >}}
 {{< amazon url="https://shopee.vn/search?keyword=spectra-baby-usa-rechargeable-electric" text="Xem trên Shopee →" >}}
 
-[See our full breast pump guide →](/posts/best-breast-pumps/)
+[Xem hướng dẫn chọn máy hút sữa →](/posts/best-breast-pumps/)
 
 ---
 
-## 2. Nursing Pillow
+## 2. Gối cho bú
 
-A nursing pillow brings baby to breast height so you're not hunching over for every feed. Your back will thank you.
+Gối cho bú giúp đưa bé lên đúng tầm ngực để mẹ không phải cúi người mỗi cữ. Lưng sẽ đỡ mỏi hơn rất nhiều.
 
-**Top pick:** Boppy Original Nursing Pillow — the most popular option for good reason.
+**Gợi ý hàng đầu:** Boppy Original Nursing Pillow
 
 {{< amazon url="https://shopee.vn/search?keyword=boppy-nursing-supportive-breastfeeding-original" text="Xem trên Shopee →" >}}
 
 ---
 
-## 3. Nipple Cream
+## 3. Kem đầu ti
 
-Sore nipples are common in the first few weeks. A good lanolin cream helps heal and protect.
+Đầu ti đau là chuyện rất thường gặp trong vài tuần đầu. Kem lanolin tốt sẽ giúp làm dịu và phục hồi nhanh hơn.
 
-**Top pick:** Lansinoh HPA Lanolin — used by lactation consultants worldwide, safe for baby.
+**Gợi ý hàng đầu:** Lansinoh HPA Lanolin
 
 {{< amazon url="https://shopee.vn/search?keyword=lansinoh-lanolin-breastfeeding-soothing-essentials" text="Xem trên Shopee →" >}}
 
 ---
 
-## 4. Nursing Pads
+## 4. Miếng lót ngực
 
-Leaking between feeds is normal, especially in the early weeks. Nursing pads prevent embarrassing wet spots.
+Sữa rỉ giữa các cữ là chuyện bình thường, nhất là ở giai đoạn đầu. Miếng lót ngực giúp tránh ướt áo.
 
-**Options:**
-- **Disposable:** Lansinoh Stay Dry (convenient)
-- **Reusable:** Bamboobies (eco-friendly, softer)
+**Lựa chọn:**
+- **Loại dùng một lần:** Lansinoh Stay Dry
+- **Loại tái sử dụng:** Bamboobies
 
-Choose based on whether you prefer convenience or reusable materials.
+Chọn theo thói quen và mức độ tiện lợi mẹ muốn.
 
----
+## 5. Túi trữ sữa
 
-## 5. Milk Storage Bags
+Nếu mẹ hút sữa, cần một cách trữ sữa an toàn. Ưu tiên túi đã tiệt trùng sẵn, chống rò rỉ và có chỗ ghi ngày giờ.
 
-If you're pumping, you need a safe way to store breast milk. Look for bags that are pre-sterilized, leak-proof, and clearly labeled.
-
-**Top pick:** Lansinoh Breastmilk Storage Bags — stand upright, easy to label, and widely trusted.
+**Gợi ý hàng đầu:** Lansinoh Breastmilk Storage Bags
 
 {{< amazon url="https://shopee.vn/search?keyword=lansinoh-breastmilk-essentials-superior-strength" text="Xem trên Shopee →" >}}
 
----
+## 6. Phễu silicone Haakaa
 
-## 6. Haakaa Silicone Pump
+Một chiếc phễu silicone đơn giản có thể hứng sữa tiết ra từ bên còn lại khi mẹ cho bú. Nó rẻ và rất hữu ích để tích sữa.
 
-This simple silicone pump attaches to the opposite breast while you nurse to catch letdown. It's inexpensive and surprisingly effective for building a stash.
+**Gợi ý hàng đầu:** Haakaa Gen 2 - dung tích 4 oz
 
-**Top pick:** Haakaa Gen 2 — 4oz capacity, with a suction base so it doesn't tip over.
+## 7. Áo ngực cho con bú
 
-A silicone pump is a simple add-on if you want to collect letdown without setting up a full electric pump.
+Áo ngực thường khiến việc cho bú trở nên bất tiện. Áo cho con bú có khóa mở một tay sẽ giúp mẹ nhanh và kín đáo hơn.
 
----
+**Gợi ý hàng đầu:** Kindred Bravely Simply Sublime
 
-## 7. Nursing Bras
+## 8. Khăn sữa / khăn ợ
 
-Regular bras make breastfeeding awkward. A good nursing bra has clips that open with one hand for quick, discreet access.
+Mẹ sẽ cần nhiều hơn mình nghĩ. Bé thường ọc sữa sau hầu hết các cữ bú.
 
-**Top pick:** Kindred Bravely Simply Sublime — bestseller on Amazon with thousands of 5-star reviews.
+**Nên có:** ít nhất 10-12 chiếc, loại muslin thường mềm và dễ giặt.
 
-Fit and clip design matter more than brand here, so prioritize comfort and support.
+## 9. Khăn che khi cho bú (tuỳ chọn)
 
----
+Nếu mẹ muốn cho bú nơi công cộng, một chiếc khăn che nhẹ sẽ giúp kín đáo hơn mà không quá nóng cho bé.
 
-## 8. Burp Cloths
+**Gợi ý hàng đầu:** Bebe au Lait Nursing Cover
 
-You need more than you think. Babies spit up after almost every feed.
+## 10. Bình nước lớn
 
-**Recommendation:** Get at least 10-12. Muslin ones are soft and wash well.
+Cho con bú làm mẹ khát kinh khủng. Luôn để sẵn một bình nước lớn bên cạnh.
 
-Burp cloths are a low-cost item worth buying in bulk from a material you like.
-
----
-
-## 9. Nursing Cover (Optional)
-
-If you plan to nurse in public, a lightweight nursing cover gives privacy without overheating baby.
-
-**Top pick:** Bebe au Lait Nursing Cover — breathable muslin, adjustable neckline so you can see baby.
-
-This is optional and depends on your comfort level with public nursing.
+**Gợi ý hàng đầu:** Stanley Quencher 40oz
 
 ---
 
-## 10. Water Bottle
+## Bảng tham khảo nhanh
 
-Breastfeeding makes you incredibly thirsty. Keep a large water bottle nearby at all times — seriously.
-
-**Top pick:** Stanley Quencher 40oz — the one every breastfeeding mom seems to own.
-
-A large insulated bottle is useful even if you choose a different brand.
-
----
-
-## Quick Reference List
-
-| Product | Why You Need It | Priority |
-|---------|----------------|----------|
-| Breast pump | Flexibility + freezer stash | Must-have |
-| Nursing pillow | Saves your back | Must-have |
-| Nipple cream | Heals soreness | Must-have |
-| Nursing pads | Prevents leaks | Must-have |
-| Storage bags | Store pumped milk | Must-have |
-| Haakaa | Easy stash building | Nice-to-have |
-| Nursing bras | Convenient access | Must-have |
-| Burp cloths | Spit-up coverage | Must-have |
-| Nursing cover | Public nursing | Optional |
-| Water bottle | Hydration | Must-have |
+| Món đồ | Vì sao cần | Mức ưu tiên |
+|---------|------------|-------------|
+| Máy hút sữa | Linh hoạt + trữ sữa | Bắt buộc |
+| Gối cho bú | Đỡ đau lưng | Bắt buộc |
+| Kem đầu ti | Giảm đau rát | Bắt buộc |
+| Miếng lót ngực | Chống rỉ sữa | Bắt buộc |
+| Túi trữ sữa | Bảo quản sữa | Bắt buộc |
+| Haakaa | Hứng sữa dễ | Nên có |
+| Áo ngực cho bú | Mở nhanh | Bắt buộc |
+| Khăn ợ | Lau sữa, ợ hơi | Bắt buộc |
+| Khăn che bú | Cho bú nơi công cộng | Tuỳ chọn |
+| Bình nước | Uống đủ nước | Bắt buộc |

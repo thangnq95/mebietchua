@@ -3,7 +3,7 @@ title: "Đồ cho bé ăn bằng silicone: Nên mua gì?"
 date: 2026-06-15
 draft: false
 description: "Silicone có thực sự đáng chọn trong đồ ăn dặm và đồ cho bé bú không?"
-tags: [feeding, newborn]
+tags: ["cho-an", "so-sinh"]
 ---
 
 ## Vì sao silicone được nhiều cha mẹ chọn?

@@ -3,7 +3,7 @@ title: "Cách cho bé bú bình theo nhịp chậm"
 date: 2026-06-15
 draft: false
 description: "Một kỹ thuật đơn giản để giảm việc bé bú quá nhanh khi dùng bình sữa."
-tags: [feeding, newborn]
+tags: ["cho-an", "so-sinh"]
 ---
 
 ## Pace feeding là gì?

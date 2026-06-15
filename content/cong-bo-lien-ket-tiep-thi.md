@@ -3,6 +3,7 @@ title: "Công bố liên kết tiếp thị"
 date: 2026-06-11
 draft: false
 description: "Công bố liên kết tiếp thị của Mẹ Biết Chưa."
+aliases: ["/affiliate-disclosure/"]
 ---
 
 ## Công bố liên kết tiếp thị

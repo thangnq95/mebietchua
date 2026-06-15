@@ -1,56 +1,56 @@
 ---
-title: "Breast Pump Cleaning Guide for Busy Moms"
+title: "Hướng Dẫn Vệ Sinh Máy Hút Sữa Cho Mẹ Bận Rộn"
 date: 2026-06-08
 draft: false
-tags: ["breast-pump", "breastfeeding", "cleaning"]
-description: "A practical breast pump cleaning guide covering pump parts, drying, storage, and daily routines."
-summary: "A simple cleaning routine can make pumping less overwhelming and help keep pump parts ready for the next session."
+tags: ["may-hut-sua", "cho-con-bu", "ve-sinh"]
+description: "Hướng dẫn thực tế về cách rửa, hong khô và cất trữ bộ phận máy hút sữa."
+summary: "Một thói quen vệ sinh đơn giản sẽ giúp việc hút sữa đỡ áp lực hơn và luôn sẵn sàng cho cữ tiếp theo."
 ---
 
-Cleaning pump parts is one of the least glamorous parts of pumping, but it matters. A simple routine can make the process faster and less stressful.
+Vệ sinh bộ máy hút sữa là phần ít hào hứng nhất của hút sữa, nhưng lại rất quan trọng. Một thói quen gọn gàng sẽ giúp mọi thứ nhanh và đỡ căng thẳng hơn.
 
-Always follow the instructions that came with your specific pump. Different brands have different parts, and some pieces may not be dishwasher safe.
+Luôn làm theo hướng dẫn của đúng model máy mẹ đang dùng vì mỗi hãng có chi tiết khác nhau. Một số bộ phận có thể rửa máy rửa chén, một số thì không.
 
-## Know Which Parts Touch Milk
+## Biết phần nào chạm vào sữa
 
-The parts that touch breast milk usually need cleaning after use. This often includes flanges, valves, membranes, bottles, and connectors.
+Những bộ phận chạm vào sữa mẹ thường phải rửa sau mỗi lần dùng. Thường là phễu, van, màng, bình và đầu nối.
 
-Tubing may not need routine washing if milk does not enter it, especially with a closed-system pump. If milk or moisture gets into the tubing, follow the manufacturer's cleaning instructions.
+Ống dẫn có thể không cần rửa thường xuyên nếu sữa không đi vào đó, nhất là với máy hệ kín. Nếu ống bị dính sữa hoặc ẩm, hãy làm theo hướng dẫn của hãng.
 
-## Create a Wash Routine
+## Tạo thói quen rửa
 
-After pumping, take the parts apart and rinse milk residue from each piece. Wash with warm soapy water in a clean basin used only for feeding items.
+Sau khi hút, tháo từng bộ phận và tráng sạch cặn sữa. Rửa bằng nước ấm và xà phòng trong một chậu sạch chỉ dùng cho đồ ăn uống.
 
-Avoid washing pump parts directly in a sink that may contain food residue or bacteria.
+Tránh rửa trực tiếp trong bồn có thể còn dính cặn thức ăn hoặc vi khuẩn.
 
-## Dry Completely
+## Hong khô hoàn toàn
 
-Air drying is important. Place parts on a clean towel or drying rack and let them dry fully before storing.
+Hong khô bằng không khí rất quan trọng. Đặt các bộ phận lên khăn sạch hoặc giá hong khô và để khô hoàn toàn trước khi cất.
 
-Putting damp parts into a sealed bag can trap moisture and make the parts smell musty.
+Nếu cho đồ còn ẩm vào túi kín, hơi ẩm có thể bị giữ lại và khiến bộ phận có mùi khó chịu.
 
-## Store Clean Parts Together
+## Cất đồ sạch gọn cùng nhau
 
-Once dry, store clean pump parts in a clean container or bag. Keeping parts together makes it easier to grab everything for the next session.
+Khi đã khô, cất các bộ phận sạch vào hộp hoặc túi sạch. Để chúng chung một chỗ sẽ dễ lấy cho cữ tiếp theo.
 
-If you pump at work, pack one full set of clean parts for each session when possible. This reduces stress and avoids rushed cleaning in a shared sink.
+Nếu mẹ hút ở nơi làm việc, nên mang sẵn một bộ sạch cho mỗi cữ để tránh phải rửa vội trong nhà vệ sinh chung.
 
-## Dishwasher Use
+## Có thể dùng máy rửa chén không?
 
-Some pump parts are dishwasher safe, usually on the top rack. Small pieces should go in a dishwasher basket so they do not fall to the bottom.
+Một số bộ phận có thể dùng máy rửa chén, thường là ngăn trên. Những chi tiết nhỏ nên cho vào rổ riêng để không rơi xuống đáy.
 
-Check the manual first. Heat can damage certain parts or shorten their lifespan.
+Hãy kiểm tra manual trước. Nhiệt có thể làm hỏng một số bộ phận hoặc rút ngắn tuổi thọ.
 
-## Replace Worn Parts
+## Thay bộ phận khi mòn
 
-Valves and membranes can wear out over time. If suction suddenly feels weaker, old parts may be the reason.
+Van và màng có thể mòn theo thời gian. Nếu lực hút yếu đi đột ngột, rất có thể là do chi tiết cũ.
 
-Keep a small backup set if you pump often. A missing valve or torn membrane can interrupt an entire pumping session.
+Nếu mẹ hút thường xuyên, nên giữ sẵn một bộ dự phòng nhỏ. Thiếu van hoặc rách màng có thể làm hỏng cả cữ hút.
 
-## Make It Easier
+## Làm cho dễ hơn
 
-Many pumping parents keep two or three sets of parts. This costs more upfront but can save a lot of time during busy weeks.
+Nhiều mẹ hút sữa giữ sẵn 2-3 bộ phận máy. Chi phí ban đầu cao hơn một chút nhưng đổi lại tiết kiệm rất nhiều thời gian.
 
-You can also prepare a small pump bag with clean parts, storage bags, labels, and a spare shirt or nursing pads for workdays.
+Mẹ cũng có thể chuẩn bị một túi hút sữa nhỏ gồm bộ sạch, túi trữ sữa, nhãn dán và một áo dự phòng để dùng khi đi làm.
 
-Cleaning is not the fun part, but a predictable routine makes pumping feel much more manageable.
+Vệ sinh không vui, nhưng nếu có thói quen ổn định thì việc hút sữa sẽ đỡ nặng đầu hơn nhiều.

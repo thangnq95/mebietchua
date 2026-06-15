@@ -3,7 +3,7 @@ title: "Bé bú mẹ từ chối bình sữa: Nên thử gì trước?"
 date: 2026-06-15
 draft: false
 description: "Một vài cách đơn giản để thử khi bé bú mẹ không chịu bú bình."
-tags: [newborn, feeding]
+tags: ["so-sinh", "cho-an"]
 ---
 
 ## Khi nào bé từ chối bình sữa?

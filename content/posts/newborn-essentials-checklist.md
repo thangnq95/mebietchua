@@ -1,100 +1,100 @@
 ---
-title: "Newborn Essentials Checklist: What You Actually Need (0-3 Months)"
+title: "Checklist Đồ Cần Thiết Cho Bé Sơ Sinh: Những Gì Thật Sự Cần (0-3 Tháng)"
 date: 2026-06-12
 draft: false
-tags: ["newborn", "checklist", "baby-gear"]
-description: "A practical newborn essentials checklist for the first 3 months. Skip the fluff — here's what you actually need for your baby."
+tags: ["so-sinh", "checklist", "do-cho-be"]
+description: "Checklist thực tế cho 3 tháng đầu đời. Bỏ qua những món thừa - đây là những gì bạn thật sự cần cho bé."
 cover:
   image: "/images/posts/newborn-essentials-checklist.webp"
-  alt: "Newborn essentials arranged in a bright nursery"
+  alt: "Đồ sơ sinh được sắp xếp trong phòng em bé sáng sủa"
 ---
 
-New parents are bombarded with lists of "must-have" baby products — most of which you'll never use. This checklist focuses on what you **actually** need for the first 3 months.
+Cha mẹ mới thường bị ngập trong hàng loạt danh sách “phải mua” - nhưng phần lớn trong số đó bạn sẽ không dùng tới. Checklist này chỉ tập trung vào những thứ thật sự cần cho 3 tháng đầu.
 
-## Feeding Essentials
+## Đồ cần cho việc cho bú
 
-**If breastfeeding:**
-- ✅ Breast pump (wearable or electric)
+**Nếu cho bú mẹ:**
+- ✅ Máy hút sữa (loại đeo được hoặc điện)
   {{< amazon url="https://shopee.vn/search?keyword=momcozy-hands-free-wearable-double-sealed-baby-like" text="Xem trên Shopee →" >}}
-- ✅ Nursing pillow (Boppy or Momcozy)
+- ✅ Gối cho bú (Boppy hoặc Momcozy)
   {{< amazon url="https://shopee.vn/search?keyword=boppy-nursing-supportive-breastfeeding-original" text="Xem trên Shopee →" >}}
-- ✅ Nipple cream (Lansinoh is a top pick)
+- ✅ Kem đầu ti (Lansinoh là lựa chọn rất phổ biến)
   {{< amazon url="https://shopee.vn/search?keyword=lansinoh-lanolin-breastfeeding-soothing-essentials" text="Xem trên Shopee →" >}}
-- ✅ Nursing pads (reusable or disposable)
-- ✅ Milk storage bags (Lansinoh or Medela)
+- ✅ Miếng lót ngực (dùng lại hoặc dùng một lần)
+- ✅ Túi trữ sữa (Lansinoh hoặc Medela)
 
-**If formula feeding:**
-- ✅ Bottles (start with 4oz size)
-- ✅ Bottle warmer
-- ✅ Formula dispenser
-- ✅ Bottle brush
+**Nếu cho bú công thức:**
+- ✅ Bình sữa (bắt đầu với size 4 oz)
+- ✅ Máy hâm sữa
+- ✅ Hộp chia sữa công thức
+- ✅ Cọ rửa bình
 
-**Either way:**
-- ✅ Burp cloths (get at least 10)
-- ✅ Bibs (muslin or waterproof)
+**Dù theo kiểu nào:**
+- ✅ Khăn ợ
+- ✅ Yếm sữa
 
 ---
 
-## Sleep Essentials
+## Đồ cần cho giấc ngủ
 
-- ✅ Safe sleep space (bassinet or crib with firm flat mattress)
+- ✅ Chỗ ngủ an toàn (nôi hoặc cũi có nệm phẳng, cứng)
   {{< amazon url="https://shopee.vn/search?keyword=halo-bassinet-bassinest-co-sleeper-adjustable" text="Xem trên Shopee →" >}}
-- ✅ Fitted sheets x3
-- ✅ Swaddle blankets x4 (Aden + Anais are popular)
-- ✅ White noise machine (Hatch Rest is a favorite)
-- ✅ Baby monitor
+- ✅ Ga trải nệm x3
+- ✅ Chăn quấn x4
+- ✅ Máy phát tiếng ồn trắng
+- ✅ Máy theo dõi bé
 
-**Skip:** Crib bumpers, loose blankets, pillows — these are unsafe for newborns.
-
----
-
-## Diapering Essentials
-
-- ✅ Newborn diapers (don't stock up — babies grow fast)
-- ✅ Size 1 diapers (more useful to bulk buy)
-- ✅ Diaper cream (Desitin or Aquaphor)
-- ✅ Changing pad + covers
-- ✅ Wipes (Pampers Sensitive or Water Wipes)
+**Nên bỏ qua:** Thanh chắn cũi, chăn mỏng rời, gối - không an toàn cho bé sơ sinh.
 
 ---
 
-## Bathing Essentials
+## Đồ cho thay tã
 
-- ✅ Baby bathtub (Angelcare or Blooming Bath)
-- ✅ Baby wash and shampoo (Mustela or Cetaphil Baby)
-- ✅ Soft washcloths x6
-- ✅ Hooded towels x2
-- ✅ Nail file or baby nail clippers
-
----
-
-## On-The-Go Essentials
-
-- ✅ Stroller (research based on your lifestyle)
-- ✅ Infant car seat (required to leave hospital)
-- ✅ Baby carrier or wrap (Solly Baby or Ergobaby)
-- ✅ Diaper bag
+- ✅ Tã sơ sinh (đừng mua quá nhiều, bé lớn rất nhanh)
+- ✅ Tã size 1 (mua số lượng lớn sẽ hợp hơn)
+- ✅ Kem chống hăm
+- ✅ Miếng lót thay tã + vỏ bọc
+- ✅ Khăn ướt
 
 ---
 
-## What You Can Skip (For Now)
+## Đồ cho tắm
 
-- ❌ Baby food makers (not needed until 4-6 months)
-- ❌ High chair (same)
-- ❌ Baby shoes (newborns don't walk)
-- ❌ Wipe warmer (nice-to-have, not essential)
-- ❌ Baby swing AND bouncer — start with one, see if baby likes it
+- ✅ Bồn tắm em bé
+- ✅ Sữa tắm và dầu gội cho bé
+- ✅ Khăn mềm
+- ✅ Khăn có mũ x2
+- ✅ Dũa móng hoặc kềm móng cho bé
 
 ---
 
-## Total Budget Estimate
+## Đồ để ra ngoài
 
-| Category | Budget | Mid-Range | Premium |
-|----------|--------|-----------|---------|
-| Feeding | $50 | $150 | $400+ |
-| Sleep | $100 | $300 | $600+ |
-| Diapering | $50 | $100 | $150 |
-| Bathing | $30 | $60 | $100 |
-| On-the-go | $200 | $500 | $1500+ |
+- ✅ Xe đẩy
+- ✅ Ghế ngồi ô tô cho trẻ sơ sinh
+- ✅ Địu hoặc khăn quấn bé
+- ✅ Túi đựng đồ cho bé
 
-The biggest budget variable is always the stroller and car seat. Everything else is manageable.
+---
+
+## Những món có thể bỏ qua lúc này
+
+- ❌ Máy làm thức ăn dặm
+- ❌ Ghế ăn dặm
+- ❌ Giày cho bé
+- ❌ Máy hâm khăn ướt
+- ❌ Vừa swing vừa bouncer - cứ bắt đầu với một món trước
+
+---
+
+## Ước tính ngân sách
+
+| Hạng mục | Tiết kiệm | Trung bình | Cao cấp |
+|----------|-----------|------------|---------|
+| Cho bú | $50 | $150 | $400+ |
+| Ngủ | $100 | $300 | $600+ |
+| Thay tã | $50 | $100 | $150 |
+| Tắm | $30 | $60 | $100 |
+| Đi ra ngoài | $200 | $500 | $1500+ |
+
+Khoản biến động lớn nhất luôn là xe đẩy và ghế ô tô. Các món còn lại thường dễ kiểm soát hơn.

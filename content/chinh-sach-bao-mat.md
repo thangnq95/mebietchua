@@ -2,6 +2,7 @@
 title: "Chính sách bảo mật"
 date: 2026-06-12
 draft: false
+aliases: ["/privacy-policy/"]
 ---
 
 ## Chính sách bảo mật

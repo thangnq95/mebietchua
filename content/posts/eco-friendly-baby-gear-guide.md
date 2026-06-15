@@ -3,7 +3,7 @@ title: "Hướng dẫn chọn đồ baby thân thiện môi trường"
 date: 2026-06-15
 draft: false
 description: "Điều gì đáng chú ý và điều gì chỉ là lời quảng cáo trong đồ baby thân thiện môi trường."
-tags: [newborn, gear]
+tags: ["so-sinh", "do-cho-be"]
 ---
 
 ## Điều gì thực sự đáng nhìn

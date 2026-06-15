@@ -34,17 +34,17 @@ paginate = 10
     weight = 1
   [[menu.main]]
     name = "Máy Hút Sữa"
-    url = "/tags/breast-pump/"
+    url = "/tags/may-hut-sua/"
     weight = 2
   [[menu.main]]
     name = "Máy Hâm Sữa"
-    url = "/tags/bottle-warmer/"
+    url = "/tags/may-ham-sua/"
     weight = 3
   [[menu.main]]
     name = "Đồ Sơ Sinh"
-    url = "/tags/newborn/"
+    url = "/tags/so-sinh/"
     weight = 4
   [[menu.main]]
     name = "Giới Thiệu"
-    url = "/about/"
+    url = "/gioi-thieu/"
     weight = 5

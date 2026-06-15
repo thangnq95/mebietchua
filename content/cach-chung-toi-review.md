@@ -3,6 +3,7 @@ title: "Chúng tôi review sản phẩm thế nào"
 date: 2026-06-11
 draft: false
 description: "Cách Mẹ Biết Chưa tìm hiểu, so sánh và gợi ý đồ cho mẹ và bé."
+aliases: ["/how-we-review/"]
 ---
 
 ## Cách chúng tôi review sản phẩm

@@ -2,6 +2,7 @@
 title: "Giới thiệu về Mẹ Biết Chưa"
 date: 2026-06-12
 draft: false
+aliases: ["/about/"]
 ---
 
 ## Chúng tôi là ai

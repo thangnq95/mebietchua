@@ -1,13 +1,13 @@
-# mombabypicks.com
+# mebietchua.com
 
-Hugo site for mombabypicks.com — Amazon affiliate site for mom & baby products.
+Hugo site cho mebietchua.com — website nội dung cho mẹ và bé.
 
 ## Setup (One Time)
 
 ```bash
 # 1. Clone this repo
-git clone https://github.com/YOUR_USERNAME/mombabypicks.git
-cd mombabypicks
+git clone https://github.com/YOUR_USERNAME/mebietchua.git
+cd mebietchua
 
 # 2. Add PaperMod theme
 git submodule add https://github.com/adityatelange/hugo-PaperMod themes/PaperMod
@@ -35,9 +35,9 @@ hugo new content posts/your-article-title.md
 
 Then edit the file in `content/posts/`.
 
-## Connect Custom Domain (mombabypicks.com)
+## Kết nối domain riêng (mebietchua.com)
 
-1. In GitHub repo → Settings → Pages → Custom domain → enter `mombabypicks.com`
+1. In GitHub repo → Settings → Pages → Custom domain → enter `mebietchua.com`
 2. In Cloudflare DNS → add these records:
    - A record: `@` → `185.199.108.153`
    - A record: `@` → `185.199.109.153`
@@ -55,5 +55,7 @@ content/
     newborn-essentials-checklist.md
     momcozy-m5-review.md
     breastfeeding-essentials.md
-  about.md
+  gioi-thieu.md
+  cach-chung-toi-review.md
+  lien-he.md
 ```

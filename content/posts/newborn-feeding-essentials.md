@@ -3,7 +3,7 @@ title: "Đồ dùng cốt lõi cho việc cho bé sơ sinh ăn"
 date: 2026-06-15
 draft: false
 description: "Danh sách gọn nhất để bắt đầu setup đồ cho bé sơ sinh ăn."
-tags: [newborn, feeding]
+tags: ["so-sinh", "cho-an"]
 ---
 
 ## Bắt đầu từ ít nhưng đủ
