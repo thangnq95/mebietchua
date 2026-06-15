@@ -1,0 +1,6 @@
+{{- $url := .Get "url" -}}
+{{- $text := .Get "text" | default "Xem trên Shopee →" -}}
+<div class="affiliate-box">
+  <p class="affiliate-disclosure">Liên kết tiếp thị: gợi ý mua hàng qua Shopee.</p>
+  <a class="affiliate-cta" href="{{ $url }}" target="_blank" rel="nofollow sponsored noopener">{{ $text }}</a>
+</div>

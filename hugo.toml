@@ -1,0 +1,50 @@
+baseURL = "https://mebietchua.com/"
+languageCode = "vi-VN"
+defaultContentLanguage = "vi"
+title = "Mẹ Biết Chưa"
+theme = "PaperMod"
+paginate = 10
+
+[params]
+  description = "Gợi ý đồ sơ sinh, máy hút sữa và đồ cho mẹ bỉm theo kiểu dễ đọc, dễ chọn."
+  author = "Mẹ Biết Chưa"
+  shopeePlaceholder = "https://shopee.vn/search?keyword="
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+
+[params.assets]
+  favicon = "favicon-9477610.ico"
+  favicon16x16 = "favicon-16x16-9477610.png"
+  favicon32x32 = "favicon-32x32-9477610.png"
+  apple_touch_icon = "apple-touch-icon-9477610.png"
+
+[params.homeInfoParams]
+  Title = "Gợi ý đồ cho mẹ bỉm và bé sơ sinh"
+  Content = "Review ngắn gọn, dễ hiểu về máy hút sữa, máy hâm sữa và đồ sơ sinh để bạn chọn nhanh hơn."
+
+[[params.socialIcons]]
+  name = "pinterest"
+  url = "https://pinterest.com/mebietchua"
+
+[menu]
+  [[menu.main]]
+    name = "Trang chủ"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Máy Hút Sữa"
+    url = "/tags/breast-pump/"
+    weight = 2
+  [[menu.main]]
+    name = "Máy Hâm Sữa"
+    url = "/tags/bottle-warmer/"
+    weight = 3
+  [[menu.main]]
+    name = "Đồ Sơ Sinh"
+    url = "/tags/newborn/"
+    weight = 4
+  [[menu.main]]
+    name = "Giới Thiệu"
+    url = "/about/"
+    weight = 5

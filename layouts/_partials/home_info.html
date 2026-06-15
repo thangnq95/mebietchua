@@ -1,0 +1,44 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <div class="home-hero-copy">
+        <p class="home-eyebrow">Gợi ý đồ cho mẹ bỉm</p>
+        <header class="entry-header">
+            <h1>{{ .Title | markdownify }}</h1>
+        </header>
+        <div class="entry-content md-content">
+            {{ $opts := dict "display" "block" }}
+            {{ .Content | $.Page.RenderString $opts }}
+        </div>
+        <div class="home-hero-actions" aria-label="Hành động chính trên trang chủ">
+            <a class="home-primary-btn" href="/posts/">Xem bài viết</a>
+            <a class="home-secondary-btn" href="/how-we-review/">Cách chúng tôi review</a>
+        </div>
+        <div class="home-quick-links" aria-label="Danh mục phổ biến">
+            <a href="/tags/breast-pump/">Máy hút sữa</a>
+            <a href="/tags/bottle-warmer/">Máy hâm sữa</a>
+            <a href="/tags/newborn/">Đồ sơ sinh</a>
+            <a href="/about/">Về chúng tôi</a>
+        </div>
+    </div>
+    <div class="home-trust-card">
+        <p class="home-trust-label">Vì sao mẹ đọc tin tưởng</p>
+        <div class="home-trust-grid">
+            <div>
+                <strong>Chọn theo nhu cầu</strong>
+                <span>Ưu tiên tính thực tế cho việc cho bé ăn, ngủ và chăm sóc hằng ngày.</span>
+            </div>
+            <div>
+                <strong>So sánh rõ ràng</strong>
+                <span>Giải thích sản phẩm hợp với ai, khi nào nên chọn và khi nào nên bỏ qua.</span>
+            </div>
+            <div>
+                <strong>Dễ đọc trên điện thoại</strong>
+                <span>Chia đoạn ngắn, CTA rõ, dễ quét nhanh khi xem trên mobile.</span>
+            </div>
+        </div>
+        <footer class="entry-footer">
+            {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+        </footer>
+    </div>
+</article>
+{{- end -}}

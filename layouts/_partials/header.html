@@ -1,0 +1,171 @@
+<header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            {{- $label_text := (site.Params.label.text | default site.Title) }}
+            {{- if site.Title }}
+            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
+                {{- if site.Params.label.icon }}
+                {{- $img := resources.Get site.Params.label.icon }}
+                {{- if $img }}
+                    {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
+                    {{- if hugo.IsExtended -}}
+                        {{- $processableFormats = $processableFormats | append "webp" -}}
+                    {{- end -}}
+                    {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
+                    {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true)}}
+                        {{- if site.Params.label.iconHeight }}
+                            {{- $img = $img.Resize (printf "x%d" site.Params.label.iconHeight) }}
+                        {{ else }}
+                            {{- $img = $img.Resize "x30" }}
+                        {{- end }}
+                    {{- end }}
+                    <img src="{{ $img.Permalink }}" alt="" aria-label="logo"
+                        height="{{- site.Params.label.iconHeight | default "30" -}}">
+                {{- else }}
+                <img src="{{- site.Params.label.icon | absURL -}}" alt="" aria-label="logo"
+                    height="{{- site.Params.label.iconHeight | default "30" -}}">
+                {{- end -}}
+                {{- else if hasPrefix site.Params.label.iconSVG "<svg" }}
+                    {{ site.Params.label.iconSVG | safeHTML }}
+                {{- end -}}
+                {{- $label_text -}}
+            </a>
+            {{- end }}
+
+            {{- $lsenabled := (or (not site.Params.disableThemeToggle) (and (not site.Params.disableLangToggle) (hugo.IsMultilingual))) }}
+            {{- if $lsenabled }}
+            <div class="logo-switches">
+                {{- if (not site.Params.disableThemeToggle) }}
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                {{- end }}
+                
+                {{- if (not site.Params.disableLangToggle) }}
+                    {{- $lang := .Lang}}
+                    {{- with site.Home.Translations }}
+                    {{- $separator := or $label_text (not site.Params.disableThemeToggle)}}
+                    {{- if $separator }}<span class="nav-sep">|</span>{{ end }}
+                    <ul class="lang-menu">
+                        {{- range . -}}
+                        {{- if ne $lang .Lang }}
+                        <li>
+                            <a href="{{- .Permalink -}}" title="{{ .Language.Params.languageAltTitle | default (.Language.LanguageName | emojify) | default (.Lang | title) }}"
+                                aria-label="{{ .Language.LanguageName | default (.Lang | title) }}">
+                                {{- if (and site.Params.displayFullLangName (.Language.LanguageName)) }}
+                                {{- .Language.LanguageName | emojify -}}
+                                {{- else }}
+                                {{- .Lang | title -}}
+                                {{- end -}}
+                            </a>
+                        </li>
+                        {{- end -}}
+                        {{- end}}
+                    </ul>
+                    {{- end }}
+                {{- end }}
+            </div>
+            {{- end }}
+        </div>
+        <input class="mobile-menu-state" id="mobile-menu-state" type="checkbox" aria-label="Mở menu điều hướng">
+        <label class="mobile-menu-toggle" for="mobile-menu-state" aria-controls="menu" aria-label="Mở menu điều hướng">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        {{- $currentPage := . }}
+        <ul id="menu" class="menu">
+            <li class="menu-drawer-header">
+                <div class="menu-drawer-title">
+                    <strong>{{ site.Title }}</strong>
+                    <span>Danh mục</span>
+                </div>
+                <label class="menu-close-button" for="mobile-menu-state" aria-label="Đóng menu điều hướng">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+                        <path d="M18 6L6 18"></path>
+                        <path d="M6 6L18 18"></path>
+                    </svg>
+                </label>
+            </li>
+            <li class="menu-cta-item">
+                <a class="menu-cta" href="{{ "/posts/" | absLangURL }}">Bắt đầu với các bài viết</a>
+            </li>
+            <li class="menu-section-label">Danh mục</li>
+            {{- range $index, $menuItem := site.Menus.main }}
+            {{- $menu_item_url := (cond (strings.HasSuffix $menuItem.URL "/") $menuItem.URL (printf "%s/" $menuItem.URL) ) | absLangURL }}
+            {{- $page_url:= $currentPage.Permalink | absLangURL }}
+            {{- $is_search := eq (site.GetPage $menuItem.KeyName).Layout `search` }}
+            <li>
+                <a href="{{ $menuItem.URL | absLangURL }}" title="{{ $menuItem.Title | default $menuItem.Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
+                {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
+                    <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
+                        <span class="menu-icon" aria-hidden="true">
+                            {{- if eq $menuItem.URL "/" -}}
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 11.5L12 4l9 7.5"></path>
+                                <path d="M5.5 10.5V20h13V10.5"></path>
+                                <path d="M9.5 20v-6h5v6"></path>
+                            </svg>
+                            {{- else if in $menuItem.URL "breast-pump" -}}
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 21s-7-4.35-7-10a4.2 4.2 0 0 1 7-3.07A4.2 4.2 0 0 1 19 11c0 5.65-7 10-7 10Z"></path>
+                            </svg>
+                            {{- else if in $menuItem.URL "bottle-warmer" -}}
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10 2v4"></path>
+                                <path d="M14 2v4"></path>
+                                <path d="M9 6h6"></path>
+                                <path d="M8.5 10h7"></path>
+                                <path d="M8 10v8a4 4 0 0 0 8 0v-8"></path>
+                            </svg>
+                            {{- else if in $menuItem.URL "newborn" -}}
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m12 3 2.6 5.3 5.9.9-4.2 4.1 1 5.9-5.3-2.8-5.3 2.8 1-5.9-4.2-4.1 5.9-.9L12 3Z"></path>
+                            </svg>
+                            {{- else if in $menuItem.URL "about" -}}
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="9"></circle>
+                                <path d="M12 10.8v5.2"></path>
+                                <path d="M12 7.2h.01"></path>
+                            </svg>
+                            {{- end -}}
+                        </span>
+                        <span class="menu-text">
+                            {{- $menuItem.Pre }}
+                            {{- $menuItem.Name -}}
+                            {{ $menuItem.Post -}}
+                        </span>
+                        <span class="menu-index">{{ printf "%02d" (add $index 1) }}</span>
+                    </span>
+                    {{- if (findRE "://" $menuItem.URL) }}&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                    {{- end }}
+                </a>
+            </li>
+            {{- end }}
+        </ul>
+        <label class="menu-overlay" for="mobile-menu-state" aria-label="Đóng menu điều hướng"></label>
+    </nav>
+</header>
