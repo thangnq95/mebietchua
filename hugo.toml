@@ -8,6 +8,7 @@ paginate = 10
 [params]
   description = "Gợi ý đồ sơ sinh, máy hút sữa và đồ cho mẹ bỉm theo kiểu dễ đọc, dễ chọn."
   author = "Mẹ Biết Chưa"
+  defaultTheme = "light"
   shopeePlaceholder = "https://shopee.vn/search?keyword="
   ShowReadingTime = true
   ShowPostNavLinks = true
