@@ -79,6 +79,17 @@ body {
   font-size: 1.15rem;
   letter-spacing: -0.02em;
   text-decoration: none;
+  max-width: 280px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .logo a {
+    max-width: 180px;
+    font-size: 0.95rem;
+  }
 }
 
 .logo-switches { margin-left: 0.35rem; }
@@ -541,8 +552,8 @@ body {
 }
 
 @media (max-width: 768px) {
-  body { font-size: 16px; }
-  .main { padding: 12px; }
+  body { font-size: 16px; overflow-x: hidden; }
+  .main { padding: 12px; overflow-x: hidden; }
 
   .header {
     background: rgba(255, 248, 244, 0.96);
@@ -551,6 +562,13 @@ body {
   .header-nav {
     min-height: 66px;
     padding: 0 12px;
+    flex-wrap: nowrap;
+  }
+
+  .logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 0.5rem;
   }
 
   .home-hero {
@@ -559,8 +577,8 @@ body {
     border-radius: 24px;
   }
 
-  .home-title { font-size: 1.8rem; }
-  .home-sub { font-size: 0.95rem; }
+  .home-title { font-size: 1.8rem; word-break: break-word; hyphens: auto; }
+  .home-sub { font-size: 0.95rem; word-break: break-word; }
 
   .home-actions {
     flex-direction: column;
