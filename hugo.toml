@@ -1,7 +1,7 @@
 baseURL = "https://mebietchua.com/"
 languageCode = "vi-VN"
 defaultContentLanguage = "vi"
-title = "Mẹ Biết Chưa"
+title = "Mẹ Biết Chưa — Hành trình làm mẹ từ mang thai đến nuôi con"
 theme = "PaperMod"
 paginate = 6
 
@@ -12,6 +12,10 @@ paginate = 6
   ShowReadingTime = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
+  images = ["images/og-default.webp"]
+
+[params.schema]
+  publisherType = "WebSite"
 
 [params.assets]
   favicon = "favicon-9477610.ico"
@@ -41,6 +45,13 @@ paginate = 6
     url = "/tags/nuoi-con/"
     weight = 3
   [[menu.main]]
+    name = "Công Cụ"
+    url = "/cong-cu/"
+    weight = 4
+  [[menu.main]]
     name = "Giới Thiệu"
     url = "/gioi-thieu/"
-    weight = 4
+    weight = 5
+
+[markup.goldmark.renderer]
+  unsafe = true

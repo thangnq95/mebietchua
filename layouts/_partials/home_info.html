@@ -3,7 +3,7 @@
   <div class="home-hero-inner">
     <span class="home-badge">{{ now.Year }}</span>
     <h1 class="home-title">{{ .Title | markdownify }}</h1>
-    <p class="home-sub">{{ .Content | $.Page.RenderString (dict "display" "block") }}</p>
+    <div class="home-sub">{{ .Content | $.Page.RenderString (dict "display" "block") }}</div>
     <div class="home-actions">
       <a class="btn-primary" href="/posts/pregnancy-month-3-body-changes/">📖 Bắt đầu đọc — Mẹ bầu tháng 3</a>
       <a class="btn-secondary" href="/gioi-thieu/">Về Mẹ Biết Chưa</a>
