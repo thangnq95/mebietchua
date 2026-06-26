@@ -4,7 +4,7 @@
     "keyword": "mẹ bầu tháng 3",
     "priority": 1,
     "status": "published",
-    "notes": "Bài 1 — Mẹ bầu tháng 3: Cơ thể thay đổi gì. Ngày 1 kế hoạch 7 ngày.",
+    "notes": "Bài 1 — Mẹ bầu tháng 3: Cơ thể thay đổi gì. 1.354 từ.",
     "published_date": "2026-06-26",
     "slug": "pregnancy-month-3-body-changes"
   },
@@ -12,98 +12,100 @@
     "id": "M02",
     "keyword": "thai máy lần đầu",
     "priority": 1,
-    "status": "ready",
-    "notes": "Bài 2 — Mẹ bầu tháng 4: Thai máy lần đầu. Ngày 2."
+    "status": "published",
+    "notes": "Bài 2 — Mẹ bầu tháng 4: Thai máy lần đầu. 1.661 từ. Brand: Bio-Oil, Mustela, Palmer's, Carriwell, Mamaway.",
+    "published_date": "2026-06-26",
+    "slug": "pregnancy-month-4-first-kicks"
   },
   {
     "id": "M03",
     "keyword": "đồ sơ sinh cần mua",
     "priority": 1,
     "status": "ready",
-    "notes": "Bài 3 — Mẹ bầu tháng 5: Checklist đồ sơ sinh. Ngày 2."
+    "notes": "Bài 3 — Mẹ bầu tháng 5: Checklist đồ sơ sinh."
   },
   {
     "id": "M04",
     "keyword": "dinh dưỡng mẹ bầu tháng 6",
     "priority": 2,
     "status": "ready",
-    "notes": "Bài 4 — Mẹ bầu tháng 6: Dinh dưỡng & vận động. Ngày 3."
+    "notes": "Bài 4 — Mẹ bầu tháng 6: Dinh dưỡng & vận động."
   },
   {
     "id": "M05",
     "keyword": "mẹ bầu đau lưng tháng 7",
     "priority": 2,
     "status": "ready",
-    "notes": "Bài 5 — Mẹ bầu tháng 7: Đau lưng & phù chân. Ngày 3."
+    "notes": "Bài 5 — Mẹ bầu tháng 7: Đau lưng & phù chân."
   },
   {
     "id": "M06",
     "keyword": "túi đi sinh cần gì",
     "priority": 2,
     "status": "ready",
-    "notes": "Bài 6 — Mẹ bầu tháng 8: Checklist túi đi sinh. Ngày 4."
+    "notes": "Bài 6 — Mẹ bầu tháng 8: Checklist túi đi sinh."
   },
   {
     "id": "M07",
     "keyword": "dấu hiệu sắp sinh",
     "priority": 2,
     "status": "ready",
-    "notes": "Bài 7 — Mẹ bầu tháng 9: Dấu hiệu sắp sinh. Ngày 4."
+    "notes": "Bài 7 — Mẹ bầu tháng 9: Dấu hiệu sắp sinh."
   },
   {
     "id": "B08",
     "keyword": "chăm sóc bé sơ sinh",
     "priority": 3,
     "status": "ready",
-    "notes": "Bài 8 — Chăm sóc bé sơ sinh tháng đầu. Ngày 5."
+    "notes": "Bài 8 — Chăm sóc bé sơ sinh tháng đầu."
   },
   {
     "id": "B09",
     "keyword": "bé 2 tháng tuổi",
     "priority": 3,
     "status": "ready",
-    "notes": "Bài 9 — Bé 2-3 tháng: Cười lần đầu, tập lật. Ngày 5."
+    "notes": "Bài 9 — Bé 2-3 tháng: Cười lần đầu, tập lật."
   },
   {
     "id": "B10",
     "keyword": "ăn dặm cho bé 5 tháng",
     "priority": 3,
     "status": "ready",
-    "notes": "Bài 10 — Bé 4-5 tháng: Bắt đầu ăn dặm. Ngày 6."
+    "notes": "Bài 10 — Bé 4-5 tháng: Bắt đầu ăn dặm."
   },
   {
     "id": "B11",
     "keyword": "bé mọc răng",
     "priority": 3,
     "status": "ready",
-    "notes": "Bài 11 — Bé 6-8 tháng: Tập ngồi, mọc răng. Ngày 6."
+    "notes": "Bài 11 — Bé 6-8 tháng: Tập ngồi, mọc răng."
   },
   {
     "id": "B12",
     "keyword": "bé tập đi",
     "priority": 4,
     "status": "ready",
-    "notes": "Bài 12 — Bé 9-10 tháng: Tập đứng, nói từ đầu. Ngày 7."
+    "notes": "Bài 12 — Bé 9-10 tháng: Tập đứng, nói từ đầu."
   },
   {
     "id": "B13",
     "keyword": "bé 1 tuổi phát triển",
     "priority": 4,
     "status": "ready",
-    "notes": "Bài 13 — Bé 11-12 tháng: Tròn 1 tuổi. Ngày 7."
+    "notes": "Bài 13 — Bé 11-12 tháng: Tròn 1 tuổi."
   },
   {
     "id": "R01",
     "keyword": "hành trình mẹ bầu",
     "priority": 2,
     "status": "ready",
-    "notes": "Roadmap 1 — Hành trình mẹ bầu 3-9 tháng. Ngày 7."
+    "notes": "Roadmap 1 — Hành trình mẹ bầu 3-9 tháng."
   },
   {
     "id": "R02",
     "keyword": "hành trình nuôi con",
     "priority": 2,
     "status": "ready",
-    "notes": "Roadmap 2 — Hành trình nuôi con 0-12 tháng. Ngày 7."
+    "notes": "Roadmap 2 — Hành trình nuôi con 0-12 tháng."
   }
 ]
