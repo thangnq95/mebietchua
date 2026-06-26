@@ -137,6 +137,32 @@ body {
 /* ── Main ── */
 .main { padding-top: 0; }
 
+/* ── Dark mode text overrides ── */
+:root[data-theme="dark"] .home-title { color: #f6ebe5; }
+:root[data-theme="dark"] .home-sub { color: #d4c3bb; }
+:root[data-theme="dark"] .menu a { color: #d4c3bb; }
+:root[data-theme="dark"] .entry-header h2,
+:root[data-theme="dark"] .post-title { color: #f6ebe5; }
+:root[data-theme="dark"] .entry-content,
+:root[data-theme="dark"] .entry-footer,
+:root[data-theme="dark"] .post-meta,
+:root[data-theme="dark"] .post-description { color: #d4c3bb; }
+:root[data-theme="dark"] .post-content { color: #eadfd9; }
+:root[data-theme="dark"] .post-content h2 { color: #e89180; }
+:root[data-theme="dark"] .post-content h3 { color: #d4c3bb; }
+:root[data-theme="dark"] .post-content td,
+:root[data-theme="dark"] .post-content th { border-color: #4b3d36; }
+:root[data-theme="dark"] .post-content th {
+  background: #3a2520;
+  color: #f6ebe5;
+}
+:root[data-theme="dark"] .journey-heading { color: #f6ebe5; }
+:root[data-theme="dark"] .journey-desc { color: #d4c3bb; }
+:root[data-theme="dark"] .timeline-label { color: #eadfd9; }
+:root[data-theme="dark"] .timeline-label a { color: #e89180; }
+:root[data-theme="dark"] .trust-item strong { color: #e89180; }
+:root[data-theme="dark"] .trust-item span { color: #ccb6ab; }
+
 /* ── Home Hero ── */
 .home-hero {
   margin: 2rem 0 2.5rem;
