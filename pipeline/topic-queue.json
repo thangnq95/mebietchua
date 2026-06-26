@@ -1,146 +1,109 @@
 [
   {
-    "id": "S003",
-    "keyword": "best baby bottles for newborns 2026",
+    "id": "M01",
+    "keyword": "mẹ bầu tháng 3",
     "priority": 1,
     "status": "published",
-    "notes": "Published 2026-06-15 via pipeline v2. Review score: 84/100. QA: PASS. 1641 words, 5 ASINs.",
-    "published_date": "2026-06-15",
-    "review_score": 83
+    "notes": "Bài 1 — Mẹ bầu tháng 3: Cơ thể thay đổi gì. Ngày 1 kế hoạch 7 ngày.",
+    "published_date": "2026-06-26",
+    "slug": "pregnancy-month-3-body-changes"
   },
   {
-    "id": "S004",
-    "keyword": "best diapers for newborns 2026",
+    "id": "M02",
+    "keyword": "thai máy lần đầu",
     "priority": 1,
-    "status": "published",
-    "notes": "Pampers vs Huggies vs Honest vs Millie Moon",
-    "published_date": "2026-06-15",
-    "review_score": 80
+    "status": "ready",
+    "notes": "Bài 2 — Mẹ bầu tháng 4: Thai máy lần đầu. Ngày 2."
   },
   {
-    "id": "S005",
-    "keyword": "best baby sleep sacks for 2026",
+    "id": "M03",
+    "keyword": "đồ sơ sinh cần mua",
+    "priority": 1,
+    "status": "ready",
+    "notes": "Bài 3 — Mẹ bầu tháng 5: Checklist đồ sơ sinh. Ngày 2."
+  },
+  {
+    "id": "M04",
+    "keyword": "dinh dưỡng mẹ bầu tháng 6",
     "priority": 2,
     "status": "ready",
-    "notes": "TOG ratings explained, winter vs summer, sizes"
+    "notes": "Bài 4 — Mẹ bầu tháng 6: Dinh dưỡng & vận động. Ngày 3."
   },
   {
-    "id": "S006",
-    "keyword": "best baby bouncers for 2026",
+    "id": "M05",
+    "keyword": "mẹ bầu đau lưng tháng 7",
     "priority": 2,
     "status": "ready",
-    "notes": "Soothing vibrations, newborn to toddler"
+    "notes": "Bài 5 — Mẹ bầu tháng 7: Đau lưng & phù chân. Ngày 3."
   },
   {
-    "id": "S007",
-    "keyword": "best baby carriers for 2026",
+    "id": "M06",
+    "keyword": "túi đi sinh cần gì",
     "priority": 2,
     "status": "ready",
-    "notes": "Ergonomic, wrap vs structured, budget options"
+    "notes": "Bài 6 — Mẹ bầu tháng 8: Checklist túi đi sinh. Ngày 4."
   },
   {
-    "id": "S008",
-    "keyword": "best high chairs for babies 2026",
+    "id": "M07",
+    "keyword": "dấu hiệu sắp sinh",
     "priority": 2,
     "status": "ready",
-    "notes": "Compact vs full-size, easy clean, convertible"
+    "notes": "Bài 7 — Mẹ bầu tháng 9: Dấu hiệu sắp sinh. Ngày 4."
   },
   {
-    "id": "S009",
-    "keyword": "best infant car seats 2026",
+    "id": "B08",
+    "keyword": "chăm sóc bé sơ sinh",
+    "priority": 3,
+    "status": "ready",
+    "notes": "Bài 8 — Chăm sóc bé sơ sinh tháng đầu. Ngày 5."
+  },
+  {
+    "id": "B09",
+    "keyword": "bé 2 tháng tuổi",
+    "priority": 3,
+    "status": "ready",
+    "notes": "Bài 9 — Bé 2-3 tháng: Cười lần đầu, tập lật. Ngày 5."
+  },
+  {
+    "id": "B10",
+    "keyword": "ăn dặm cho bé 5 tháng",
+    "priority": 3,
+    "status": "ready",
+    "notes": "Bài 10 — Bé 4-5 tháng: Bắt đầu ăn dặm. Ngày 6."
+  },
+  {
+    "id": "B11",
+    "keyword": "bé mọc răng",
+    "priority": 3,
+    "status": "ready",
+    "notes": "Bài 11 — Bé 6-8 tháng: Tập ngồi, mọc răng. Ngày 6."
+  },
+  {
+    "id": "B12",
+    "keyword": "bé tập đi",
+    "priority": 4,
+    "status": "ready",
+    "notes": "Bài 12 — Bé 9-10 tháng: Tập đứng, nói từ đầu. Ngày 7."
+  },
+  {
+    "id": "B13",
+    "keyword": "bé 1 tuổi phát triển",
+    "priority": 4,
+    "status": "ready",
+    "notes": "Bài 13 — Bé 11-12 tháng: Tròn 1 tuổi. Ngày 7."
+  },
+  {
+    "id": "R01",
+    "keyword": "hành trình mẹ bầu",
     "priority": 2,
     "status": "ready",
-    "notes": "Travel systems, safety ratings, budget picks"
+    "notes": "Roadmap 1 — Hành trình mẹ bầu 3-9 tháng. Ngày 7."
   },
   {
-    "id": "S010",
-    "keyword": "best baby bath tubs 2026",
+    "id": "R02",
+    "keyword": "hành trình nuôi con",
     "priority": 2,
     "status": "ready",
-    "notes": "Newborn sling, 4-stage, inflatable"
-  },
-  {
-    "id": "S011",
-    "keyword": "best baby play mats 2026",
-    "priority": 3,
-    "status": "ready",
-    "notes": "Foam vs fabric, water-resistant, size comparison"
-  },
-  {
-    "id": "S012",
-    "keyword": "best baby swings 2026",
-    "priority": 3,
-    "status": "ready",
-    "notes": "Multi-directional, portable, plug-in vs battery"
-  },
-  {
-    "id": "S013",
-    "keyword": "best baby walkers 2026",
-    "priority": 3,
-    "status": "ready",
-    "notes": "Activity centers vs walkers, safety features"
-  },
-  {
-    "id": "S014",
-    "keyword": "best baby humidifiers 2026",
-    "priority": 3,
-    "status": "ready",
-    "notes": "Cool mist vs warm mist, ultrasonic, easy clean"
-  },
-  {
-    "id": "S015",
-    "keyword": "best baby bottle sterilizers 2026",
-    "priority": 3,
-    "status": "ready",
-    "notes": "Electric vs microwave vs cold water, capacity"
-  },
-  {
-    "id": "S016",
-    "keyword": "best baby food makers 2026",
-    "priority": 3,
-    "status": "ready",
-    "notes": "Steam and blend, all-in-one vs separate"
-  },
-  {
-    "id": "S017",
-    "keyword": "best diaper bags 2026",
-    "priority": 4,
-    "status": "ready",
-    "notes": "Backpack vs tote, insulated pockets, dad-friendly"
-  },
-  {
-    "id": "S018",
-    "keyword": "best baby lotions for newborns 2026",
-    "priority": 4,
-    "status": "ready",
-    "notes": "Sensitive skin, fragrance-free, eczema-friendly"
-  },
-  {
-    "id": "S019",
-    "keyword": "best baby towels hooded 2026",
-    "priority": 4,
-    "status": "ready",
-    "notes": "Hooded towels, organic cotton, bamboo"
-  },
-  {
-    "id": "S020",
-    "keyword": "best baby nail trimmers 2026",
-    "priority": 4,
-    "status": "ready",
-    "notes": "Electric vs manual, safety features"
-  },
-  {
-    "id": "S021",
-    "keyword": "best baby thermometers 2026",
-    "priority": 4,
-    "status": "ready",
-    "notes": "Forehead vs rectal vs ear, accuracy"
-  },
-  {
-    "id": "S022",
-    "keyword": "best baby grooming kits 2026",
-    "priority": 4,
-    "status": "ready",
-    "notes": "Complete sets, travel-friendly, quality"
+    "notes": "Roadmap 2 — Hành trình nuôi con 0-12 tháng. Ngày 7."
   }
 ]

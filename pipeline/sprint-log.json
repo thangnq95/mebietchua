@@ -1,22 +1,18 @@
 {
-  "version": "2.0",
+  "version": "3.0",
+  "strategy": "7-day-mom-journey",
   "topics": [],
   "published": [
     {
-      "id": "S003",
-      "keyword": "best baby bottles for newborns 2026",
-      "slug": "best-baby-bottles-for-newborns-2026",
-      "score": 83,
-      "date": "2026-06-15"
-    },
-    {
-      "id": "S004",
-      "keyword": "best diapers for newborns 2026",
-      "slug": "best-diapers-for-newborns-2026",
-      "score": 80,
-      "date": "2026-06-15"
+      "id": "M01",
+      "keyword": "mẹ bầu tháng 3",
+      "slug": "pregnancy-month-3-body-changes",
+      "score": "manual",
+      "date": "2026-06-26",
+      "day": 1,
+      "words": 1354
     }
   ],
   "failed": [],
-  "last_run": "2026-06-15T06:46:57Z"
+  "last_run": "2026-06-26T06:34:00Z"
 }
