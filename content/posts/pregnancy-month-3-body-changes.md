@@ -4,6 +4,7 @@ date: 2026-06-26
 draft: false
 description: "Mẹ bầu tháng 3 là giai đoạn ốm nghén đỉnh điểm nhưng thai nhi phát triển mạnh. Cùng tìm hiểu những thay đổi của cơ thể, cách giảm nghén và dinh dưỡng cần thiết."
 tags: ["me-bau", "thang-3", "om-nghen", "dinh-duong-bau", "3-thang-dau"]
+series: ["hanh-trinh-me-bau"]
 cover:
   image: /images/posts/pregnancy-month-3-body-changes.webp
   alt: "Mẹ bầu tháng 3 khám thai định kỳ"

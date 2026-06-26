@@ -1,44 +1,91 @@
 {{- with site.Params.homeInfoParams }}
-<article class="first-entry home-info">
-    <div class="home-hero-copy">
-        <p class="home-eyebrow">Gợi ý đồ cho mẹ bỉm</p>
-        <header class="entry-header">
-            <h1>{{ .Title | markdownify }}</h1>
-        </header>
-        <div class="entry-content md-content">
-            {{ $opts := dict "display" "block" }}
-            {{ .Content | $.Page.RenderString $opts }}
-        </div>
-        <div class="home-hero-actions" aria-label="Hành động chính trên trang chủ">
-            <a class="home-primary-btn" href="/posts/">Xem bài viết</a>
-            <a class="home-secondary-btn" href="/cach-chung-toi-review/">Cách chúng tôi review</a>
-        </div>
-        <div class="home-quick-links" aria-label="Danh mục phổ biến">
-            <a href="/tags/may-hut-sua/">Máy hút sữa</a>
-            <a href="/tags/may-ham-sua/">Máy hâm sữa</a>
-            <a href="/tags/so-sinh/">Đồ sơ sinh</a>
-            <a href="/gioi-thieu/">Về chúng tôi</a>
-        </div>
+<section class="home-hero">
+  <div class="home-hero-inner">
+    <span class="home-badge">{{ now.Year }}</span>
+    <h1 class="home-title">{{ .Title | markdownify }}</h1>
+    <p class="home-sub">{{ .Content | $.Page.RenderString (dict "display" "block") }}</p>
+    <div class="home-actions">
+      <a class="btn-primary" href="/posts/pregnancy-month-3-body-changes/">📖 Bắt đầu đọc — Mẹ bầu tháng 3</a>
+      <a class="btn-secondary" href="/gioi-thieu/">Về Mẹ Biết Chưa</a>
     </div>
-    <div class="home-trust-card">
-        <p class="home-trust-label">Vì sao mẹ đọc tin tưởng</p>
-        <div class="home-trust-grid">
-            <div>
-                <strong>Chọn theo nhu cầu</strong>
-                <span>Ưu tiên tính thực tế cho việc cho bé ăn, ngủ và chăm sóc hằng ngày.</span>
-            </div>
-            <div>
-                <strong>So sánh rõ ràng</strong>
-                <span>Giải thích sản phẩm hợp với ai, khi nào nên chọn và khi nào nên bỏ qua.</span>
-            </div>
-            <div>
-                <strong>Dễ đọc trên điện thoại</strong>
-                <span>Chia đoạn ngắn, CTA rõ, dễ quét nhanh khi xem trên mobile.</span>
-            </div>
-        </div>
-        <footer class="entry-footer">
-            {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
-        </footer>
+  </div>
+</section>
+
+<section class="home-journey">
+  <div class="journey-column">
+    <h2 class="journey-heading">
+      <span class="journey-icon">🤰</span>
+      Hành trình mẹ bầu
+    </h2>
+    <p class="journey-desc">Từ tháng 3 đến tháng 9 — những điều mẹ cần biết mỗi tháng.</p>
+    <ul class="journey-timeline">
+      {{- $momMonths := slice
+        (dict "month" "Tháng 3" "slug" "pregnancy-month-3-body-changes" "label" "Cơ thể thay đổi & ốm nghén" "ready" true)
+        (dict "month" "Tháng 4" "slug" "pregnancy-month-4-first-kicks" "label" "Thai máy lần đầu" "ready" false)
+        (dict "month" "Tháng 5" "slug" "pregnancy-month-5-baby-shopping" "label" "Checklist đồ sơ sinh" "ready" false)
+        (dict "month" "Tháng 6" "slug" "pregnancy-month-6-nutrition-exercise" "label" "Dinh dưỡng & vận động" "ready" false)
+        (dict "month" "Tháng 7" "slug" "pregnancy-month-7-back-pain-swelling" "label" "Đau lưng & phù chân" "ready" false)
+        (dict "month" "Tháng 8" "slug" "pregnancy-month-8-hospital-bag" "label" "Chuẩn bị túi đi sinh" "ready" false)
+        (dict "month" "Tháng 9" "slug" "pregnancy-month-9-labor-signs" "label" "Dấu hiệu sắp sinh" "ready" false)
+      }}
+      {{- range $momMonths }}
+      <li class="timeline-item {{ if .ready }}ready{{ else }}pending{{ end }}">
+        <span class="timeline-month">{{ .month }}</span>
+        <span class="timeline-label">
+          {{- if .ready }}
+          <a href="/posts/{{ .slug }}/">{{ .label }}</a>
+          {{- else }}
+          {{ .label }}
+          <small class="timeline-badge">sắp có</small>
+          {{- end }}
+        </span>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+
+  <div class="journey-column">
+    <h2 class="journey-heading">
+      <span class="journey-icon">👶</span>
+      Hành trình nuôi con
+    </h2>
+    <p class="journey-desc">Từ sơ sinh đến 1 tuổi — mốc phát triển và cách chăm sóc từng tháng.</p>
+    <ul class="journey-timeline">
+      {{- $babyMonths := slice
+        (dict "month" "Tháng 1" "label" "Chăm sóc bé sơ sinh tuần đầu" "ready" false)
+        (dict "month" "Tháng 2–3" "label" "Cười lần đầu, tập lật" "ready" false)
+        (dict "month" "Tháng 4–5" "label" "Bắt đầu ăn dặm" "ready" false)
+        (dict "month" "Tháng 6–8" "label" "Tập ngồi, mọc răng" "ready" false)
+        (dict "month" "Tháng 9–10" "label" "Tập đứng, nói từ đầu" "ready" false)
+        (dict "month" "Tháng 11–12" "label" "Tròn 1 tuổi" "ready" false)
+      }}
+      {{- range $babyMonths }}
+      <li class="timeline-item pending">
+        <span class="timeline-month">{{ .month }}</span>
+        <span class="timeline-label">
+          {{ .label }}
+          <small class="timeline-badge">sắp có</small>
+        </span>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+</section>
+
+<section class="home-trust">
+  <div class="trust-card">
+    <div class="trust-item">
+      <strong>Thực tế, không hàn lâm</strong>
+      <span>Kiến thức được viết như lời tâm sự của bạn thân — dễ hiểu, dễ áp dụng ngay.</span>
     </div>
-</article>
+    <div class="trust-item">
+      <strong>Đồng hành từng tháng</strong>
+      <span>Mỗi bài là một cột mốc trong hành trình — mẹ không cần tự tìm kiếm lan man.</span>
+    </div>
+    <div class="trust-item">
+      <strong>Tối ưu cho mobile</strong>
+      <span>Đọc nhanh trên điện thoại lúc cho con bú, hút sữa hay ru con ngủ.</span>
+    </div>
+  </div>
+</section>
 {{- end -}}

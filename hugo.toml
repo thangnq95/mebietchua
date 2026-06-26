@@ -3,13 +3,12 @@ languageCode = "vi-VN"
 defaultContentLanguage = "vi"
 title = "Mẹ Biết Chưa"
 theme = "PaperMod"
-paginate = 10
+paginate = 6
 
 [params]
-  description = "Gợi ý đồ sơ sinh, máy hút sữa và đồ cho mẹ bỉm theo kiểu dễ đọc, dễ chọn."
+  description = "Hành trình làm mẹ từ A-Z: mang thai, sinh con và nuôi bé. Chia sẻ thực tế, ấm áp, dễ hiểu cho mẹ Việt."
   author = "Mẹ Biết Chưa"
   defaultTheme = "light"
-  shopeePlaceholder = "https://shopee.vn/search?keyword="
   ShowReadingTime = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
@@ -21,8 +20,8 @@ paginate = 10
   apple_touch_icon = "apple-touch-icon-9477610.png"
 
 [params.homeInfoParams]
-  Title = "Gợi ý đồ cho mẹ bỉm và bé sơ sinh"
-  Content = "Review ngắn gọn, dễ hiểu về máy hút sữa, máy hâm sữa và đồ sơ sinh để bạn chọn nhanh hơn."
+  Title = "Hành trình làm mẹ — từ mang thai đến nuôi con"
+  Content = "Mẹ Biết Chưa đồng hành cùng mẹ Việt qua từng tháng thai kỳ và từng giai đoạn phát triển của bé. Kiến thức thực tế, giọng văn ấm áp như bạn thân tâm sự."
 
 [[params.socialIcons]]
   name = "pinterest"
@@ -34,18 +33,14 @@ paginate = 10
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "Máy Hút Sữa"
-    url = "/tags/may-hut-sua/"
+    name = "Mẹ Bầu"
+    url = "/tags/me-bau/"
     weight = 2
   [[menu.main]]
-    name = "Máy Hâm Sữa"
-    url = "/tags/may-ham-sua/"
+    name = "Nuôi Con"
+    url = "/tags/nuoi-con/"
     weight = 3
-  [[menu.main]]
-    name = "Đồ Sơ Sinh"
-    url = "/tags/so-sinh/"
-    weight = 4
   [[menu.main]]
     name = "Giới Thiệu"
     url = "/gioi-thieu/"
-    weight = 5
+    weight = 4
