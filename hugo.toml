@@ -20,6 +20,9 @@ paginate = 6
 [params.schema]
   publisherType = "WebSite"
 
+[services.googleAnalytics]
+  ID = "G-96RPQE0K42"
+
 [params.assets]
   favicon = "favicon-9477610.ico"
   favicon16x16 = "favicon-16x16-9477610.png"
