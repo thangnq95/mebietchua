@@ -87,6 +87,3 @@ Tháng 5 là lúc mẹ vừa tròn bụng, vừa còn đủ năng lượng để
 
 ---
 
-*Tuyên bố miễn trừ trách nhiệm y tế: Nội dung trên website Mẹ Biết Chưa chỉ mang tính chất tham khảo, không thay thế cho việc chẩn đoán hoặc điều trị y tế. Checklist trong bài dựa trên kinh nghiệm thực tế của các mẹ bỉm Việt Nam và khuyến nghị chung, mẹ hãy điều chỉnh theo điều kiện và nhu cầu thực tế của gia đình mình.*
-
-*Công bố liên kết tiếp thị: Một số liên kết trên site là liên kết tiếp thị và có thể mang lại hoa hồng cho chúng tôi.*

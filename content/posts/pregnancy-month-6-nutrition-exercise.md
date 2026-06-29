@@ -87,6 +87,3 @@ Tháng 6 hãy là tháng mẹ tận hưởng trọn vẹn thai kỳ — ăn ngon
 
 ---
 
-*Tuyên bố miễn trừ trách nhiệm y tế: Nội dung trên website Mẹ Biết Chưa chỉ mang tính chất tham khảo, không thay thế cho việc chẩn đoán hoặc điều trị y tế. Mẹ hãy tham khảo ý kiến bác sĩ trước khi bắt đầu bất kỳ chế độ dinh dưỡng hay bài tập mới nào trong thai kỳ.*
-
-*Công bố liên kết tiếp thị: Một số liên kết trên site là liên kết tiếp thị và có thể mang lại hoa hồng cho chúng tôi.*

@@ -79,6 +79,3 @@ Chúc mẹ vượt cạn bình an, mẹ tròn con vuông!
 
 ---
 
-*Tuyên bố miễn trừ trách nhiệm y tế: Nội dung trên website Mẹ Biết Chưa chỉ mang tính chất tham khảo, không thay thế chẩn đoán hoặc điều trị y tế. Khi có bất kỳ dấu hiệu chuyển dạ hoặc bất thường nào, mẹ hãy đến bệnh viện ngay lập tức. Đừng tự chẩn đoán tại nhà.*
-
-*Công bố liên kết tiếp thị: Một số liên kết trên site là liên kết tiếp thị và có thể mang lại hoa hồng cho chúng tôi.*

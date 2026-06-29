@@ -72,6 +72,3 @@ Tháng 7 có thể nặng nề, nhưng mẹ đang ở gần đích lắm rồi. 
 
 ---
 
-*Tuyên bố miễn trừ trách nhiệm y tế: Nội dung trên website Mẹ Biết Chưa chỉ mang tính chất tham khảo, không thay thế chẩn đoán hoặc điều trị y tế. Nếu mẹ bị đau lưng dữ dội kèm sốt, chảy máu hoặc phù mặt đột ngột, hãy đến bệnh viện ngay.*
-
-*Công bố liên kết tiếp thị: Một số liên kết trên site là liên kết tiếp thị và có thể mang lại hoa hồng cho chúng tôi.*

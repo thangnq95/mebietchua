@@ -64,6 +64,3 @@ Một tuần trước ngày dự sinh, mẹ đặt túi ở vị trí dễ thấ
 
 ---
 
-*Tuyên bố miễn trừ trách nhiệm: Checklist trong bài dựa trên kinh nghiệm thực tế của các mẹ bỉm Việt Nam. Mỗi bệnh viện có quy định riêng, mẹ nên hỏi trước bệnh viện mình định sinh để chuẩn bị chính xác nhất.*
-
-*Công bố liên kết tiếp thị: Một số liên kết trên site là liên kết tiếp thị và có thể mang lại hoa hồng cho chúng tôi.*
