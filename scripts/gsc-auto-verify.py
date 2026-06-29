@@ -1,143 +1,109 @@
 #!/usr/bin/env python3
-"""Auto-verify mebietchua.com on Google Search Console using Playwright.
-Reuses your existing Chrome profile (already logged into Google).
+"""GSC auto-verify using your Chrome profile (already logged in Google).
 Usage: python3 scripts/gsc-auto-verify.py
 """
-import sys, os, subprocess, time, re, glob
+import subprocess, os, sys, time, re
 
-CHROME_PROFILE = os.path.expanduser("~/Library/Application Support/Google/Chrome/Default")
+CHROME_PROFILE = os.path.expanduser("~/Library/Application Support/Google/Chrome")
 SITE = "https://mebietchua.com"
 GSC = "https://search.google.com/search-console"
 
 def main():
     from playwright.sync_api import sync_playwright
     
-    print("🔑 Opening Chrome with your profile...")
+    print("🔑 Using Chrome profile: thangnq95@gmail.com (Default)")
     
     with sync_playwright() as p:
-        # Use persistent context to reuse Chrome profile (keeps Google login)
-        context = p.chromium.launch_persistent_context(
-            CHROME_PROFILE,
-            headless=False,
-            channel="chrome",
-            args=["--disable-blink-features=AutomationControlled"]
-        )
+        try:
+            context = p.chromium.launch_persistent_context(
+                user_data_dir=CHROME_PROFILE,
+                channel="chrome",
+                headless=False,
+                args=["--disable-blink-features=AutomationControlled", "--profile-directory=Default"],
+                no_viewport=True
+            )
+        except Exception as e:
+            print(f"❌ Cannot open Chrome: {e}")
+            print("Close Chrome first (cmd+Q) then retry")
+            return
         
         page = context.pages[0] if context.pages else context.new_page()
         
-        # Step 1: Go to Search Console
-        print("📍 Navigating to Search Console...")
-        page.goto(f"{GSC}/welcome", wait_until="networkidle", timeout=30000)
+        # Go to GSC add property page
+        add_url = f"{GSC}/welcome?resource_id={SITE}"
+        print(f"📍 Opening: {add_url}")
+        page.goto(add_url, timeout=15000)
         time.sleep(3)
         
-        # Check if already logged in
-        if "accounts.google.com" in page.url:
-            print("⏳ Please sign in to Google in the browser window...")
-            page.wait_for_url("**/search-console/**", timeout=120000)
-            print("✅ Signed in!")
+        # Check if login needed
+        if "Sign in" in page.content()[:5000] or "accounts.google" in page.url:
+            print("⏳ Login required — sign in in the browser window...")
+            try:
+                page.wait_for_function("window.location.href.includes('search-console')", timeout=120000)
+            except:
+                pass
+            time.sleep(2)
         
-        # Step 2: Check if property already exists
-        page.goto(GSC, wait_until="networkidle", timeout=30000)
-        time.sleep(2)
+        print("📋 Looking for HTML verification file...")
         
-        # Try to select property
-        try:
-            # Click property selector
-            selector = page.locator("[aria-label*='property']").first
-            if selector:
-                selector.click()
-                time.sleep(1)
-                page.keyboard.type(SITE)
-                time.sleep(0.5)
-                page.keyboard.press("Enter")
-        except:
-            pass
+        # Try to find and click HTML file upload method
+        html_texts = page.locator("text=HTML").all()
+        for el in html_texts:
+            try:
+                if "file" in el.text_content().lower() or "upload" in el.text_content().lower():
+                    el.click()
+                    time.sleep(1)
+                    break
+            except:
+                pass
         
-        # Step 3: Try to add property via URL prefix
-        print(f"🔗 Adding property: {SITE}")
-        page.goto(f"{GSC}/add?resource_id={SITE}", wait_until="networkidle", timeout=30000)
-        time.sleep(3)
-        
-        # Check verification method
-        current_url = page.url
-        print(f"   Current URL: {current_url}")
-        
-        # Step 4: Look for HTML file verification
-        try:
-            # Find the HTML file method
-            html_method = page.locator("text=HTML file").first
-            if html_method:
-                html_method.click()
-                time.sleep(2)
-        except:
-            pass
-        
-        # Step 5: Extract filename from page
-        page_content = page.content()
-        
-        # Look for googleXXXX.html pattern
-        match = re.search(r'google([a-f0-9]+)\.html', page_content)
-        if not match:
-            # Try to find in any text
-            filename_text = page.locator("text=google").first
-            if filename_text:
-                text = filename_text.text_content()
-                match = re.search(r'google([a-f0-9]+)\.html', text)
+        # Extract filename
+        content = page.content()
+        match = re.search(r'google[a-f0-9]+\.html', content)
         
         if match:
-            filename = f"google{match.group(1)}.html"
-            print(f"📄 Found verification file: {filename}")
+            filename = match.group(0)
+            print(f"📄 Found: {filename}")
             
-            # Step 6: Create file and deploy
+            # Create + deploy file
             filepath = f"static/{filename}"
             with open(filepath, "w") as f:
                 f.write(f"google-site-verification: {filename}")
             
             print(f"📝 Created {filepath}")
             
-            # Build & deploy
-            subprocess.run(["hugo", "--gc", "--minify", "--quiet"], cwd=os.path.dirname(os.path.abspath(__file__)) + "/..")
             subprocess.run(["git", "add", filepath])
-            subprocess.run(["git", "commit", "-m", f"verify: Google Search Console {filename}"])
+            subprocess.run(["git", "commit", "-m", f"verify: GSC {filename}"])
             subprocess.run(["git", "push", "origin", "main"])
             
-            print(f"✅ Deployed! File at: {SITE}/{filename}")
+            print(f"✅ Deployed → {SITE}/{filename}")
             time.sleep(5)
             
-            # Step 7: Click VERIFY button
-            print("🔍 Looking for VERIFY button...")
-            verify_btn = page.locator("button:has-text('Verify')").first
-            if verify_btn:
-                verify_btn.click()
+            # Click VERIFY
+            try:
+                page.locator("button:has-text('Verify')").first.click(timeout=5000)
                 print("✅ Clicked VERIFY")
-                time.sleep(5)
-                
-                # Check result
-                if "verified" in page.content().lower() or "success" in page.content().lower():
-                    print("🎉 DOMAIN VERIFIED!")
-                    
-                    # Step 8: Submit sitemap
-                    page.goto(f"{GSC}/sitemaps?resource_id={SITE}", wait_until="networkidle", timeout=30000)
-                    time.sleep(2)
-                    
-                    sitemap_input = page.locator("input[type='url']").first
-                    if sitemap_input:
-                        sitemap_input.fill(f"{SITE}/sitemap.xml")
-                        page.locator("button:has-text('Submit')").first.click()
-                        print("📊 Sitemap submitted!")
-            else:
-                print("⚠️  Please click VERIFY manually in the browser")
+                time.sleep(3)
+            except:
+                print("⚠️  Click VERIFY button manually")
         else:
-            print("⚠️  Could not find HTML filename. Checking page content...")
-            # Save screenshot for debugging
-            page.screenshot(path="/tmp/gsc-debug.png")
-            print("   Screenshot saved to /tmp/gsc-debug.png")
-            print("   Please complete verification manually:")
-            print(f"   1. Get the HTML filename from page")
-            print(f"   2. Run: bash scripts/gsc-verify.sh <filename>")
+            # Show filename candidates
+            print("⚠️  Could not auto-detect filename.")
+            print("   Copy the googleXXX.html filename from browser")
+            filename = input("   Paste here: ").strip()
+            
+            if filename.startswith("google"):
+                filepath = f"static/{filename}"
+                with open(filepath, "w") as f:
+                    f.write(f"google-site-verification: {filename}")
+                subprocess.run(["git", "add", filepath])
+                subprocess.run(["git", "commit", "-m", f"verify: GSC {filename}"])
+                subprocess.run(["git", "push", "origin", "main"])
+                print(f"✅ {SITE}/{filename}")
         
-        print("\n⏳ Browser will stay open for 30s. Close it when done.")
-        time.sleep(30)
+        print(f"\n📊 Next: goto {GSC}/sitemaps → submit {SITE}/sitemap.xml")
+        print("⏳ Browser stays open. Close when done.")
+        input("Press Enter to close browser...")
         context.close()
 
 if __name__ == "__main__":
