@@ -52,19 +52,23 @@
     <p class="journey-desc">Từ sơ sinh đến 1 tuổi — mốc phát triển và cách chăm sóc từng tháng.</p>
     <ul class="journey-timeline">
       {{- $babyMonths := slice
-        (dict "month" "Tháng 1" "label" "Chăm sóc bé sơ sinh tuần đầu" "ready" false)
-        (dict "month" "Tháng 2–3" "label" "Cười lần đầu, tập lật" "ready" false)
-        (dict "month" "Tháng 4–5" "label" "Bắt đầu ăn dặm" "ready" false)
-        (dict "month" "Tháng 6–8" "label" "Tập ngồi, mọc răng" "ready" false)
-        (dict "month" "Tháng 9–10" "label" "Tập đứng, nói từ đầu" "ready" false)
-        (dict "month" "Tháng 11–12" "label" "Tròn 1 tuổi" "ready" false)
+        (dict "month" "Tháng 1" "label" "Chăm sóc bé sơ sinh tuần đầu" "ready" true "slug" "newborn-month-1-first-weeks")
+        (dict "month" "Tháng 2–3" "label" "Cười lần đầu, tập lật" "ready" true "slug" "baby-month-2-3-milestones")
+        (dict "month" "Tháng 4–5" "label" "Bắt đầu ăn dặm" "ready" true "slug" "baby-month-4-5-starting-solids")
+        (dict "month" "Tháng 6–8" "label" "Tập ngồi, mọc răng" "ready" true "slug" "baby-month-6-8-sitting-teething")
+        (dict "month" "Tháng 9–10" "label" "Tập đứng, nói từ đầu" "ready" true "slug" "baby-month-9-10-standing-talking")
+        (dict "month" "Tháng 11–12" "label" "Tròn 1 tuổi" "ready" true "slug" "baby-month-11-12-first-birthday")
       }}
       {{- range $babyMonths }}
-      <li class="timeline-item pending">
+      <li class="timeline-item {{ if .ready }}ready{{ else }}pending{{ end }}">
         <span class="timeline-month">{{ .month }}</span>
         <span class="timeline-label">
+          {{- if .ready }}
+          <a href="/posts/{{ .slug }}/">{{ .label }}</a>
+          {{- else }}
           {{ .label }}
           <small class="timeline-badge">sắp có</small>
+          {{- end }}
         </span>
       </li>
       {{- end }}
