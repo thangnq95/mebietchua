@@ -21,7 +21,7 @@ paginate = 6
   publisherType = "WebSite"
 
 [services.googleAnalytics]
-  ID = "G-89XCHJ01WS"
+  ID = "G-524F7KBGC7"
 
 [params.assets]
   favicon = "favicon-9477610.ico"
