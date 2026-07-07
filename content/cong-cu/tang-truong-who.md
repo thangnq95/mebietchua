@@ -48,6 +48,7 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 .leg-line{width:22px;height:3px;border-radius:2px}
 .leg-dot{width:10px;height:10px;border-radius:50%}
 .prediction-box{background:#fdf4ff;border:1px solid #e9d5ff;border-radius:8px;padding:.75rem 1rem;margin-top:.75rem;font-size:.875rem;color:#6b21a8}
+.ref-note{font-size:.75rem;color:#6b7280;margin:.35rem 0 0;line-height:1.5}
 </style>
 
 <div class="tool-card">
@@ -72,6 +73,7 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
   <div style="margin-top:12px">
     <div class="tool-label">Chiều cao (cm) — không bắt buộc</div>
     <input class="tool-input" id="height" type="number" step="0.1" placeholder="VD: 65.5" />
+    <p class="ref-note">Chuẩn tham khảo: WHO Child Growth Standards (length/height-for-age) cho bé từ 0-24 tháng.</p>
   </div>
   <button class="btn-calc" onclick="calcWHO()">Kiểm tra ngay</button>
 </div>
@@ -88,13 +90,13 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
   </div>
 
   <div class="tool-card">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem;flex-wrap:wrap;gap:8px">
-      <h3 style="margin:0;font-size:.95rem;color:#111">Biểu đồ tăng trưởng WHO</h3>
-      <div class="section-tab" style="margin-bottom:0">
-        <button class="tab-btn active" id="tab-w" onclick="switchChart('w')">Cân nặng</button>
-        <button class="tab-btn" id="tab-h" onclick="switchChart('h')">Chiều cao</button>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem;flex-wrap:wrap;gap:8px">
+        <h3 id="chart-title" style="margin:0;font-size:.95rem;color:#111">Biểu đồ tăng trưởng WHO</h3>
+        <div class="section-tab" style="margin-bottom:0">
+          <button class="tab-btn active" id="tab-w" onclick="switchChart('w')">Cân nặng</button>
+          <button class="tab-btn" id="tab-h" onclick="switchChart('h')">Chiều cao</button>
+        </div>
       </div>
-    </div>
     <div class="legend-row">
       <span class="leg"><span class="leg-line" style="background:#e34948;border-top:2px dashed #e34948;height:0;border-radius:0"></span>+2SD</span>
       <span class="leg"><span class="leg-line" style="background:#10b981"></span>Trung bình</span>
@@ -102,7 +104,7 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
       <span class="leg"><span class="leg-dot" style="background:#ec4899"></span>Con bé (hiện tại)</span>
       <span class="leg"><span class="leg-line" style="background:#a855f7;border-top:2px dashed #a855f7;height:0;border-radius:0"></span>Dự đoán tương lai</span>
     </div>
-    <div class="chart-wrap"><canvas id="whoChart" role="img" aria-label="Biểu đồ tăng trưởng WHO 0-24 tháng">Biểu đồ cân nặng chuẩn WHO</canvas></div>
+    <div class="chart-wrap"><canvas id="whoChart" role="img" aria-label="Biểu đồ tăng trưởng WHO 0-24 tháng">Biểu đồ tăng trưởng WHO</canvas></div>
   </div>
 
   <div class="tool-card">
@@ -205,10 +207,19 @@ function calcWHO() {
   if (lastHeight) {
     const hRef  = interp(data.h, age);
     const hStat = getStatus(lastHeight, hRef);
-    hHtml = `<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:.7rem 1rem;margin:.75rem 0;font-size:.875rem">
-      <b>Chiều cao ${lastHeight} cm:</b>
-      <span class="status-badge ${hStat.cls}" style="font-size:.75rem;padding:.15rem .6rem">${hStat.label}</span>
-      &nbsp;Chuẩn: ${hRef[1].toFixed(1)}–${hRef[3].toFixed(1)} cm, TB: ${hRef[2].toFixed(1)} cm
+    const hVsMedian = ((lastHeight / hRef[2]) * 100).toFixed(0);
+    hHtml = `<div style="margin-top:.75rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:.5rem">
+        <h3 style="margin:0;font-size:.95rem;color:#111">Tiêu chuẩn chiều cao theo tuổi (WHO)</h3>
+        <span class="status-badge ${hStat.cls}" style="margin-bottom:0">${hStat.label}</span>
+      </div>
+      <div class="result-grid">
+        <div class="stat-card"><p class="stat-val" style="color:#0ea5e9">${lastHeight} cm</p><p class="stat-label">Chiều cao hiện tại</p></div>
+        <div class="stat-card"><p class="stat-val" style="color:#10b981">${hRef[2].toFixed(1)} cm</p><p class="stat-label">Trung bình WHO (${age}th)</p></div>
+        <div class="stat-card"><p class="stat-val" style="color:#6b7280;font-size:1.1rem">${hRef[1].toFixed(1)}–${hRef[3].toFixed(1)}</p><p class="stat-label">Vùng tham khảo (cm)</p></div>
+        <div class="stat-card"><p class="stat-val" style="color:#8b5cf6;font-size:1.1rem">${hVsMedian}%</p><p class="stat-label">So với trung bình</p></div>
+      </div>
+      <div class="advice" style="background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a">WHO dùng chuẩn chiều dài/chiều cao theo tuổi: dưới −2SD là thấp hơn chuẩn, từ −2SD đến +2SD là vùng tham khảo bình thường, trên +2SD là cao hơn trung bình.</div>
     </div>`;
   }
   document.getElementById('height-result').innerHTML = hHtml;
@@ -217,8 +228,9 @@ function calcWHO() {
   document.getElementById('pred-box').innerHTML = `<div class="prediction-box">🔮 <b>Dự đoán đến 24 tháng:</b> Nếu bé giữ nguyên percentile hiện tại, đến 24 tháng bé sẽ đạt khoảng <b>${predAt24} kg</b> (chuẩn TB 24 tháng: ${WHO[gender].w[16][2]} kg)</div>`;
 
   document.getElementById('result').style.display = 'block';
-  renderChart('w');
-  renderTable('w');
+  const defaultChartType = lastHeight ? 'h' : 'w';
+  renderChart(defaultChartType);
+  renderTable(defaultChartType);
   document.getElementById('result').scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 
@@ -306,6 +318,13 @@ function renderChart(type) {
     }
   });
 
+  document.getElementById('chart-title').textContent = type === 'h'
+    ? 'Biểu đồ tăng trưởng WHO - Chiều cao'
+    : 'Biểu đồ tăng trưởng WHO - Cân nặng';
+  document.getElementById('whoChart').setAttribute(
+    'aria-label',
+    type === 'h' ? 'Biểu đồ chiều cao WHO 0-24 tháng' : 'Biểu đồ cân nặng WHO 0-24 tháng'
+  );
   document.getElementById('tab-w').classList.toggle('active', type==='w');
   document.getElementById('tab-h').classList.toggle('active', type==='h');
 }
