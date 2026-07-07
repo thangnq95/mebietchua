@@ -49,6 +49,18 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 .leg-dot{width:10px;height:10px;border-radius:50%}
 .prediction-box{background:#fdf4ff;border:1px solid #e9d5ff;border-radius:8px;padding:.75rem 1rem;margin-top:.75rem;font-size:.875rem;color:#6b21a8}
 .ref-note{font-size:.75rem;color:#6b7280;margin:.35rem 0 0;line-height:1.5}
+@media(max-width:640px){
+  .tool-card{padding:1rem}
+  .chart-wrap{height:240px;margin:.85rem 0 .5rem}
+  .section-tab{width:100%;gap:8px}
+  .tab-btn{flex:1;min-width:0;padding:.6rem .8rem;font-size:.85rem}
+  .legend-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 10px;margin-bottom:.4rem}
+  .leg{font-size:.72rem;line-height:1.2;align-items:flex-start}
+}
+@media(max-width:420px){
+  .legend-row{grid-template-columns:1fr}
+  .chart-wrap{height:220px}
+}
 </style>
 
 <div class="tool-card">
@@ -90,12 +102,13 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
   </div>
 
   <div class="tool-card">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem;flex-wrap:wrap;gap:8px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem;flex-wrap:wrap;gap:8px">
         <h3 id="chart-title" style="margin:0;font-size:.95rem;color:#111">Biểu đồ tăng trưởng WHO</h3>
-        <div class="section-tab" style="margin-bottom:0">
-          <button class="tab-btn active" id="tab-w" onclick="switchChart('w')">Cân nặng</button>
-          <button class="tab-btn" id="tab-h" onclick="switchChart('h')">Chiều cao</button>
-        </div>
+        <p style="margin:.15rem 0 0;font-size:.74rem;color:#6b7280">Chạm để đổi giữa cân nặng và chiều cao</p>
+      </div>
+      <div class="section-tab" style="margin-bottom:.85rem">
+        <button class="tab-btn active" id="tab-w" onclick="switchChart('w')">Cân nặng</button>
+        <button class="tab-btn" id="tab-h" onclick="switchChart('h')">Chiều cao</button>
       </div>
     <div class="legend-row">
       <span class="leg"><span class="leg-line" style="background:#e34948;border-top:2px dashed #e34948;height:0;border-radius:0"></span>+2SD</span>
@@ -266,6 +279,7 @@ function renderChart(type) {
   const data   = WHO[lastGender][type];
   const babyVal = type === 'w' ? lastWeight : lastHeight;
   if (!babyVal) return;
+  const isMobile = window.innerWidth < 640;
 
   const low  = data.map(r => r[1]);
   const med  = data.map(r => r[2]);
@@ -297,7 +311,7 @@ function renderChart(type) {
     },
     options: {
       responsive:true, maintainAspectRatio:false,
-      layout: { padding: { right: 36 } },
+      layout: { padding: { right: isMobile ? 18 : 36 } },
       plugins: {
         legend: { display:false },
         tooltip: {
@@ -311,9 +325,9 @@ function renderChart(type) {
         }
       },
       scales: {
-        x: { ticks:{font:{size:10}}, grid:{color:'#f3f4f6'} },
-        y: { ticks:{font:{size:10}}, grid:{color:'#f3f4f6'},
-             title:{display:true, text: type==='w'?'kg':'cm', font:{size:11}} }
+        x: { ticks:{font:{size:isMobile ? 9 : 10}}, grid:{color:'#f3f4f6'} },
+        y: { ticks:{font:{size:isMobile ? 9 : 10}}, grid:{color:'#f3f4f6'},
+             title:{display:true, text: type==='w'?'kg':'cm', font:{size:isMobile ? 10 : 11}} }
       }
     }
   });
