@@ -1,6 +1,13 @@
 ---
 title: "Lịch tiêm chủng Việt Nam"
 description: "Nhập ngày sinh của bé để xem đầy đủ lịch tiêm chủng theo chương trình TCMR Việt Nam và vaccine dịch vụ khuyến cáo. Biết ngay mũi nào đã qua và mũi nào sắp tới."
+faq:
+  - question: "Trang này có bao gồm vaccine dịch vụ không?"
+    answer: "Có. Mẹ có thể chuyển giữa lịch TCMR miễn phí và vaccine dịch vụ để xem theo nhu cầu."
+  - question: "Có cần nhập ngày sinh chính xác không?"
+    answer: "Có, vì lịch sẽ tự tính các mốc tiêm theo số ngày tuổi của bé."
+  - question: "Nếu mũi đã qua thì còn tiêm được không?"
+    answer: "Thường vẫn có thể tiêm bù, nhưng mẹ nên hỏi bác sĩ hoặc điểm tiêm chủng để được sắp lịch phù hợp."
 tags: ["cong-cu", "tiem-chung", "vaccine", "be-so-sinh"]
 ---
 
@@ -136,6 +143,17 @@ function showTab(filter, btn) {
   renderList(filter);
 }
 </script>
+
+<div class="vax-card">
+  <h3 style="margin:0 0 .75rem;font-size:.95rem;color:#111">Mẹ nên mở tiếp</h3>
+  <ul style="margin:0;padding-left:1.2rem;color:#374151;line-height:1.7">
+    <li><a href="/posts/newborn-month-1-first-weeks/">Bé sơ sinh tháng đầu</a> để nắm các dấu hiệu cần theo dõi sau sinh.</li>
+    <li><a href="/posts/baby-month-2-3-milestones/">Bé 2-3 tháng</a> để biết mốc phát triển đầu tiên.</li>
+    <li><a href="/cong-cu/tang-truong-who/">Kiểm tra tăng trưởng chuẩn WHO</a> để theo dõi chiều cao/cân nặng của bé.</li>
+  </ul>
+</div>
+
+{{< faq title="Câu hỏi thường gặp về lịch tiêm chủng" >}}
 
 ---
 *Lịch tiêm theo chương trình TCMR Bộ Y tế Việt Nam. Vaccine dịch vụ theo khuyến cáo của VNPCA. Mẹ nên mang sổ tiêm chủng khi đi tiêm để bác sĩ xác nhận chính xác nhất.*

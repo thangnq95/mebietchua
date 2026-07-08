@@ -1,0 +1,34 @@
+{{- $faqs := .Page.Params.faq -}}
+{{- if and $faqs (gt (len $faqs) 0) -}}
+{{- $title := .Get "title" | default "Câu hỏi thường gặp" -}}
+{{- $titleID := replaceRE "[^a-zA-Z0-9]+" "-" (lower $title) -}}
+<section class="faq-box" aria-labelledby="{{ $titleID }}">
+  <style>
+    .faq-box{margin:1.5rem 0;padding:1.25rem 1.25rem 1rem;border:1px solid #e5e7eb;border-radius:14px;background:#fffdf8}
+    .faq-box h2{margin:0 0 .9rem;font-size:1.05rem;color:#111}
+    .faq-list{display:grid;gap:.75rem}
+    .faq-item{border:1px solid #f3e8ff;border-radius:12px;background:#fff;overflow:hidden}
+    .faq-item summary{list-style:none;cursor:pointer;padding:.9rem 1rem;font-weight:700;color:#111;background:#faf5ff}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-answer{padding:.85rem 1rem 1rem;color:#374151;line-height:1.65}
+    .faq-answer p{margin:.5rem 0 0}
+    .faq-answer p:first-child{margin-top:0}
+  </style>
+  <h2 id="{{ $titleID }}">{{ $title }}</h2>
+  <div class="faq-list">
+    {{- range $faqs }}
+      <details class="faq-item">
+        <summary>{{ .question }}</summary>
+        <div class="faq-answer">{{ .answer | markdownify }}</div>
+      </details>
+    {{- end }}
+  </div>
+</section>
+<script type="application/ld+json">
+{{- $items := slice -}}
+{{- range $faqs -}}
+  {{- $items = $items | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" (.answer | plainify))) -}}
+{{- end -}}
+{{- dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $items | jsonify -}}
+</script>
+{{- end -}}

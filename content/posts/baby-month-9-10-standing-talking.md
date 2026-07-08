@@ -3,6 +3,13 @@ title: "Bé 9-10 Tháng: Tập Đứng, Bước Đi Và Những Từ Đầu Tiê
 date: 2026-06-26
 draft: false
 description: "Bé 9-10 tháng phát triển gì? Từ bò đến tập đứng, có nên dùng xe tập đi, kích thích ngôn ngữ và những nguy hiểm cần tránh khi bé tập đi."
+faq:
+  - question: "Có nên dùng xe tập đi tròn không?"
+    answer: "Không nên. Nhiều chuyên gia khuyến cáo xe tập đi tròn vì dễ gây té ngã và không giúp bé học giữ thăng bằng tự nhiên."
+  - question: "Bé 9-10 tháng chưa biết nói có sao không?"
+    answer: "Mỗi bé một nhịp phát triển. Mẹ nên tiếp tục nói chuyện, đọc sách và để ý thêm mốc phát triển chung."
+  - question: "Sau bài này nên mở gì?"
+    answer: "Mẹ có thể xem lại [Lịch tiêm chủng Việt Nam](/cong-cu/lich-tiem-chung/) và [Kiểm tra tăng trưởng WHO](/cong-cu/tang-truong-who/)."
 tags: ["nuoi-con", "thang-9", "thang-10", "tap-di", "hoc-noi"]
 series: ["hanh-trinh-nuoi-con"]
 cover:
@@ -33,3 +40,5 @@ Timeline thực tế:
 Ở 9-10 tháng, bé hiểu nhiều hơn những gì bé nói được. Bé hiểu "không", "lại đây", tên mình, và các từ quen thuộc như "bình sữa", "bế". Để kích thích ngôn ngữ: đọc sách board book mỗi ngày, chỉ vào hình và gọi tên, lặp lại từ bé bập bẹ và mở rộng thành câu ("ba" → "ba đây này"), hát cho bé nghe.
 
 **Tiếp tục:** Bé 11-12 tháng: Tròn 1 tuổi *(sắp ra mắt)*
+
+{{< faq title="Câu hỏi thường gặp về bé 9-10 tháng" >}}

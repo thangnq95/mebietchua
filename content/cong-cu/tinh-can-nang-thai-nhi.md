@@ -1,6 +1,13 @@
 ---
 title: "Tính cân nặng thai nhi theo tuần"
 description: "Ước tính cân nặng thai nhi dựa trên tuần thai. So sánh với chuẩn WHO để biết bé đang phát triển thế nào."
+faq:
+  - question: "Công cụ này có thay thế siêu âm không?"
+    answer: "Không. Đây chỉ là công cụ tham khảo để mẹ hình dung cân nặng ước tính, còn chẩn đoán thật vẫn cần bác sĩ và máy siêu âm."
+  - question: "Nên dùng từ tuần bao nhiêu?"
+    answer: "Trang phù hợp nhất từ tuần 14 đến 42, tức giai đoạn giữa và cuối thai kỳ."
+  - question: "Nếu bé nhẹ cân hơn chuẩn thì sao?"
+    answer: "Mẹ không nên tự lo quá sớm. Hãy theo dõi các lần siêu âm tiếp theo, ăn uống đúng hướng dẫn và hỏi bác sĩ nếu chỉ số vẫn thấp nhiều."
 tags: ["cong-cu", "thai-nhi", "can-nang", "sieu-am"]
 ---
 
@@ -120,3 +127,14 @@ function calcFetalWeight(){
   document.getElementById('fetal-result').scrollIntoView({behavior:'smooth'});
 }
 </script>
+
+<div class="tool-card">
+  <h3 style="margin:0 0 .75rem;font-size:.95rem;color:#111">Mẹ nên mở tiếp</h3>
+  <ul style="margin:0;padding-left:1.2rem;color:#374151;line-height:1.7">
+    <li><a href="/cong-cu/tinh-ngay-du-sinh/">Tính ngày dự sinh</a> để biết chính xác mốc tuần thai.</li>
+    <li><a href="/posts/pregnancy-month-6-nutrition-exercise/">Mẹ bầu tháng 6</a> để xem dinh dưỡng và vận động phù hợp.</li>
+    <li><a href="/cong-cu/tang-truong-who/">Kiểm tra tăng trưởng chuẩn WHO</a> nếu mẹ đã sinh và muốn theo dõi bé sau này.</li>
+  </ul>
+</div>
+
+{{< faq title="Câu hỏi thường gặp về cân nặng thai nhi" >}}

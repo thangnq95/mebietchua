@@ -3,6 +3,13 @@ title: "Chăm Sóc Bé Sơ Sinh Tháng Đầu Tiên: Giấc Ngủ, Ti Mẹ Và C
 date: 2026-06-26
 draft: false
 description: "Chăm sóc bé sơ sinh tháng đầu: lịch sinh hoạt thực tế, cách chăm rốn đúng, nhận biết vàng da, mẹ sau sinh phục hồi và cho con bú đúng cách."
+faq:
+  - question: "Bé sơ sinh bú bao nhiêu cữ là đủ?"
+    answer: "Thường bé bú khoảng 8-12 cữ mỗi ngày, nhưng mẹ nên ưu tiên theo nhu cầu của bé và dấu hiệu bú đủ."
+  - question: "Rốn bé sơ sinh bao lâu thì rụng?"
+    answer: "Phần lớn rốn sẽ rụng sau 7-14 ngày nếu mẹ giữ khô sạch và chăm đúng cách."
+  - question: "Sau sinh nên xem công cụ nào?"
+    answer: "Mẹ nên mở [Kiểm tra tăng trưởng WHO](/cong-cu/tang-truong-who/) và [Lịch tiêm chủng Việt Nam](/cong-cu/lich-tiem-chung/) để theo dõi bé dễ hơn."
 tags: ["nuoi-con", "thang-1", "so-sinh", "cham-soc-be", "ti-me"]
 series: ["hanh-trinh-nuoi-con"]
 cover:
@@ -37,3 +44,5 @@ Sữa mẹ thường về sau sinh 2-5 ngày. Trước đó, bé nhận được
 Dấu hiệu bé bú đủ: ướt 6-8 tã/ngày, tăng cân đều, bé nhanh nhẹn khi thức. Mẹ uống đủ 2.5-3 lít nước/ngày, ăn đủ chất, nghỉ ngơi khi bé ngủ.
 
 **Tiếp tục:** Bé 2-3 tháng: Cười lần đầu, tập lật *(sắp ra mắt)*
+
+{{< faq title="Câu hỏi thường gặp về bé sơ sinh tháng đầu" >}}

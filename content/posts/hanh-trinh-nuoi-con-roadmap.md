@@ -58,6 +58,12 @@ Chào mẹ! Đây là roadmap toàn bộ hành trình nuôi con từ sơ sinh đ
 - [Tính lượng sữa cho bé](/cong-cu/tinh-luong-sua/)
 - [Lịch tiêm chủng Việt Nam](/cong-cu/lich-tiem-chung/)
 
+## Bắt đầu từ đâu nếu mẹ mới có bé?
+
+- Đọc bài [Chăm sóc bé sơ sinh tháng đầu](/posts/newborn-month-1-first-weeks/) trước.
+- Mở [Lịch tiêm chủng Việt Nam](/cong-cu/lich-tiem-chung/) để xem mốc sắp tới.
+- Dùng [Kiểm tra tăng trưởng WHO](/cong-cu/tang-truong-who/) để theo dõi cân nặng và chiều cao.
+
 ---
 
 *Chúc mẹ và bé một hành trình thật nhiều niềm vui! Follow Mẹ Biết Chưa để cập nhật thêm nhiều bài viết hữu ích mỗi tuần.*

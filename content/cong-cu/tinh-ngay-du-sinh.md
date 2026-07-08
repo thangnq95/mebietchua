@@ -1,6 +1,13 @@
 ---
 title: "Tính ngày dự sinh"
 description: "Tính ngày dự sinh từ ngày kinh cuối, xem tuần thai hiện tại và các mốc khám thai quan trọng trong suốt thai kỳ."
+faq:
+  - question: "Công cụ này tính ngày dự sinh bằng cách nào?"
+    answer: "Trang đang dùng công thức Naegele: lấy ngày đầu tiên của kỳ kinh cuối cộng thêm 280 ngày."
+  - question: "Nếu chu kỳ kinh không đều thì có chính xác không?"
+    answer: "Vẫn là ước tính tham khảo. Khi chu kỳ không đều, mẹ nên đối chiếu thêm với siêu âm sớm và hỏi bác sĩ sản khoa."
+  - question: "Có thể dùng trang này để xem tuần thai hiện tại không?"
+    answer: "Có. Sau khi nhập ngày kinh cuối, trang sẽ hiển thị tuần thai hiện tại, tiến trình thai kỳ và các mốc quan trọng."
 tags: ["cong-cu", "ngay-du-sinh", "tuan-thai", "me-bau"]
 ---
 
@@ -56,6 +63,15 @@ tags: ["cong-cu", "ngay-du-sinh", "tuan-thai", "me-bau"]
 </div>
 
 </div>
+</div>
+
+<div class="dd-card">
+  <h3 style="margin:0 0 .75rem;font-size:.95rem;color:#111">Mẹ nên mở tiếp</h3>
+  <ul style="margin:0;padding-left:1.2rem;color:#374151;line-height:1.7">
+    <li><a href="/posts/pregnancy-month-3-body-changes/">Mẹ bầu tháng 3</a> để hiểu các mốc sàng lọc đầu thai kỳ.</li>
+    <li><a href="/posts/pregnancy-month-8-hospital-bag/">Mẹ bầu tháng 8</a> để chuẩn bị túi đi sinh đúng thời điểm.</li>
+    <li><a href="/cong-cu/tinh-can-nang-thai-nhi/">Tính cân nặng thai nhi theo tuần</a> để theo dõi bé theo từng lần siêu âm.</li>
+  </ul>
 </div>
 
 <script>
@@ -124,6 +140,8 @@ function calcDueDate() {
   document.getElementById('dd-result').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 </script>
+
+{{< faq title="Câu hỏi thường gặp về tính ngày dự sinh" >}}
 
 ---
 *Tính theo công thức Naegele (LMP + 280 ngày). Ngày dự sinh chỉ mang tính ước tính — chỉ khoảng 5% bé sinh đúng ngày dự sinh. Luôn theo dõi theo chỉ dẫn của bác sĩ.*

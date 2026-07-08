@@ -3,6 +3,13 @@ title: "Bé Tròn 1 Tuổi: Mốc Phát Triển Quan Trọng Và Chuẩn Bị Ch
 date: 2026-06-26
 draft: false
 description: "Bé 12 tháng biết gì? Checklist phát triển, chuyển từ sữa mẹ sang sữa tươi, thực đơn bé 1 tuổi và lịch tiêm chủng mốc 12 tháng."
+faq:
+  - question: "Bé 1 tuổi có cần uống sữa tươi ngay không?"
+    answer: "Có thể bắt đầu sữa tươi nguyên kem từ 1 tuổi, nhưng mẹ nên chuyển dần để bé quen vị."
+  - question: "Bé 12 tháng chưa biết đi có bình thường không?"
+    answer: "Có. Nhiều bé đi muộn hơn một chút nhưng vẫn hoàn toàn bình thường nếu các mốc khác vẫn phát triển tốt."
+  - question: "Mốc này nên xem lại công cụ nào?"
+    answer: "Mẹ có thể dùng [Kiểm tra tăng trưởng WHO](/cong-cu/tang-truong-who/) và [Lịch tiêm chủng Việt Nam](/cong-cu/lich-tiem-chung/)."
 tags: ["nuoi-con", "thang-12", "1-tuoi", "phat-trien", "dinh-duong"]
 series: ["hanh-trinh-nuoi-con"]
 cover:
@@ -40,3 +47,5 @@ Theo lịch TCMR Việt Nam, mốc 12 tháng bé cần tiêm: **sởi, viêm nã
 Chúc mẹ và bé một sinh nhật 1 tuổi thật đáng nhớ. Hành trình nuôi con còn dài, nhưng năm đầu tiên đã chứng minh mẹ là một người mẹ tuyệt vời!
 
 **Xem toàn bộ hành trình nuôi con 0-12 tháng tại [trang chủ](/)**
+
+{{< faq title="Câu hỏi thường gặp về bé tròn 1 tuổi" >}}

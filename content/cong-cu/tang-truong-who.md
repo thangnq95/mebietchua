@@ -1,6 +1,13 @@
 ---
 title: "Kiểm tra tăng trưởng chuẩn WHO"
 description: "Lưu hồ sơ bé, đăng nhập Google tùy chọn, rồi nhập cân nặng và chiều cao để xem bé đang ở vị trí phân vị nào so với chuẩn WHO. Công cụ miễn phí cho mẹ Việt."
+faq:
+  - question: "Có bắt buộc phải đăng nhập Google mới dùng được không?"
+    answer: "Không bắt buộc. Mẹ có thể dùng chế độ khách, dữ liệu sẽ lưu trên trình duyệt hiện tại. Nếu đăng nhập Google, hồ sơ bé sẽ đồng bộ giữa các máy."
+  - question: "Vì sao nên lưu ngày sinh của bé?"
+    answer: "Vì hệ thống sẽ tự tính tháng tuổi mỗi lần mẹ mở lại trang, đỡ phải nhập lại thủ công và tránh lệch tuổi."
+  - question: "Trang này phù hợp với bé mấy tháng?"
+    answer: "WHO ở đây đang theo chuẩn 0-24 tháng. Nếu bé lớn hơn, mẹ vẫn xem tham khảo nhưng nên ưu tiên tư vấn nhi khoa khi cần đánh giá chính xác hơn."
 tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 ---
 
@@ -160,8 +167,8 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
     <div class="chart-wrap"><canvas id="whoChart" role="img" aria-label="Biểu đồ tăng trưởng WHO 0-24 tháng">Biểu đồ tăng trưởng WHO</canvas></div>
   </div>
 
-  <div class="tool-card">
-    <h3 style="margin:0 0 .75rem;font-size:.95rem;color:#111">Bảng chuẩn WHO 0–24 tháng</h3>
+<div class="tool-card">
+  <h3 style="margin:0 0 .75rem;font-size:.95rem;color:#111">Bảng chuẩn WHO 0–24 tháng</h3>
     <div class="section-tab" style="margin-bottom:.75rem">
       <button class="tab-btn active" id="ttab-w" onclick="switchTable('w')">Cân nặng (kg)</button>
       <button class="tab-btn" id="ttab-h" onclick="switchTable('h')">Chiều cao (cm)</button>
@@ -175,9 +182,19 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 </div>
 </div>
 
+<div class="tool-card">
+  <h3 style="margin:0 0 .75rem;font-size:.95rem;color:#111">Mẹ nên mở tiếp</h3>
+  <ul style="margin:0;padding-left:1.2rem;color:#374151;line-height:1.7">
+    <li><a href="/cong-cu/tinh-ngay-du-sinh/">Tính ngày dự sinh</a> nếu mẹ muốn tự tính tuần thai từ ngày kinh cuối.</li>
+    <li><a href="/cong-cu/tinh-can-nang-thai-nhi/">Tính cân nặng thai nhi theo tuần</a> nếu mẹ đang theo dõi bé trong bụng.</li>
+    <li><a href="/cong-cu/lich-tiem-chung/">Lịch tiêm chủng Việt Nam</a> nếu bé đã sinh và mẹ muốn xem mốc tiêm tiếp theo.</li>
+  </ul>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 {{< who-supabase-config >}}
 <script defer src="/js/who-tool-app.js"></script>
+{{< faq title="Câu hỏi thường gặp về công cụ WHO" >}}
 
 ---
 *Số liệu dựa trên WHO Child Growth Standards 2006. Dự đoán tương lai giả định bé duy trì vị trí phân vị hiện tại — thực tế có thể thay đổi tùy dinh dưỡng và sức khỏe. Công cụ chỉ mang tính tham khảo, không thay thế khám dinh dưỡng chuyên nghiệp.*

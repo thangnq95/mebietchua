@@ -3,6 +3,13 @@ title: "Bé 2-3 Tháng Tuổi: Mốc Phát Triển Quan Trọng Và Cách Kích 
 date: 2026-06-26
 draft: false
 description: "Bé 2-3 tháng biết làm gì? Cười xã hội, nhìn theo vật, tập lật. Cách chơi với bé 0-3 tháng để kích thích não bộ và dấu hiệu chậm phát triển cần gặp bác sĩ."
+faq:
+  - question: "Bé chưa cười xã hội ở tháng 2 có sao không?"
+    answer: "Mỗi bé có tốc độ khác nhau. Nếu đến khoảng 3 tháng bé vẫn không cười đáp lại, mẹ nên trao đổi với bác sĩ."
+  - question: "Tummy time nên làm bao lâu?"
+    answer: "Mẹ chỉ cần bắt đầu từ vài phút mỗi lần, 2-3 lần/ngày, rồi tăng dần theo sức chịu của bé."
+  - question: "Có nên xem thêm công cụ nào?"
+    answer: "Mẹ có thể mở [Kiểm tra tăng trưởng WHO](/cong-cu/tang-truong-who/) và [Lịch tiêm chủng Việt Nam](/cong-cu/lich-tiem-chung/) để theo dõi bé toàn diện hơn."
 tags: ["nuoi-con", "thang-2", "thang-3", "phat-trien", "choi-voi-be"]
 series: ["hanh-trinh-nuoi-con"]
 cover:
@@ -41,3 +48,5 @@ Xem lại [chăm sóc bé sơ sinh tháng đầu](/posts/newborn-month-1-first-w
 Gặp bác sĩ nếu đến 3 tháng bé: không nhìn theo vật, không cười đáp lại, không phát ra âm thanh, tay chân quá mềm hoặc quá cứng, không nâng đầu khi nằm sấp.
 
 **Tiếp tục:** Bé 4-5 tháng: Bắt đầu ăn dặm *(sắp ra mắt)*
+
+{{< faq title="Câu hỏi thường gặp về bé 2-3 tháng" >}}

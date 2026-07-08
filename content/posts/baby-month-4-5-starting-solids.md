@@ -3,6 +3,13 @@ title: "Bé 4-5 Tháng: Bắt Đầu Ăn Dặm Đúng Cách — Chọn BLW Hay X
 date: 2026-06-26
 draft: false
 description: "Dấu hiệu bé sẵn sàng ăn dặm, so sánh BLW và ăn dặm truyền thống, thực đơn tuần đầu chi tiết và đồ dùng ăn dặm cần thiết cho bé 4-5 tháng."
+faq:
+  - question: "Bé 4-5 tháng đã phải ăn dặm chưa?"
+    answer: "WHO khuyến nghị từ 6 tháng, nên 4-5 tháng chỉ là giai đoạn mẹ quan sát dấu hiệu sẵn sàng và hỏi bác sĩ nếu muốn bắt đầu sớm."
+  - question: "Nên chọn BLW hay xay nhuyễn?"
+    answer: "Không có cách nào tuyệt đối tốt hơn. Nhiều mẹ bắt đầu bằng xay nhuyễn rồi chuyển dần sang BLW khi bé lớn hơn."
+  - question: "Sau bài này nên xem gì tiếp?"
+    answer: "Mẹ có thể mở [Tính lượng sữa cho bé](/cong-cu/tinh-luong-sua/) và [Kiểm tra tăng trưởng WHO](/cong-cu/tang-truong-who/)."
 tags: ["nuoi-con", "thang-4", "thang-5", "an-dam", "blw"]
 series: ["hanh-trinh-nuoi-con"]
 cover:
@@ -45,3 +52,5 @@ Mỗi món mới thử ít nhất 3 ngày để kiểm tra dị ứng. Không th
 > **Mẹo thực tế:** Nấu 1 lần, chia vào khay đá, đông lạnh từng viên. Mỗi bữa lấy 1-2 viên rã đông — tiết kiệm thời gian mà vẫn đảm bảo tươi ngon.
 
 **Tiếp tục:** Bé 6-8 tháng: Tập ngồi, mọc răng *(sắp ra mắt)*
+
+{{< faq title="Câu hỏi thường gặp về bé 4-5 tháng" >}}

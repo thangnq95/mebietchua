@@ -3,6 +3,13 @@ title: "Mẹ Bầu Tháng 5: Checklist Đồ Sơ Sinh Cần Mua Sớm — Tránh
 date: 2026-06-26
 draft: false
 description: "Checklist đồ sơ sinh đầy đủ cho mẹ bầu tháng 5: 20 món thiết yếu chia theo nhóm, nên mua ở đâu rẻ, những thứ không cần mua tránh lãng phí."
+faq:
+  - question: "Tháng 5 có phải lúc tốt nhất để mua đồ sơ sinh không?"
+    answer: "Có. Mẹ vẫn còn đủ sức để so sánh giá, canh sale và giặt giũ đồ cho bé trước khi bụng quá lớn."
+  - question: "Có cần mua hết ngay không?"
+    answer: "Không cần. Mẹ chỉ nên ưu tiên những món thiết yếu trước, còn lại để sau khi sinh rồi bổ sung."
+  - question: "Nên mở công cụ nào để chuẩn bị tiếp?"
+    answer: "Mẹ nên mở [Tính ngày dự sinh](/cong-cu/tinh-ngay-du-sinh/) để biết còn bao lâu nữa đến ngày sinh và xem lại [roadmap mẹ bầu](/posts/hanh-trinh-me-bau-roadmap/)."
 tags: ["me-bau", "thang-5", "do-so-sinh", "checklist", "mua-sam-cho-be"]
 series: ["hanh-trinh-me-bau"]
 cover:
@@ -85,5 +92,6 @@ Tháng 5 là lúc mẹ vừa tròn bụng, vừa còn đủ năng lượng để
 - [Mẹ bầu tháng 4: Cảm nhận thai máy lần đầu](/posts/pregnancy-month-4-first-kicks/)
 - Mẹ bầu tháng 6: Dinh dưỡng & vận động *(sắp ra mắt)*
 
----
+{{< faq title="Câu hỏi thường gặp về đồ sơ sinh tháng 5" >}}
 
+---
