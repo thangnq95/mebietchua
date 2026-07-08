@@ -8,7 +8,7 @@ description: "Bộ công cụ miễn phí giúp mẹ theo dõi sức khỏe thai
 <a href="/cong-cu/tang-truong-who/" style="text-decoration:none;display:block;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.25rem;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
   <div style="font-size:2rem;margin-bottom:.5rem">📏</div>
   <h3 style="margin:0 0 .4rem;font-size:1rem;color:#111">Kiểm tra tăng trưởng WHO</h3>
-  <p style="margin:0;font-size:.875rem;color:#6b7280">Nhập cân nặng và chiều cao của bé — xem bé đang ở đâu so với chuẩn WHO</p>
+  <p style="margin:0;font-size:.875rem;color:#6b7280">Lưu hồ sơ bé, tự tính tháng tuổi từ ngày sinh và xem bé đang ở đâu so với chuẩn WHO</p>
 </a>
 
 <a href="/cong-cu/tinh-ngay-du-sinh/" style="text-decoration:none;display:block;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.25rem;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">

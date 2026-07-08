@@ -1,0 +1,2 @@
+{{- $cfg := dict "url" (.Site.Params.supabase.url | default "") "anonKey" (.Site.Params.supabase.anonKey | default "") -}}
+<script>window.MBC_SUPABASE_CONFIG = {{ $cfg | jsonify | safeJS }};</script>

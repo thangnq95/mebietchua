@@ -1,12 +1,45 @@
 ---
 title: "Kiểm tra tăng trưởng chuẩn WHO"
-description: "Nhập cân nặng, chiều cao và tuổi của bé để xem bé đang ở percentile nào so với chuẩn WHO. Công cụ miễn phí cho mẹ Việt."
+description: "Lưu hồ sơ bé, đăng nhập Google tùy chọn, rồi nhập cân nặng và chiều cao để xem bé đang ở percentile nào so với chuẩn WHO. Công cụ miễn phí cho mẹ Việt."
 tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 ---
 
 <div id="who-app">
 <style>
 #who-app{font-family:inherit;max-width:680px;margin:0 auto}
+.who-profile-card{background:linear-gradient(180deg,#fff 0,#fff7fb 100%)}
+.who-profile-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:1rem}
+.who-auth-actions{display:flex;gap:8px;flex-wrap:wrap}
+.who-mini-btn{padding:.45rem .8rem;border:1px solid #e5e7eb;border-radius:999px;background:#fff;font-size:.82rem;font-weight:600;color:#111;cursor:pointer;transition:all .15s}
+.who-mini-btn:hover{border-color:#ec4899;color:#ec4899}
+.who-mini-btn.who-primary{background:linear-gradient(135deg,#ec4899,#8b5cf6);border-color:#ec4899;color:#fff}
+.who-mini-btn.who-danger{border-color:#fecaca;color:#b91c1c}
+.who-session-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:.85rem 1rem;background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;margin-bottom:1rem;flex-wrap:wrap}
+.who-session-user{display:flex;align-items:center;gap:10px;min-width:0}
+.who-avatar,.who-avatar-fallback{width:32px;height:32px;border-radius:50%;flex-shrink:0}
+.who-avatar{object-fit:cover}
+.who-avatar-fallback{display:grid;place-items:center;background:#111;color:#fff;font-size:.7rem;font-weight:700}
+.who-session-name{font-weight:700;color:#111;font-size:.9rem}
+.who-session-email{font-size:.75rem;color:#6b7280}
+.who-session-pill{display:inline-flex;align-items:center;padding:.28rem .65rem;border-radius:999px;font-size:.75rem;font-weight:700;background:#ede9fe;color:#6b21a8}
+.who-session-pill.remote{background:#dcfce7;color:#166534}
+.who-session-pill.guest{background:#e0f2fe;color:#075985}
+.who-session-text{font-size:.82rem;color:#374151}
+.who-subhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:.75rem;flex-wrap:wrap}
+.who-mini-badge{display:inline-flex;align-items:center;padding:.3rem .65rem;border-radius:999px;background:#fce7f3;color:#9d174d;font-size:.75rem;font-weight:700}
+.who-child-list{display:grid;gap:10px;margin-bottom:1rem}
+.who-child-item{position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;flex-wrap:wrap}
+.who-child-item.active{border-color:#ec4899;box-shadow:0 0 0 1px rgba(236,72,153,.14);background:#fdf2f8}
+.who-child-main{min-width:0}
+.who-child-name{font-weight:700;color:#111}
+.who-child-meta{font-size:.78rem;color:#6b7280;margin-top:4px}
+.who-child-actions{display:flex;gap:6px;flex-wrap:wrap}
+.who-active-badge{position:absolute;top:10px;right:12px;font-size:.72rem;font-weight:700;color:#9d174d;background:#fce7f3;padding:.22rem .55rem;border-radius:999px}
+.who-form-top{margin-bottom:12px}
+.who-age-preview{margin-top:12px;padding:10px 12px;border-radius:10px;background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;font-size:.85rem;line-height:1.5}
+.who-empty{padding:12px;border:1px dashed #d1d5db;border-radius:12px;color:#6b7280;font-size:.86rem;background:#fafafa}
+.who-muted{font-size:.82rem;color:#6b7280}
+.who-form-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .tool-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;margin-bottom:1rem}
 .tool-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:500px){.tool-row{grid-template-columns:1fr}}
@@ -50,6 +83,10 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 .prediction-box{background:#fdf4ff;border:1px solid #e9d5ff;border-radius:8px;padding:.75rem 1rem;margin-top:.75rem;font-size:.875rem;color:#6b21a8}
 .ref-note{font-size:.75rem;color:#6b7280;margin:.35rem 0 0;line-height:1.5}
 @media(max-width:640px){
+  .who-profile-head,.who-session-bar,.who-child-item{flex-direction:column}
+  .who-session-bar{align-items:flex-start}
+  .who-auth-actions,.who-child-actions,.who-form-actions{width:100%}
+  .who-mini-btn{width:100%}
   .tool-card{padding:1rem}
   .chart-wrap{height:240px;margin:.85rem 0 .5rem}
   .section-tab{width:100%;gap:8px}
@@ -63,6 +100,8 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 }
 </style>
 
+<div id="who-profile"></div>
+
 <div class="tool-card">
   <h2 style="margin:0 0 1rem;font-size:1.1rem;color:#111">Thông tin của bé</h2>
   <div style="margin-bottom:1rem">
@@ -74,14 +113,15 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
   </div>
   <div class="tool-row">
     <div>
-      <div class="tool-label">Tuổi bé (tháng)</div>
-      <input class="tool-input" id="age" type="number" min="0" max="24" placeholder="VD: 5" />
+      <div class="tool-label">Tuổi bé (tháng, tự tính từ ngày sinh)</div>
+      <input class="tool-input" id="age" type="number" min="0" max="24" placeholder="Sẽ tự điền từ hồ sơ" />
     </div>
     <div>
       <div class="tool-label">Cân nặng (kg)</div>
       <input class="tool-input" id="weight" type="number" step="0.1" placeholder="VD: 6.8" />
     </div>
   </div>
+  <div id="who-age-helper" class="who-muted" style="margin-top:8px">Nếu mẹ đã lưu hồ sơ bé ở phía trên, tuổi sẽ tự điền theo ngày sinh.</div>
   <div style="margin-top:12px">
     <div class="tool-label">Chiều cao (cm) — không bắt buộc</div>
     <input class="tool-input" id="height" type="number" step="0.1" placeholder="VD: 65.5" />
@@ -136,271 +176,8 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<script>
-const WHO = {
-  boy: {
-    w: [[0,2.5,3.3,4.4],[1,3.4,4.5,5.8],[2,4.3,5.6,7.1],[3,5.0,6.4,8.0],[4,5.6,7.0,8.7],[5,6.0,7.5,9.3],[6,6.4,7.9,9.8],[7,6.7,8.3,10.3],[8,6.9,8.6,10.7],[9,7.1,8.9,11.0],[10,7.4,9.2,11.4],[11,7.6,9.4,11.7],[12,7.7,9.6,12.0],[15,8.3,10.3,12.8],[18,8.8,10.9,13.7],[21,9.2,11.5,14.5],[24,9.7,12.2,15.3]],
-    h: [[0,46.1,49.9,53.7],[1,50.8,54.7,58.6],[2,54.4,58.4,62.4],[3,57.3,61.4,65.5],[4,59.7,63.9,68.0],[5,61.7,65.9,70.1],[6,63.3,67.6,71.9],[7,64.8,69.2,73.5],[8,66.2,70.6,75.0],[9,67.5,72.0,76.5],[10,68.7,73.3,77.9],[11,69.9,74.5,79.2],[12,71.0,75.7,80.5],[15,74.1,79.1,84.2],[18,76.9,82.3,87.7],[21,79.4,85.1,90.0],[24,81.0,87.1,93.2]]
-  },
-  girl: {
-    w: [[0,2.4,3.2,4.2],[1,3.2,4.2,5.5],[2,3.9,5.1,6.6],[3,4.5,5.8,7.5],[4,5.0,6.4,8.2],[5,5.4,6.9,8.8],[6,5.7,7.3,9.3],[7,6.0,7.6,9.8],[8,6.3,7.9,10.2],[9,6.5,8.2,10.5],[10,6.7,8.5,10.9],[11,6.9,8.7,11.2],[12,6.9,8.7,11.2],[15,7.6,9.6,12.4],[18,8.1,10.2,13.2],[21,8.6,10.9,14.0],[24,9.0,11.5,14.8]],
-    h: [[0,45.4,49.1,52.9],[1,49.8,53.7,57.6],[2,53.0,57.1,61.1],[3,55.6,59.8,64.0],[4,57.8,62.1,66.4],[5,59.6,64.0,68.5],[6,61.2,65.7,70.3],[7,62.7,67.3,71.9],[8,64.0,68.7,73.5],[9,65.3,70.1,75.0],[10,66.5,71.5,76.4],[11,67.7,72.8,77.8],[12,68.9,74.0,79.2],[15,72.0,77.5,83.0],[18,74.9,80.7,86.5],[21,77.5,83.7,89.8],[24,80.0,86.4,92.9]]
-  }
-};
-
-const LABELS = ['Sơ sinh','1th','2th','3th','4th','5th','6th','7th','8th','9th','10th','11th','12th','15th','18th','21th','24th'];
-const AGES   = [0,1,2,3,4,5,6,7,8,9,10,11,12,15,18,21,24];
-
-let chartInst = null, lastAge = null, lastGender = 'boy', lastWeight = null, lastHeight = null;
-
-function interp(data, age) {
-  const idx = AGES.findIndex(k => k >= age);
-  if (idx <= 0) return data[0];
-  if (idx === -1) return data[data.length-1];
-  const t = (age - AGES[idx-1]) / (AGES[idx] - AGES[idx-1]);
-  return data[idx-1].map((v,i) => i===0 ? null : v + (data[idx][i]-v)*t);
-}
-
-function getStatus(val, ref) {
-  if (val < ref[1]) return {label:'Dưới −2SD ⚠️', cls:'st-low', adv:'Bé đang dưới ngưỡng −2SD. Mẹ nên đưa bé đi khám dinh dưỡng để được tư vấn kịp thời.'};
-  if (val < ref[2]) return {label:'Dưới trung bình (bình thường)', cls:'st-watch', adv:'Bé trong vùng bình thường nhưng dưới mức trung bình. Tiếp tục theo dõi và đảm bảo dinh dưỡng đầy đủ.'};
-  if (val <= ref[3]) return {label:'Bình thường ✓', cls:'st-normal', adv:'Tuyệt vời! Bé đang phát triển trong vùng bình thường theo chuẩn WHO. Tiếp tục duy trì chế độ dinh dưỡng hiện tại.'};
-  return {label:'Trên +2SD', cls:'st-high', adv:'Bé đang trên +2SD. Với cân nặng mẹ nên kiểm soát khẩu phần ăn. Tham khảo bác sĩ nếu lo lắng.'};
-}
-
-// Tính percentile t ∈ (-∞,+∞) của bé so với dải -2SD..+2SD
-// t=0 → -2SD, t=1 → +2SD, t=0.5 → trung bình
-function calcPercentileT(val, ref) {
-  const range = ref[3] - ref[1];
-  if (range === 0) return 0.5;
-  return (val - ref[1]) / range;
-}
-
-// Dự đoán cân nặng tương lai bằng cách giữ nguyên t
-function buildPrediction(data, age, babyVal) {
-  const ref = interp(data, age);
-  const t = calcPercentileT(babyVal, ref);
-  return AGES.map(a => {
-    if (a < age) return null;
-    const r = interp(data, a);
-    return parseFloat((r[1] + t * (r[3] - r[1])).toFixed(2));
-  });
-}
-
-function calcWHO() {
-  const gender = document.querySelector('input[name="gender"]:checked').value;
-  const age    = parseInt(document.getElementById('age').value);
-  const weight = parseFloat(document.getElementById('weight').value);
-  const hv     = parseFloat(document.getElementById('height').value);
-
-  if (isNaN(age) || isNaN(weight) || age < 0 || age > 24) {
-    alert('Mẹ vui lòng nhập tuổi (0–24 tháng) và cân nặng hợp lệ nhé!'); return;
-  }
-  lastAge = age; lastGender = gender; lastWeight = weight;
-  lastHeight = isNaN(hv) ? null : hv;
-
-  const data = WHO[gender];
-  const wRef  = interp(data.w, age);
-  const wStat = getStatus(weight, wRef);
-  const wNext = interp(data.w, Math.min(age+1,24));
-
-  // Predicted at 24 months
-  const predAt24 = buildPrediction(data.w, age, weight).at(-1);
-
-  document.getElementById('status-row').innerHTML =
-    `<span class="status-badge ${wStat.cls}">${wStat.label}</span>`;
-
-  document.getElementById('stats-grid').innerHTML = `
-    <div class="stat-card"><p class="stat-val" style="color:#ec4899">${weight} kg</p><p class="stat-label">Cân nặng hiện tại</p></div>
-    <div class="stat-card"><p class="stat-val" style="color:#10b981">${wRef[2].toFixed(1)} kg</p><p class="stat-label">Trung bình WHO (${age}th)</p></div>
-    <div class="stat-card"><p class="stat-val" style="color:#6b7280;font-size:1.1rem">${wRef[1].toFixed(1)}–${wRef[3].toFixed(1)}</p><p class="stat-label">Vùng bình thường (kg)</p></div>
-    <div class="stat-card"><p class="stat-val" style="color:#8b5cf6;font-size:1.1rem">${((weight/wRef[2])*100).toFixed(0)}%</p><p class="stat-label">So với trung bình</p></div>`;
-
-  let hHtml = '';
-  if (lastHeight) {
-    const hRef  = interp(data.h, age);
-    const hStat = getStatus(lastHeight, hRef);
-    const hVsMedian = ((lastHeight / hRef[2]) * 100).toFixed(0);
-    hHtml = `<div style="margin-top:.75rem">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:.5rem">
-        <h3 style="margin:0;font-size:.95rem;color:#111">Tiêu chuẩn chiều cao theo tuổi (WHO)</h3>
-        <span class="status-badge ${hStat.cls}" style="margin-bottom:0">${hStat.label}</span>
-      </div>
-      <div class="result-grid">
-        <div class="stat-card"><p class="stat-val" style="color:#0ea5e9">${lastHeight} cm</p><p class="stat-label">Chiều cao hiện tại</p></div>
-        <div class="stat-card"><p class="stat-val" style="color:#10b981">${hRef[2].toFixed(1)} cm</p><p class="stat-label">Trung bình WHO (${age}th)</p></div>
-        <div class="stat-card"><p class="stat-val" style="color:#6b7280;font-size:1.1rem">${hRef[1].toFixed(1)}–${hRef[3].toFixed(1)}</p><p class="stat-label">Vùng tham khảo (cm)</p></div>
-        <div class="stat-card"><p class="stat-val" style="color:#8b5cf6;font-size:1.1rem">${hVsMedian}%</p><p class="stat-label">So với trung bình</p></div>
-      </div>
-      <div class="advice" style="background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a">WHO dùng chuẩn chiều dài/chiều cao theo tuổi: dưới −2SD là thấp hơn chuẩn, từ −2SD đến +2SD là vùng tham khảo bình thường, trên +2SD là cao hơn trung bình.</div>
-    </div>`;
-  }
-  document.getElementById('height-result').innerHTML = hHtml;
-  document.getElementById('advice-box').innerHTML = `<div class="advice">💡 ${wStat.adv}</div>`;
-  document.getElementById('next-box').innerHTML = `<div class="next-month">📅 <b>Tháng ${Math.min(age+1,24)}:</b> Chuẩn TB <b>${wNext[2].toFixed(1)} kg</b> — bé cần tăng thêm <b>${(wNext[2]-wRef[2]).toFixed(2)} kg</b></div>`;
-  document.getElementById('pred-box').innerHTML = `<div class="prediction-box">🔮 <b>Dự đoán đến 24 tháng:</b> Nếu bé giữ nguyên percentile hiện tại, đến 24 tháng bé sẽ đạt khoảng <b>${predAt24} kg</b> (chuẩn TB 24 tháng: ${WHO[gender].w[16][2]} kg)</div>`;
-
-  document.getElementById('result').style.display = 'block';
-  const defaultChartType = lastHeight ? 'h' : 'w';
-  renderChart(defaultChartType);
-  renderTable(defaultChartType);
-  document.getElementById('result').scrollIntoView({behavior:'smooth', block:'nearest'});
-}
-
-// Plugin vẽ label cuối line
-const lineLabelsPlugin = {
-  id: 'lineLabels',
-  afterDraw(chart) {
-    const ctx = chart.ctx;
-    const meta0 = chart.getDatasetMeta(0); // +2SD
-    const meta1 = chart.getDatasetMeta(1); // TB
-    const meta2 = chart.getDatasetMeta(2); // -2SD
-    const pairs = [
-      {meta: meta0, color: '#e34948', text: '+2SD'},
-      {meta: meta1, color: '#10b981', text: 'TB'},
-      {meta: meta2, color: '#3b82f6', text: '−2SD'},
-    ];
-    ctx.save();
-    ctx.font = 'bold 11px sans-serif';
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'middle';
-    pairs.forEach(({meta, color, text}) => {
-      const pts = meta.data;
-      if (!pts || pts.length === 0) return;
-      const last = pts[pts.length - 1];
-      ctx.fillStyle = color;
-      ctx.fillText(text, last.x + 4, last.y);
-    });
-    ctx.restore();
-  }
-};
-
-function renderChart(type) {
-  const data   = WHO[lastGender][type];
-  const babyVal = type === 'w' ? lastWeight : lastHeight;
-  if (!babyVal) return;
-  const isMobile = window.innerWidth < 640;
-
-  const low  = data.map(r => r[1]);
-  const med  = data.map(r => r[2]);
-  const high = data.map(r => r[3]);
-
-  // Point hiện tại
-  const babyPoint = AGES.map(a => a === lastAge ? babyVal : null);
-
-  // Prediction line: null trước lastAge, giá trị từ lastAge trở đi
-  const pred = buildPrediction(data, lastAge, babyVal);
-
-  if (chartInst) chartInst.destroy();
-
-  chartInst = new Chart(document.getElementById('whoChart'), {
-    type: 'line',
-    plugins: [lineLabelsPlugin],
-    data: {
-      labels: LABELS,
-      datasets: [
-        { label:'+2SD',   data:high,       borderColor:'#e34948', borderWidth:1.5, borderDash:[5,4], pointRadius:0, fill:false, tension:0.3 },
-        { label:'TB',     data:med,        borderColor:'#10b981', borderWidth:2.5, pointRadius:0,    fill:false, tension:0.3 },
-        { label:'−2SD',   data:low,        borderColor:'#3b82f6', borderWidth:1.5, borderDash:[5,4], pointRadius:0, fill:false, tension:0.3 },
-        { label:'Dự đoán',data:pred,       borderColor:'#a855f7', borderWidth:2,   borderDash:[6,3], pointRadius:AGES.map(a=>a===lastAge?0:3),
-          pointBackgroundColor:'#a855f7', fill:false, tension:0.3, spanGaps:false },
-        { label:'Con bé', data:babyPoint,  borderColor:'#ec4899', borderWidth:0,
-          pointRadius:AGES.map(a=>a===lastAge?10:0),
-          pointBackgroundColor:'#ec4899', pointBorderColor:'#fff', pointBorderWidth:2, showLine:false },
-      ]
-    },
-    options: {
-      responsive:true, maintainAspectRatio:false,
-      layout: { padding: { right: isMobile ? 18 : 36 } },
-      plugins: {
-        legend: { display:false },
-        tooltip: {
-          callbacks: {
-            label: ctx => {
-              const u = type==='w'?'kg':'cm';
-              if (ctx.raw === null) return null;
-              return `${ctx.dataset.label}: ${Number(ctx.raw).toFixed(1)} ${u}`;
-            }
-          }
-        }
-      },
-      scales: {
-        x: { ticks:{font:{size:isMobile ? 9 : 10}}, grid:{color:'#f3f4f6'} },
-        y: { ticks:{font:{size:isMobile ? 9 : 10}}, grid:{color:'#f3f4f6'},
-             title:{display:true, text: type==='w'?'kg':'cm', font:{size:isMobile ? 10 : 11}} }
-      }
-    }
-  });
-
-  document.getElementById('chart-title').textContent = type === 'h'
-    ? 'Biểu đồ tăng trưởng WHO - Chiều cao'
-    : 'Biểu đồ tăng trưởng WHO - Cân nặng';
-  document.getElementById('whoChart').setAttribute(
-    'aria-label',
-    type === 'h' ? 'Biểu đồ chiều cao WHO 0-24 tháng' : 'Biểu đồ cân nặng WHO 0-24 tháng'
-  );
-  document.getElementById('tab-w').classList.toggle('active', type==='w');
-  document.getElementById('tab-h').classList.toggle('active', type==='h');
-}
-
-function renderTable(type) {
-  const data    = WHO[lastGender][type];
-  const unit    = type === 'w' ? 'kg' : 'cm';
-  const babyVal = type === 'w' ? lastWeight : lastHeight;
-  const pred    = babyVal ? buildPrediction(data, lastAge, babyVal) : null;
-
-  let html = `<thead><tr>
-    <th>Tháng tuổi</th>
-    <th style="color:#3b82f6">−2SD</th>
-    <th style="color:#059669">Trung bình</th>
-    <th style="color:#e34948">+2SD</th>
-    ${babyVal ? '<th style="color:#7c3aed">Con bé / Dự đoán</th>' : ''}
-  </tr></thead><tbody>`;
-
-  data.forEach((row, i) => {
-    const a = row[0];
-    const isCurrent = a === lastAge;
-    const isFuture  = pred && a > lastAge;
-    const tdCls = isCurrent ? 'baby-now' : (isFuture ? 'baby-pred' : '');
-
-    let babyCell = '';
-    if (babyVal) {
-      if (isCurrent) {
-        const st = babyVal < row[1] ? '⚠️' : (babyVal > row[3] ? '↑' : '✓');
-        babyCell = `<td class="highlight">${babyVal} ${st}</td>`;
-      } else if (isFuture && pred[i] !== null) {
-        babyCell = `<td class="baby-pred">~${pred[i]}</td>`;
-      } else {
-        babyCell = `<td style="color:#d1d5db">—</td>`;
-      }
-    }
-
-    html += `<tr>
-      <td class="${tdCls}" style="font-weight:${isCurrent?700:400}">${a===0?'Sơ sinh':a+' tháng'}</td>
-      <td class="${tdCls}">${row[1].toFixed(1)}</td>
-      <td class="${tdCls}" style="font-weight:600;color:#059669">${row[2].toFixed(1)}</td>
-      <td class="${tdCls}">${row[3].toFixed(1)}</td>
-      ${babyCell}
-    </tr>`;
-  });
-
-  html += '</tbody>';
-  document.getElementById('who-ref-table').innerHTML = html;
-  document.getElementById('ttab-w').classList.toggle('active', type==='w');
-  document.getElementById('ttab-h').classList.toggle('active', type==='h');
-}
-
-function switchChart(type) {
-  if (lastAge === null) return;
-  if (type === 'h' && !lastHeight) { alert('Mẹ chưa nhập chiều cao của bé!'); return; }
-  renderChart(type);
-}
-function switchTable(type) {
-  if (lastAge === null) return;
-  if (type === 'h' && !lastHeight) { alert('Mẹ chưa nhập chiều cao của bé!'); return; }
-  renderTable(type);
-}
-</script>
+{{< who-supabase-config >}}
+<script defer src="/js/who-tool-app.js"></script>
 
 ---
 *Số liệu dựa trên WHO Child Growth Standards 2006. Dự đoán tương lai giả định bé duy trì percentile hiện tại — thực tế có thể thay đổi tùy dinh dưỡng và sức khỏe. Công cụ chỉ mang tính tham khảo, không thay thế khám dinh dưỡng chuyên nghiệp.*
