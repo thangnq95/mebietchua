@@ -289,18 +289,18 @@
     if (!ui.authNote) return;
     var config = getSupabaseConfig();
     if (!config.url || !config.anonKey) {
-      ui.authNote.textContent = "Supabase chưa được cấu hình. Hiện tại hồ sơ chỉ lưu trên browser này.";
+      ui.authNote.textContent = "Supabase chưa được cấu hình. Hiện tại hồ sơ chỉ lưu trên trình duyệt này.";
       if (ui.googleBtn) ui.googleBtn.style.display = "none";
       if (ui.logoutBtn) ui.logoutBtn.style.display = "none";
-      if (ui.remoteHint) ui.remoteHint.textContent = "Guest mode";
+      if (ui.remoteHint) ui.remoteHint.textContent = "Chế độ khách";
       return;
     }
 
     if (!state.user) {
-      ui.authNote.textContent = "Chưa đăng nhập. Dữ liệu sẽ lưu trên browser hiện tại cho đến khi mẹ đăng nhập Google.";
+      ui.authNote.textContent = "Chưa đăng nhập. Dữ liệu sẽ lưu trên trình duyệt hiện tại cho đến khi mẹ đăng nhập Google.";
       if (ui.googleBtn) ui.googleBtn.style.display = "inline-flex";
       if (ui.logoutBtn) ui.logoutBtn.style.display = "none";
-      if (ui.remoteHint) ui.remoteHint.textContent = "Guest mode";
+      if (ui.remoteHint) ui.remoteHint.textContent = "Chế độ khách";
       return;
     }
 
@@ -351,7 +351,7 @@
       ui.childDob.value = child.dob || "";
       setGenderValue(child.gender || "boy");
       ui.formTitle.textContent = state.editingChildId ? "Sửa hồ sơ bé" : "Thêm bé khác";
-      ui.formHint.textContent = child.id === state.activeChildId ? "Đây là bé đang active. Lưu xong hệ thống sẽ cập nhật tuổi tự động." : "Mẹ có thể lưu một bé khác rồi chuyển active sau.";
+      ui.formHint.textContent = child.id === state.activeChildId ? "Đây là bé đang được chọn. Lưu xong hệ thống sẽ cập nhật tuổi tự động." : "Mẹ có thể lưu một bé khác rồi chuyển bé đang dùng sau.";
       ui.saveChild.textContent = state.editingChildId ? "Cập nhật hồ sơ" : "Lưu hồ sơ bé";
     } else {
       ui.childName.value = "";
@@ -386,7 +386,7 @@
           ui.ageInput.value = age.totalMonths;
           ui.ageInput.readOnly = true;
           ui.ageInput.setAttribute("aria-readonly", "true");
-          ui.ageInput.title = "Tự tính từ ngày sinh của hồ sơ bé đang active";
+          ui.ageInput.title = "Tự tính từ ngày sinh của hồ sơ bé đang được chọn";
           if (ui.ageHelper) {
             ui.ageHelper.innerHTML = "Đang dùng hồ sơ <b>" + escapeHtml(activeChild.name) + "</b> - " + escapeHtml(formatAgeText(age)) + ". Mẹ có thể đổi bé ở khung hồ sơ phía trên.";
           }
@@ -399,7 +399,7 @@
         ui.ageInput.removeAttribute("aria-readonly");
         ui.ageInput.title = "Nhập tay nếu chưa lưu hồ sơ bé";
         if (ui.ageHelper) {
-          ui.ageHelper.textContent = "Chưa có hồ sơ active. Mẹ nhập tuổi thủ công hoặc thêm bé mới ở khung hồ sơ phía trên.";
+          ui.ageHelper.textContent = "Chưa có bé đang dùng. Mẹ nhập tuổi thủ công hoặc thêm bé mới ở khung hồ sơ phía trên.";
         }
       }
     }
@@ -416,11 +416,11 @@
     if (!ui.sessionBar) return;
     var config = getSupabaseConfig();
     if (!config.url || !config.anonKey) {
-      ui.sessionBar.innerHTML = '<span class="who-session-pill">Guest mode</span><span class="who-session-text">Chưa có Supabase config nên dữ liệu chỉ lưu trên thiết bị này.</span>';
+      ui.sessionBar.innerHTML = '<span class="who-session-pill">Chế độ khách</span><span class="who-session-text">Chưa có Supabase config nên dữ liệu chỉ lưu trên thiết bị này.</span>';
       return;
     }
     if (!state.user) {
-      ui.sessionBar.innerHTML = '<span class="who-session-pill guest">Local only</span><span class="who-session-text">Đăng nhập Google để đồng bộ hồ sơ bé giữa các máy.</span>';
+      ui.sessionBar.innerHTML = '<span class="who-session-pill guest">Chỉ lưu trên máy này</span><span class="who-session-text">Đăng nhập Google để đồng bộ hồ sơ bé giữa các máy.</span>';
       return;
     }
     var avatar = state.user.user_metadata && state.user.user_metadata.avatar_url ? '<img class="who-avatar" src="' + escapeAttr(state.user.user_metadata.avatar_url) + '" alt="avatar">' : '<span class="who-avatar-fallback">' + escapeHtml((state.user.email || "MB").slice(0, 2).toUpperCase()) + '</span>';
@@ -432,7 +432,7 @@
       '<div class="who-session-email">' + escapeHtml(state.user.email || "") + '</div>',
       '</div>',
       '</div>',
-      '<span class="who-session-pill remote">Supabase sync</span>'
+      '<span class="who-session-pill remote">Đồng bộ đám mây</span>'
     ].join("");
   }
 
@@ -669,7 +669,7 @@
     ui.heightResult.innerHTML = hHtml;
     ui.adviceBox.innerHTML = '<div class="advice">💡 ' + wStat.adv + "</div>";
     ui.nextBox.innerHTML = '<div class="next-month">📅 <b>Tháng ' + Math.min(age + 1, 24) + ':</b> Chuẩn TB <b>' + wNext[2].toFixed(1) + ' kg</b> — bé cần tăng thêm <b>' + (wNext[2] - wRef[2]).toFixed(2) + ' kg</b></div>';
-    ui.predBox.innerHTML = '<div class="prediction-box">🔮 <b>Dự đoán đến 24 tháng:</b> Nếu bé giữ nguyên percentile hiện tại, đến 24 tháng bé sẽ đạt khoảng <b>' + predAt24 + ' kg</b> (chuẩn TB 24 tháng: ' + WHO[gender].w[16][2] + " kg)</div>";
+    ui.predBox.innerHTML = '<div class="prediction-box">🔮 <b>Dự đoán đến 24 tháng:</b> Nếu bé giữ nguyên vị trí phân vị hiện tại, đến 24 tháng bé sẽ đạt khoảng <b>' + predAt24 + ' kg</b> (chuẩn TB 24 tháng: ' + WHO[gender].w[16][2] + " kg)</div>";
 
     ui.result.style.display = "block";
     var defaultChartType = state.lastHeight ? "h" : "w";
@@ -907,7 +907,7 @@
       '      <p class="who-muted" id="who-auth-note" style="margin:0">Đang khởi tạo...</p>',
       '    </div>',
       '    <div class="who-auth-actions">',
-      '      <button type="button" class="who-mini-btn who-primary" id="who-google-btn">Continue with Google</button>',
+      '      <button type="button" class="who-mini-btn who-primary" id="who-google-btn">Đăng nhập bằng Google</button>',
       '      <button type="button" class="who-mini-btn" id="who-logout-btn" style="display:none">Đăng xuất</button>',
       '    </div>',
       '  </div>',
@@ -915,9 +915,9 @@
       '  <div class="who-subhead">',
       '    <div>',
       '      <div class="tool-label">Danh sách bé</div>',
-      '      <p class="who-muted" style="margin:.15rem 0 0">Chọn bé active để WHO tự lấy tuổi theo ngày sinh.</p>',
+      '      <p class="who-muted" style="margin:.15rem 0 0">Chọn bé đang dùng để WHO tự lấy tuổi theo ngày sinh.</p>',
       '    </div>',
-      '    <span class="who-mini-badge" id="who-remote-hint">Guest mode</span>',
+      '    <span class="who-mini-badge" id="who-remote-hint">Chế độ khách</span>',
       '  </div>',
       '  <div id="who-child-list" class="who-child-list"></div>',
       '  <form id="who-child-form" class="who-child-form">',
@@ -1101,7 +1101,7 @@
       });
     } catch (err) {
       console.error(err);
-      alert("Không thể mở Google login. Mẹ kiểm tra Supabase config giúp mình nhé.");
+      alert("Không thể mở đăng nhập Google. Mẹ kiểm tra Supabase config giúp mình nhé.");
     }
   }
 

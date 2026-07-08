@@ -1,6 +1,6 @@
 ---
 title: "Kiểm tra tăng trưởng chuẩn WHO"
-description: "Lưu hồ sơ bé, đăng nhập Google tùy chọn, rồi nhập cân nặng và chiều cao để xem bé đang ở percentile nào so với chuẩn WHO. Công cụ miễn phí cho mẹ Việt."
+description: "Lưu hồ sơ bé, đăng nhập Google tùy chọn, rồi nhập cân nặng và chiều cao để xem bé đang ở vị trí phân vị nào so với chuẩn WHO. Công cụ miễn phí cho mẹ Việt."
 tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 ---
 
@@ -125,7 +125,7 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
   <div style="margin-top:12px">
     <div class="tool-label">Chiều cao (cm) — không bắt buộc</div>
     <input class="tool-input" id="height" type="number" step="0.1" placeholder="VD: 65.5" />
-    <p class="ref-note">Chuẩn tham khảo: WHO Child Growth Standards (length/height-for-age) cho bé từ 0-24 tháng.</p>
+    <p class="ref-note">Chuẩn tham khảo: WHO Child Growth Standards (chuẩn chiều dài/chiều cao theo tuổi) cho bé từ 0-24 tháng.</p>
   </div>
   <button class="btn-calc" onclick="calcWHO()">Kiểm tra ngay</button>
 </div>
@@ -169,7 +169,7 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
     <div class="table-wrap">
       <table class="who-table" id="who-ref-table"></table>
     </div>
-    <p style="font-size:.75rem;color:#9ca3af;margin:.5rem 0 0">🟣 Tuổi hiện tại — <i>tím nhạt</i> = dự đoán tương lai (giữ nguyên percentile)</p>
+    <p style="font-size:.75rem;color:#9ca3af;margin:.5rem 0 0">🟣 Tuổi hiện tại — <i>tím nhạt</i> = dự đoán tương lai (giữ nguyên vị trí phân vị)</p>
   </div>
 
 </div>
@@ -180,4 +180,4 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 <script defer src="/js/who-tool-app.js"></script>
 
 ---
-*Số liệu dựa trên WHO Child Growth Standards 2006. Dự đoán tương lai giả định bé duy trì percentile hiện tại — thực tế có thể thay đổi tùy dinh dưỡng và sức khỏe. Công cụ chỉ mang tính tham khảo, không thay thế khám dinh dưỡng chuyên nghiệp.*
+*Số liệu dựa trên WHO Child Growth Standards 2006. Dự đoán tương lai giả định bé duy trì vị trí phân vị hiện tại — thực tế có thể thay đổi tùy dinh dưỡng và sức khỏe. Công cụ chỉ mang tính tham khảo, không thay thế khám dinh dưỡng chuyên nghiệp.*
