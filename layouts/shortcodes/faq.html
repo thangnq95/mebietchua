@@ -29,6 +29,6 @@
 {{- range $faqs -}}
   {{- $items = $items | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" (.answer | plainify))) -}}
 {{- end -}}
-{{- dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $items | jsonify -}}
+{{- dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $items | jsonify | safeJS -}}
 </script>
 {{- end -}}
