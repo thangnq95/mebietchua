@@ -4,6 +4,37 @@ Ngay bat dau: 2026-07-08
 
 Muc tieu 24h: dua 10 URL uu tien vao Search Console, tao tin hieu index moi, co bo caption de dang Pinterest/TikTok/cong dong, va ghi baseline de ngay mai toi uu theo du lieu that.
 
+## 0. Execution Log
+
+Cap nhat sau khi thuc hien tren Search Console ngay 2026-07-08:
+
+- Sitemap `https://mebietchua.com/sitemap.xml` da co san trong GSC.
+- Sitemap status: `Success`.
+- Submitted: `Jun 29, 2026`.
+- Last read: `Jun 29, 2026`.
+- Discovered pages: `99`.
+- Live HTML check: WHO page co canonical, GA4 `G-524F7KBGC7`, FAQ schema va internal links.
+- Live sitemap check: co cac URL uu tien trong sprint.
+
+Trang thai request indexing:
+
+| URL | Trang thai luc inspect | Hanh dong |
+|---|---|---|
+| `https://mebietchua.com/` | URL is on Google | Request indexing lai de refresh |
+| `https://mebietchua.com/cong-cu/` | URL is not on Google, unknown to Google | Request indexing thanh cong |
+| `https://mebietchua.com/cong-cu/tinh-ngay-du-sinh/` | URL is not on Google, unknown to Google | Request indexing thanh cong |
+| `https://mebietchua.com/cong-cu/tinh-can-nang-thai-nhi/` | URL is not on Google, unknown to Google | Request indexing thanh cong |
+| `https://mebietchua.com/cong-cu/tang-truong-who/` | URL is not on Google, unknown to Google | Request indexing thanh cong |
+| `https://mebietchua.com/cong-cu/lich-tiem-chung/` | URL is not on Google, unknown to Google | Request indexing thanh cong |
+| `https://mebietchua.com/posts/pregnancy-month-3-body-changes/` | URL is not on Google, unknown to Google | Request indexing thanh cong |
+| `https://mebietchua.com/posts/pregnancy-month-4-first-kicks/` | URL is not on Google, unknown to Google | Request indexing thanh cong |
+| `https://mebietchua.com/posts/pregnancy-month-5-baby-shopping/` | URL is not on Google, unknown to Google | Request indexing thanh cong |
+| `https://mebietchua.com/posts/newborn-month-1-first-weeks/` | URL is not on Google, unknown to Google | Request indexing thanh cong |
+
+Ghi chu: GSC bao cac URL da duoc them vao priority crawl queue. Request nhieu lan khong tang uu tien, nen trong 24h tiep theo khong request lai cac URL nay.
+
+Phan chua lam trong browser: chua dang Pinterest/TikTok/cong dong vi day la hanh dong public tren tai khoan/nhom ben ngoai, can chon board/nhom va xac nhan noi dung cu the truoc khi bam dang.
+
 ## 1. Search Console Checklist
 
 Sitemap can submit lai:
