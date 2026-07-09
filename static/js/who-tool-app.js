@@ -316,14 +316,14 @@
     }
 
     if (!state.user) {
-      ui.authNote.textContent = "Chưa đăng nhập. Dữ liệu sẽ lưu trên trình duyệt hiện tại cho đến khi mẹ đăng nhập Google.";
+      ui.authNote.textContent = "Chưa đăng nhập. Dữ liệu sẽ lưu trên trình duyệt hiện tại; mẹ có thể đăng nhập tài khoản Mẹ Biết Chưa ở đầu trang hoặc tại đây.";
       if (ui.googleBtn) ui.googleBtn.style.display = "inline-flex";
       if (ui.logoutBtn) ui.logoutBtn.style.display = "none";
       if (ui.remoteHint) ui.remoteHint.textContent = "Chế độ khách";
       return;
     }
 
-    ui.authNote.textContent = "Đã đăng nhập bằng Google. Hồ sơ sẽ đồng bộ giữa các thiết bị.";
+    ui.authNote.textContent = "Đã đăng nhập tài khoản Mẹ Biết Chưa. Hồ sơ sẽ đồng bộ giữa các thiết bị.";
     if (ui.googleBtn) ui.googleBtn.style.display = "none";
     if (ui.logoutBtn) ui.logoutBtn.style.display = "inline-flex";
     if (ui.remoteHint) ui.remoteHint.textContent = state.user.email || "Đã đăng nhập";
@@ -922,11 +922,11 @@
       '<div class="tool-card who-profile-card">',
       '  <div class="who-profile-head">',
       '    <div>',
-      '      <h2 style="margin:0 0 .25rem;font-size:1.05rem;color:#111">Hồ sơ bé & đăng nhập</h2>',
+      '      <h2 style="margin:0 0 .25rem;font-size:1.05rem;color:#111">Hồ sơ bé</h2>',
       '      <p class="who-muted" id="who-auth-note" style="margin:0">Đang khởi tạo...</p>',
       '    </div>',
       '    <div class="who-auth-actions">',
-      '      <button type="button" class="who-mini-btn who-primary" id="who-google-btn">Đăng nhập bằng Google</button>',
+      '      <button type="button" class="who-mini-btn who-primary" id="who-google-btn">Đăng nhập tài khoản</button>',
       '      <button type="button" class="who-mini-btn" id="who-logout-btn" style="display:none">Đăng xuất</button>',
       '    </div>',
       '  </div>',
