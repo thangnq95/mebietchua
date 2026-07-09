@@ -1,6 +1,7 @@
 (function () {
   var STORAGE_KEY = "mebietchua.who.profile.v1";
   var LEGACY_KEY = "who-profile-v1";
+  var PRODUCTION_WHO_URL = "https://mebietchua.com/cong-cu/tang-truong-who/";
   var SUPABASE_CONFIG = window.MBC_SUPABASE_CONFIG || {};
   var SUPABASE_CLIENT = null;
 
@@ -68,6 +69,36 @@
       url: cleanConfigValue(SUPABASE_CONFIG.url),
       anonKey: cleanConfigValue(SUPABASE_CONFIG.anonKey)
     };
+  }
+
+  function isLocalHost(hostname) {
+    return hostname === "localhost" || hostname === "127.0.0.1" || hostname === "0.0.0.0";
+  }
+
+  function getOAuthRedirectUrl() {
+    var loc = window.location;
+    if (isLocalHost(loc.hostname)) return PRODUCTION_WHO_URL;
+
+    var path = loc.pathname || "/cong-cu/tang-truong-who/";
+    if (path === "/") path = "/cong-cu/tang-truong-who/";
+
+    if (loc.hostname === "www.mebietchua.com") {
+      return "https://mebietchua.com" + path;
+    }
+
+    if (loc.hostname === "mebietchua.com") {
+      return loc.origin + path;
+    }
+
+    return PRODUCTION_WHO_URL;
+  }
+
+  function clearOAuthHashFromUrl() {
+    if (!window.history || !window.location.hash) return;
+    var hash = window.location.hash;
+    var isOAuthHash = hash.indexOf("access_token=") !== -1 || hash.indexOf("refresh_token=") !== -1 || hash.indexOf("error=") !== -1;
+    if (!isOAuthHash) return;
+    window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
   }
 
   function clone(value) {
@@ -1064,10 +1095,12 @@
         }
       });
       var sessionResult = await SUPABASE_CLIENT.auth.getSession();
+      clearOAuthHashFromUrl();
       state.session = sessionResult.data && sessionResult.data.session ? sessionResult.data.session : null;
       state.user = state.session ? state.session.user : null;
 
       SUPABASE_CLIENT.auth.onAuthStateChange(async function (_event, session) {
+        clearOAuthHashFromUrl();
         state.session = session;
         state.user = session ? session.user : null;
         if (state.user) {
@@ -1096,7 +1129,7 @@
       await SUPABASE_CLIENT.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: window.location.href
+          redirectTo: getOAuthRedirectUrl()
         }
       });
     } catch (err) {

@@ -7,10 +7,13 @@ This project keeps Hugo on GitHub Pages and uses Supabase only for auth + profil
 1. Create a free Supabase project.
 2. Open the SQL editor and run [`schema.sql`](./schema.sql).
 3. In Authentication, enable Google login.
-4. Add these redirect URLs:
+4. In Authentication > URL Configuration, set **Site URL**:
+   - `https://mebietchua.com`
+5. Add these redirect URLs:
    - `https://mebietchua.com/cong-cu/tang-truong-who/`
    - `https://mebietchua.com/`
-5. Copy the public Project URL and `anon` key into Hugo params:
+6. Do not set the production Site URL to `localhost`. Local dev login intentionally redirects back to the live WHO tool so Google OAuth does not leave tokens on a local URL.
+7. Copy the public Project URL and `anon` key into Hugo params:
    - `params.supabase.url`
    - `params.supabase.anonKey`
 
