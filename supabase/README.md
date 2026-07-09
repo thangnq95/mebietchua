@@ -12,7 +12,7 @@ This project keeps Hugo on GitHub Pages and uses Supabase only for auth + profil
 5. Add these redirect URLs:
    - `https://mebietchua.com/cong-cu/tang-truong-who/`
    - `https://mebietchua.com/`
-6. Do not set the production Site URL to `localhost`. Local dev login intentionally redirects back to the live WHO tool so Google OAuth does not leave tokens on a local URL.
+6. Do not set the production Site URL to `localhost`. The frontend sends Google OAuth back to `https://mebietchua.com`, then a head script forwards Supabase auth hashes to `/cong-cu/tang-truong-who/` so the WHO tool can complete the session.
 7. Copy the public Project URL and `anon` key into Hugo params:
    - `params.supabase.url`
    - `params.supabase.anonKey`
