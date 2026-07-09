@@ -193,7 +193,14 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 {{< who-supabase-config >}}
-<script defer src="/js/who-tool-app.js"></script>
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.defer = true;
+    script.src = "/js/who-tool-app.js?v=20260709-oauth-redirect";
+    document.currentScript.after(script);
+  })();
+</script>
 {{< faq title="Câu hỏi thường gặp về công cụ WHO" >}}
 
 ---
