@@ -1,11 +1,21 @@
 <meta name="p:domain_verify" content="2a99bece6bba732ea3af786beaa6f7b1">
+{{- $supabaseCfg := dict "url" (.Site.Params.supabase.url | default "") "anonKey" (.Site.Params.supabase.anonKey | default "") -}}
+<script>window.MBC_SUPABASE_CONFIG = {{ $supabaseCfg | jsonify | safeJS }};</script>
 <script>
   (function () {
     var hash = window.location.hash || "";
     var isSupabaseAuthHash = hash.indexOf("access_token=") !== -1 || hash.indexOf("refresh_token=") !== -1 || hash.indexOf("error=") !== -1;
     var isWhoTool = window.location.pathname === "/cong-cu/tang-truong-who/";
-    if (isSupabaseAuthHash && !isWhoTool) {
-      window.location.replace("/cong-cu/tang-truong-who/" + hash);
+    var isHomeCallback = window.location.pathname === "/" || window.location.pathname === "";
+    if (isSupabaseAuthHash && isHomeCallback && !isWhoTool) {
+      var fallback = "/cong-cu/tang-truong-who/";
+      var target = fallback;
+      try {
+        var saved = window.sessionStorage.getItem("mbc.auth.returnTo") || "";
+        if (saved && saved.charAt(0) === "/" && saved.indexOf("//") !== 0) target = saved;
+      } catch (err) {}
+      window.location.replace(target + hash);
     }
   })();
 </script>
+<script defer src="/js/site-auth.js?v=20260709-global-auth"></script>

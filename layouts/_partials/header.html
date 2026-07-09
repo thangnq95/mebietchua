@@ -117,6 +117,22 @@
                 </a>
             </li>
             {{- end }}
+            <li class="site-auth-menu" id="site-auth-menu">
+                <button type="button" class="site-auth-login" id="site-auth-login">Đăng nhập</button>
+                <div class="site-auth-user" id="site-auth-user" hidden>
+                    <button type="button" class="site-auth-user-button" id="site-auth-user-button" aria-expanded="false">
+                        <span class="site-auth-avatar" id="site-auth-avatar">M</span>
+                        <span class="site-auth-name-wrap">
+                            <span class="site-auth-name" id="site-auth-name">Tài khoản</span>
+                            <span class="site-auth-email" id="site-auth-email">Đang đồng bộ</span>
+                        </span>
+                    </button>
+                    <div class="site-auth-dropdown" id="site-auth-dropdown" hidden>
+                        <a href="/cong-cu/tang-truong-who/">Hồ sơ bé</a>
+                        <button type="button" id="site-auth-logout">Đăng xuất</button>
+                    </div>
+                </div>
+            </li>
         </ul>
         <label class="menu-overlay" for="mobile-menu-state" aria-label="Đóng menu điều hướng"></label>
     </nav>
