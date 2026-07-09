@@ -8,7 +8,7 @@
     var isWhoTool = window.location.pathname === "/cong-cu/tang-truong-who/";
     var isHomeCallback = window.location.pathname === "/" || window.location.pathname === "";
     if (isSupabaseAuthHash && isHomeCallback && !isWhoTool) {
-      var fallback = "/cong-cu/tang-truong-who/";
+      var fallback = "/tai-khoan/";
       var target = fallback;
       try {
         var saved = window.sessionStorage.getItem("mbc.auth.returnTo") || "";
@@ -18,4 +18,4 @@
     }
   })();
 </script>
-<script defer src="/js/site-auth.js?v=20260709-global-auth"></script>
+<script defer src="/js/site-auth.js?v=20260709-account-page"></script>

@@ -118,7 +118,7 @@
             </li>
             {{- end }}
             <li class="site-auth-menu" id="site-auth-menu">
-                <button type="button" class="site-auth-login" id="site-auth-login">Đăng nhập</button>
+                <a class="site-auth-login" id="site-auth-login" href="/tai-khoan/">Đăng nhập</a>
                 <div class="site-auth-user" id="site-auth-user" hidden>
                     <button type="button" class="site-auth-user-button" id="site-auth-user-button" aria-expanded="false">
                         <span class="site-auth-avatar" id="site-auth-avatar">M</span>
@@ -128,6 +128,7 @@
                         </span>
                     </button>
                     <div class="site-auth-dropdown" id="site-auth-dropdown" hidden>
+                        <a href="/tai-khoan/" id="site-auth-account-link">Tài khoản của mẹ</a>
                         <a href="/cong-cu/tang-truong-who/">Hồ sơ bé</a>
                         <button type="button" id="site-auth-logout">Đăng xuất</button>
                     </div>

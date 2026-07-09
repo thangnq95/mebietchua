@@ -59,9 +59,14 @@
     ui.userButton = document.getElementById("site-auth-user-button");
     ui.dropdown = document.getElementById("site-auth-dropdown");
     ui.logout = document.getElementById("site-auth-logout");
+    ui.accountLink = document.getElementById("site-auth-account-link");
     ui.name = document.getElementById("site-auth-name");
     ui.email = document.getElementById("site-auth-email");
     ui.avatar = document.getElementById("site-auth-avatar");
+  }
+
+  function getAccountUrl() {
+    return "/tai-khoan/?returnTo=" + encodeURIComponent(getReturnPath());
   }
 
   function setDropdown(open) {
@@ -79,6 +84,8 @@
     }
 
     ui.menu.hidden = false;
+    if (ui.login) ui.login.setAttribute("href", getAccountUrl());
+    if (ui.accountLink) ui.accountLink.setAttribute("href", getAccountUrl());
     if (!state.user) {
       if (ui.login) ui.login.hidden = false;
       if (ui.user) ui.user.hidden = true;
@@ -93,19 +100,6 @@
     if (ui.avatar) ui.avatar.textContent = getInitial(state.user);
   }
 
-  async function signIn() {
-    if (!client) return;
-    try {
-      window.sessionStorage.setItem("mbc.auth.returnTo", getReturnPath());
-    } catch (err) {}
-    await client.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: PRODUCTION_SITE_URL
-      }
-    });
-  }
-
   async function signOut() {
     if (!client) return;
     await client.auth.signOut();
@@ -115,7 +109,6 @@
   }
 
   function bindEvents() {
-    if (ui.login) ui.login.addEventListener("click", signIn);
     if (ui.logout) ui.logout.addEventListener("click", signOut);
     if (ui.userButton) {
       ui.userButton.addEventListener("click", function () {

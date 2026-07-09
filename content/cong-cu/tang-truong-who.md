@@ -1,9 +1,9 @@
 ---
 title: "Kiểm tra tăng trưởng chuẩn WHO"
-description: "Lưu hồ sơ bé, đăng nhập Google tùy chọn, rồi nhập cân nặng và chiều cao để xem bé đang ở vị trí phân vị nào so với chuẩn WHO. Công cụ miễn phí cho mẹ Việt."
+description: "Lưu hồ sơ bé, nhập cân nặng và chiều cao để xem bé đang ở vị trí phân vị nào so với chuẩn WHO. Có thể đồng bộ qua tài khoản Mẹ Biết Chưa."
 faq:
-  - question: "Có bắt buộc phải đăng nhập Google mới dùng được không?"
-    answer: "Không bắt buộc. Mẹ có thể dùng chế độ khách, dữ liệu sẽ lưu trên trình duyệt hiện tại. Nếu đăng nhập Google, hồ sơ bé sẽ đồng bộ giữa các máy."
+  - question: "Có bắt buộc phải đăng nhập tài khoản mới dùng được không?"
+    answer: "Không bắt buộc. Mẹ có thể dùng chế độ khách, dữ liệu sẽ lưu trên trình duyệt hiện tại. Nếu đăng nhập ở trang tài khoản, hồ sơ bé sẽ đồng bộ giữa các máy."
   - question: "Vì sao nên lưu ngày sinh của bé?"
     answer: "Vì hệ thống sẽ tự tính tháng tuổi mỗi lần mẹ mở lại trang, đỡ phải nhập lại thủ công và tránh lệch tuổi."
   - question: "Trang này phù hợp với bé mấy tháng?"
@@ -32,6 +32,7 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 .who-session-pill.remote{background:#dcfce7;color:#166534}
 .who-session-pill.guest{background:#e0f2fe;color:#075985}
 .who-session-text{font-size:.82rem;color:#374151}
+.who-session-link{display:inline-flex;align-items:center;justify-content:center;padding:.38rem .7rem;border-radius:999px;background:#fff;color:#9d174d;border:1px solid #fbcfe8;font-size:.78rem;font-weight:700;text-decoration:none}
 .who-subhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:.75rem;flex-wrap:wrap}
 .who-mini-badge{display:inline-flex;align-items:center;padding:.3rem .65rem;border-radius:999px;background:#fce7f3;color:#9d174d;font-size:.75rem;font-weight:700}
 .who-child-list{display:grid;gap:10px;margin-bottom:1rem}
@@ -197,7 +198,7 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
   (function () {
     var script = document.createElement("script");
     script.defer = true;
-    script.src = "/js/who-tool-app.js?v=20260709-global-auth-copy";
+    script.src = "/js/who-tool-app.js?v=20260709-account-page";
     document.currentScript.after(script);
   })();
 </script>

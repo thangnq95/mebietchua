@@ -1,7 +1,6 @@
 (function () {
   var STORAGE_KEY = "mebietchua.who.profile.v1";
   var LEGACY_KEY = "who-profile-v1";
-  var PRODUCTION_SITE_URL = "https://mebietchua.com";
   var SUPABASE_CONFIG = window.MBC_SUPABASE_CONFIG || {};
   var SUPABASE_CLIENT = null;
 
@@ -69,16 +68,6 @@
       url: cleanConfigValue(SUPABASE_CONFIG.url),
       anonKey: cleanConfigValue(SUPABASE_CONFIG.anonKey)
     };
-  }
-
-  function isLocalHost(hostname) {
-    return hostname === "localhost" || hostname === "127.0.0.1" || hostname === "0.0.0.0";
-  }
-
-  function getOAuthRedirectUrl() {
-    var loc = window.location;
-    if (isLocalHost(loc.hostname)) return PRODUCTION_SITE_URL;
-    return PRODUCTION_SITE_URL;
   }
 
   function clearOAuthHashFromUrl() {
@@ -309,23 +298,17 @@
     var config = getSupabaseConfig();
     if (!config.url || !config.anonKey) {
       ui.authNote.textContent = "Supabase chưa được cấu hình. Hiện tại hồ sơ chỉ lưu trên trình duyệt này.";
-      if (ui.googleBtn) ui.googleBtn.style.display = "none";
-      if (ui.logoutBtn) ui.logoutBtn.style.display = "none";
       if (ui.remoteHint) ui.remoteHint.textContent = "Chế độ khách";
       return;
     }
 
     if (!state.user) {
-      ui.authNote.textContent = "Chưa đăng nhập. Dữ liệu sẽ lưu trên trình duyệt hiện tại; mẹ có thể đăng nhập tài khoản Mẹ Biết Chưa ở đầu trang hoặc tại đây.";
-      if (ui.googleBtn) ui.googleBtn.style.display = "inline-flex";
-      if (ui.logoutBtn) ui.logoutBtn.style.display = "none";
+      ui.authNote.textContent = "Mẹ đang dùng chế độ khách. Hồ sơ lưu trên trình duyệt này; nếu muốn đồng bộ nhiều thiết bị, mẹ đăng nhập ở trang tài khoản.";
       if (ui.remoteHint) ui.remoteHint.textContent = "Chế độ khách";
       return;
     }
 
     ui.authNote.textContent = "Đã đăng nhập tài khoản Mẹ Biết Chưa. Hồ sơ sẽ đồng bộ giữa các thiết bị.";
-    if (ui.googleBtn) ui.googleBtn.style.display = "none";
-    if (ui.logoutBtn) ui.logoutBtn.style.display = "inline-flex";
     if (ui.remoteHint) ui.remoteHint.textContent = state.user.email || "Đã đăng nhập";
   }
 
@@ -439,7 +422,7 @@
       return;
     }
     if (!state.user) {
-      ui.sessionBar.innerHTML = '<span class="who-session-pill guest">Chỉ lưu trên máy này</span><span class="who-session-text">Đăng nhập Google để đồng bộ hồ sơ bé giữa các máy.</span>';
+      ui.sessionBar.innerHTML = '<span class="who-session-pill guest">Chỉ lưu trên máy này</span><span class="who-session-text">Muốn đồng bộ hồ sơ bé giữa các máy?</span><a class="who-session-link" href="/tai-khoan/?returnTo=/cong-cu/tang-truong-who/">Mở trang tài khoản</a>';
       return;
     }
     var avatar = state.user.user_metadata && state.user.user_metadata.avatar_url ? '<img class="who-avatar" src="' + escapeAttr(state.user.user_metadata.avatar_url) + '" alt="avatar">' : '<span class="who-avatar-fallback">' + escapeHtml((state.user.email || "MB").slice(0, 2).toUpperCase()) + '</span>';
@@ -925,10 +908,6 @@
       '      <h2 style="margin:0 0 .25rem;font-size:1.05rem;color:#111">Hồ sơ bé</h2>',
       '      <p class="who-muted" id="who-auth-note" style="margin:0">Đang khởi tạo...</p>',
       '    </div>',
-      '    <div class="who-auth-actions">',
-      '      <button type="button" class="who-mini-btn who-primary" id="who-google-btn">Đăng nhập tài khoản</button>',
-      '      <button type="button" class="who-mini-btn" id="who-logout-btn" style="display:none">Đăng xuất</button>',
-      '    </div>',
       '  </div>',
       '  <div class="who-session-bar" id="who-session-bar"></div>',
       '  <div class="who-subhead">',
@@ -971,8 +950,6 @@
     ].join("");
 
     ui.authNote = document.getElementById("who-auth-note");
-    ui.googleBtn = document.getElementById("who-google-btn");
-    ui.logoutBtn = document.getElementById("who-logout-btn");
     ui.sessionBar = document.getElementById("who-session-bar");
     ui.remoteHint = document.getElementById("who-remote-hint");
     ui.childList = document.getElementById("who-child-list");
@@ -1015,12 +992,6 @@
       ui.resetChild.addEventListener("click", function () {
         resetProfileForm();
       });
-    }
-    if (ui.googleBtn) {
-      ui.googleBtn.addEventListener("click", signInWithGoogle);
-    }
-    if (ui.logoutBtn) {
-      ui.logoutBtn.addEventListener("click", signOut);
     }
   }
 
@@ -1109,35 +1080,6 @@
     }
 
     renderAll();
-  }
-
-  async function signInWithGoogle() {
-    if (!SUPABASE_CLIENT) return;
-    try {
-      await SUPABASE_CLIENT.auth.signInWithOAuth({
-        provider: "google",
-        options: {
-          redirectTo: getOAuthRedirectUrl()
-        }
-      });
-    } catch (err) {
-      console.error(err);
-      alert("Không thể mở đăng nhập Google. Mẹ kiểm tra Supabase config giúp mình nhé.");
-    }
-  }
-
-  async function signOut() {
-    if (!SUPABASE_CLIENT) return;
-    try {
-      await SUPABASE_CLIENT.auth.signOut();
-      state.session = null;
-      state.user = null;
-      state.source = "guest";
-      loadLocalBootstrap();
-      renderAll();
-    } catch (err) {
-      console.error(err);
-    }
   }
 
   async function loadRemoteState() {
