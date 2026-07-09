@@ -1,7 +1,7 @@
 (function () {
   var STORAGE_KEY = "mebietchua.who.profile.v1";
   var LEGACY_KEY = "who-profile-v1";
-  var PRODUCTION_WHO_URL = "https://mebietchua.com/cong-cu/tang-truong-who/";
+  var PRODUCTION_SITE_URL = "https://mebietchua.com";
   var SUPABASE_CONFIG = window.MBC_SUPABASE_CONFIG || {};
   var SUPABASE_CLIENT = null;
 
@@ -77,20 +77,8 @@
 
   function getOAuthRedirectUrl() {
     var loc = window.location;
-    if (isLocalHost(loc.hostname)) return PRODUCTION_WHO_URL;
-
-    var path = loc.pathname || "/cong-cu/tang-truong-who/";
-    if (path === "/") path = "/cong-cu/tang-truong-who/";
-
-    if (loc.hostname === "www.mebietchua.com") {
-      return "https://mebietchua.com" + path;
-    }
-
-    if (loc.hostname === "mebietchua.com") {
-      return loc.origin + path;
-    }
-
-    return PRODUCTION_WHO_URL;
+    if (isLocalHost(loc.hostname)) return PRODUCTION_SITE_URL;
+    return PRODUCTION_SITE_URL;
   }
 
   function clearOAuthHashFromUrl() {

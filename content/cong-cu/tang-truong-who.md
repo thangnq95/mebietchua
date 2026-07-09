@@ -197,7 +197,7 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
   (function () {
     var script = document.createElement("script");
     script.defer = true;
-    script.src = "/js/who-tool-app.js?v=20260709-oauth-redirect";
+    script.src = "/js/who-tool-app.js?v=20260709-auth-root-redirect";
     document.currentScript.after(script);
   })();
 </script>
