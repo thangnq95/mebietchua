@@ -253,20 +253,23 @@
   }
 
   function saveGuestState() {
+    var existing = normalizeState(safeParse(localStorage.getItem(STORAGE_KEY), null) || safeParse(localStorage.getItem(LEGACY_KEY), null) || {});
+    var childrenToSave = state.user ? state.children : existing.children;
+    var activeChildIdToSave = state.user ? state.activeChildId : existing.activeChildId;
     var payload = {
-      profileName: state.profile.profileName || "",
-      email: state.profile.email || "",
-      children: state.children.map(function (child) {
+      profileName: state.profile.profileName || existing.profileName || "",
+      email: state.profile.email || existing.email || "",
+      children: childrenToSave.map(function (child) {
         return {
           id: child.id,
           name: child.name,
           dob: child.dob,
           gender: child.gender,
-          active: child.id === state.activeChildId
+          active: child.id === activeChildIdToSave
         };
       }),
-      activeChildId: state.activeChildId || "",
-      editingChildId: state.editingChildId || "",
+      activeChildId: activeChildIdToSave || "",
+      editingChildId: state.user ? (state.editingChildId || "") : (existing.editingChildId || ""),
       draft: clone(state.currentDraft)
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
@@ -376,6 +379,20 @@
 
   function renderMainForm() {
     var activeChild = getActiveChild();
+    if (ui.profileHint) {
+      if (state.user && activeChild) {
+        var activeAge = getAgeFromDob(activeChild.dob);
+        ui.profileHint.style.display = "block";
+        ui.profileHint.innerHTML = 'Đang tự điền từ hồ sơ <b>' + escapeHtml(activeChild.name) + '</b>' + (activeAge ? ' - ' + escapeHtml(formatAgeText(activeAge)) : '') + '. <a href="/ho-so-be/">Đổi hồ sơ bé</a>';
+      } else if (state.user) {
+        ui.profileHint.style.display = "block";
+        ui.profileHint.innerHTML = 'Mẹ chưa có hồ sơ bé đang dùng. Có thể <a href="/ho-so-be/">tạo hồ sơ bé</a> để lần sau công cụ tự điền tuổi.';
+      } else {
+        ui.profileHint.style.display = "none";
+        ui.profileHint.textContent = "";
+      }
+    }
+
     if (ui.genderInputs && ui.genderInputs.length) {
       var gender = activeChild ? activeChild.gender : state.currentDraft.gender;
       setGenderValue(gender || "boy");
@@ -390,7 +407,7 @@
           ui.ageInput.setAttribute("aria-readonly", "true");
           ui.ageInput.title = "Tự tính từ ngày sinh của hồ sơ bé đang được chọn";
           if (ui.ageHelper) {
-            ui.ageHelper.innerHTML = "Đang dùng hồ sơ <b>" + escapeHtml(activeChild.name) + "</b> - " + escapeHtml(formatAgeText(age)) + ". Mẹ có thể đổi bé ở khung hồ sơ phía trên.";
+            ui.ageHelper.innerHTML = "Tuổi đang tự tính từ hồ sơ <b>" + escapeHtml(activeChild.name) + "</b>. Mẹ có thể đổi bé tại trang <a href=\"/ho-so-be/\">Hồ sơ bé</a>.";
           }
         }
       } else {
@@ -401,7 +418,7 @@
         ui.ageInput.removeAttribute("aria-readonly");
         ui.ageInput.title = "Nhập tay nếu chưa lưu hồ sơ bé";
         if (ui.ageHelper) {
-          ui.ageHelper.textContent = "Chưa có bé đang dùng. Mẹ nhập tuổi thủ công hoặc thêm bé mới ở khung hồ sơ phía trên.";
+          ui.ageHelper.textContent = "Mẹ nhập tay nếu chưa đăng nhập hoặc chưa tạo hồ sơ bé.";
         }
       }
     }
@@ -982,6 +999,7 @@
     ui.heightInput = document.getElementById("height");
     ui.genderInputs = Array.prototype.slice.call(document.querySelectorAll('input[name="gender"]'));
     ui.ageHelper = document.getElementById("who-age-helper");
+    ui.profileHint = document.getElementById("who-profile-hint");
   }
 
   function setupMainButtons() {
@@ -1028,11 +1046,14 @@
 
   function loadLocalBootstrap() {
     var raw = getGuestState();
-    setStateFromPayload(raw, "guest");
-    if (!state.children.length) {
-      state.children = [];
-      state.activeChildId = "";
-    }
+    var normalized = normalizeState(raw);
+    state.children = [];
+    state.activeChildId = "";
+    state.editingChildId = "";
+    state.currentDraft = normalized.draft;
+    state.source = "guest";
+    syncMainDraftToForm();
+    renderAll();
   }
 
   async function setupSupabase() {
@@ -1122,9 +1143,6 @@
         return;
       }
 
-      if (state.children.length) {
-        await syncGuestStateToRemote();
-      }
       state.source = "remote";
       state.hasRemote = true;
       state.profile.email = state.user.email || "";

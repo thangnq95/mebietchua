@@ -51,7 +51,7 @@
     ui.returnLink.hidden = false;
     ui.returnLink.setAttribute("href", returnTo);
     ui.returnLink.textContent = returnTo.indexOf("/cong-cu/tang-truong-who/") === 0
-      ? "Quay lại hồ sơ bé"
+      ? "Quay lại công cụ WHO"
       : "Quay lại trang vừa mở";
   }
 
@@ -164,7 +164,7 @@
         '</div>',
         '<div class="account-next-box">',
         '<strong>Gợi ý tiếp theo</strong>',
-        '<p>Mẹ có thể mở hồ sơ bé để thêm ngày sinh, sau đó công cụ WHO sẽ tự tính tháng tuổi mỗi lần quay lại.</p>',
+        '<p>Mẹ có thể mở trang hồ sơ bé để thêm ngày sinh, sau đó công cụ WHO sẽ tự tính tháng tuổi mỗi lần quay lại.</p>',
         '</div>'
       ].join("");
     }

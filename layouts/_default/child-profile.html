@@ -1,0 +1,120 @@
+{{- define "main" }}
+
+<article class="post-single">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="post-title entry-hint-parent">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">{{ .Description }}</div>
+    {{- end }}
+  </header>
+
+  <div class="post-content md-content">
+    <style>
+    .child-shell{max-width:860px;margin:0 auto 2rem}
+    .child-hero{position:relative;overflow:hidden;margin:0 0 1.25rem;padding:2rem;border:1px solid #f0d8ce;border-radius:28px;background:linear-gradient(135deg,#fff 0,#fff7f0 58%,#ffe4db 100%);box-shadow:0 24px 60px rgba(159,79,72,.09)}
+    .child-hero:after{content:"";position:absolute;right:-70px;top:-90px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(199,91,74,.22),transparent 68%)}
+    .child-eyebrow{display:inline-flex;margin-bottom:.8rem;padding:.35rem .8rem;border-radius:999px;background:#fff1e9;color:#b5473c;font-size:.75rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .child-hero h1{position:relative;margin:0 0 .75rem;color:#2f201c;font-size:clamp(2rem,5vw,3.1rem);line-height:1.05;letter-spacing:-.04em}
+    .child-hero p{position:relative;max-width:650px;margin:0;color:#6c564e;font-size:1.02rem;line-height:1.75}
+    .child-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:1rem}
+    .child-card{border:1px solid #efd8cf;border-radius:24px;background:#fff;padding:1.25rem;box-shadow:0 18px 45px rgba(116,74,64,.07)}
+    .child-card h2{margin:0;color:#2f201c;font-size:1.15rem}
+    .child-muted{color:#6b5a53;font-size:.92rem;line-height:1.65}
+    .child-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1rem}
+    .child-status{display:inline-flex;align-items:center;padding:.38rem .75rem;border-radius:999px;font-size:.75rem;font-weight:900;background:#e0f2fe;color:#075985;white-space:nowrap}
+    .child-status.synced{background:#dcfce7;color:#166534}
+    .child-list{display:grid;gap:.8rem;margin-top:1rem}
+    .child-empty{padding:1rem;border:1px dashed #d6c7bf;border-radius:16px;background:#fffaf7;color:#7d655c;line-height:1.6}
+    .child-item{position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1rem;border:1px solid #f0d8ce;border-radius:18px;background:#fffaf7}
+    .child-item.active{border-color:#e23f98;background:#fff4f8;box-shadow:0 0 0 1px rgba(226,63,152,.12)}
+    .child-name{font-weight:900;color:#2f201c}
+    .child-meta{margin-top:.25rem;color:#7d655c;font-size:.86rem}
+    .child-actions{display:flex;gap:.45rem;flex-wrap:wrap;justify-content:flex-end}
+    .child-btn{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:.45rem .75rem;border:1px solid #efd8cf;border-radius:999px;background:#fff;color:#7c443c;font-weight:900;font-size:.82rem;cursor:pointer;text-decoration:none}
+    .child-btn.primary{border-color:#e23f98;color:#fff;background:linear-gradient(135deg,#e23f98,#ff8f70)}
+    .child-btn.danger{border-color:#fecaca;color:#b91c1c}
+    .child-active-badge{position:absolute;top:.75rem;right:.8rem;padding:.22rem .55rem;border-radius:999px;background:#fce7f3;color:#9d174d;font-size:.72rem;font-weight:900}
+    .child-form{display:grid;gap:.9rem;margin-top:1rem}
+    .child-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+    .child-label{display:block;margin-bottom:.28rem;color:#374151;font-size:.76rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+    .child-input{width:100%;box-sizing:border-box;padding:.68rem .8rem;border:1.5px solid #d1d5db;border-radius:12px;font-size:1rem;background:#fff;color:#111;outline:none}
+    .child-input:focus{border-color:#e23f98}
+    .child-radio{display:flex;gap:.8rem;flex-wrap:wrap}
+    .child-radio label{display:flex;align-items:center;gap:.4rem;color:#47362f;font-weight:700}
+    .child-radio input{accent-color:#e23f98}
+    .child-preview{padding:.75rem .9rem;border-radius:14px;background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;font-size:.9rem;line-height:1.55}
+    .child-actions-bar{display:flex;gap:.65rem;flex-wrap:wrap}
+    :root[data-theme="dark"] .child-hero{border-color:#4b3d36;background:linear-gradient(135deg,#2a221d 0,#332720 62%,#3a2922 100%);box-shadow:0 24px 60px rgba(0,0,0,.24)}
+    :root[data-theme="dark"] .child-hero h1,:root[data-theme="dark"] .child-card h2,:root[data-theme="dark"] .child-name{color:#f6ebe5}
+    :root[data-theme="dark"] .child-hero p,:root[data-theme="dark"] .child-muted,:root[data-theme="dark"] .child-meta,:root[data-theme="dark"] .child-radio label{color:#d4c3bb}
+    :root[data-theme="dark"] .child-card,:root[data-theme="dark"] .child-item,:root[data-theme="dark"] .child-empty,:root[data-theme="dark"] .child-btn{border-color:#4b3d36;background:#2a221d;color:#f2ddd2}
+    :root[data-theme="dark"] .child-item.active{background:#33202a;border-color:#e89180}
+    :root[data-theme="dark"] .child-input{border-color:#4b3d36;background:#241d19;color:#f6ebe5}
+    @media(max-width:760px){
+      .child-shell{margin-inline:.25rem}
+      .child-hero{padding:1.35rem;border-radius:22px}
+      .child-layout,.child-row{grid-template-columns:1fr}
+      .child-card{border-radius:20px}
+      .child-top,.child-item{flex-direction:column}
+      .child-actions,.child-actions-bar,.child-btn{width:100%}
+      .child-active-badge{position:static;align-self:flex-start}
+    }
+    </style>
+
+    <section class="child-shell" id="child-profile-app">
+      <div class="child-hero">
+        <span class="child-eyebrow">Hồ sơ bé</span>
+        <h1>Thông tin bé dùng chung cho các công cụ</h1>
+        <p>Mẹ lưu tên, ngày sinh và giới tính ở đây. Khi đã đăng nhập, các công cụ như tăng trưởng WHO sẽ tự lấy bé đang dùng để điền tuổi và giới tính.</p>
+      </div>
+
+      <div class="child-layout">
+        <section class="child-card">
+          <div class="child-top">
+            <div>
+              <h2>Danh sách bé</h2>
+              <p class="child-muted" id="child-summary">Đang kiểm tra hồ sơ...</p>
+            </div>
+            <span class="child-status" id="child-status">Đang tải</span>
+          </div>
+          <div class="child-list" id="child-list"></div>
+        </section>
+
+        <section class="child-card">
+          <h2 id="child-form-title">Thêm bé mới</h2>
+          <p class="child-muted" id="child-form-hint">Tạo hồ sơ riêng cho từng bé để dễ chuyển đổi.</p>
+          <form class="child-form" id="child-form">
+            <div class="child-row">
+              <label>
+                <span class="child-label">Tên bé</span>
+                <input class="child-input" id="child-name" type="text" placeholder="VD: Kem">
+              </label>
+              <label>
+                <span class="child-label">Ngày sinh</span>
+                <input class="child-input" id="child-dob" type="date">
+              </label>
+            </div>
+            <div>
+              <span class="child-label">Giới tính</span>
+              <div class="child-radio">
+                <label><input type="radio" name="child-gender" value="boy" checked> Bé trai</label>
+                <label><input type="radio" name="child-gender" value="girl"> Bé gái</label>
+              </div>
+            </div>
+            <div class="child-preview" id="child-age-preview">Nhập ngày sinh để hệ thống tự tính tháng tuổi.</div>
+            <div class="child-actions-bar">
+              <button class="child-btn primary" id="child-save" type="submit">Lưu hồ sơ bé</button>
+              <button class="child-btn" id="child-reset" type="button">Thêm bé mới</button>
+              <a class="child-btn" href="/cong-cu/tang-truong-who/">Mở công cụ WHO</a>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <script defer src="/js/child-profile-app.js?v=20260710-child-profile-page"></script>
+  </div>
+</article>
+
+{{- end }}

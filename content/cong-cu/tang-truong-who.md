@@ -1,9 +1,9 @@
 ---
 title: "Kiểm tra tăng trưởng chuẩn WHO"
-description: "Lưu hồ sơ bé, nhập cân nặng và chiều cao để xem bé đang ở vị trí phân vị nào so với chuẩn WHO. Có thể đồng bộ qua tài khoản Mẹ Biết Chưa."
+description: "Nhập cân nặng và chiều cao để xem bé đang ở vị trí phân vị nào so với chuẩn WHO. Nếu mẹ đã lưu hồ sơ bé, công cụ sẽ tự điền tuổi."
 faq:
   - question: "Có bắt buộc phải đăng nhập tài khoản mới dùng được không?"
-    answer: "Không bắt buộc. Mẹ có thể dùng chế độ khách, dữ liệu sẽ lưu trên trình duyệt hiện tại. Nếu đăng nhập ở trang tài khoản, hồ sơ bé sẽ đồng bộ giữa các máy."
+    answer: "Không bắt buộc. Nếu chưa đăng nhập, mẹ nhập tuổi, giới tính, cân nặng và chiều cao trực tiếp trong công cụ. Nếu đã đăng nhập và có hồ sơ bé ở trang Hồ sơ bé, tuổi và giới tính sẽ tự điền."
   - question: "Vì sao nên lưu ngày sinh của bé?"
     answer: "Vì hệ thống sẽ tự tính tháng tuổi mỗi lần mẹ mở lại trang, đỡ phải nhập lại thủ công và tránh lệch tuổi."
   - question: "Trang này phù hợp với bé mấy tháng?"
@@ -14,40 +14,9 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 <div id="who-app">
 <style>
 #who-app{font-family:inherit;max-width:680px;margin:0 auto}
-.who-profile-card{background:linear-gradient(180deg,#fff 0,#fff7fb 100%)}
-.who-profile-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:1rem}
-.who-auth-actions{display:flex;gap:8px;flex-wrap:wrap}
-.who-mini-btn{padding:.45rem .8rem;border:1px solid #e5e7eb;border-radius:999px;background:#fff;font-size:.82rem;font-weight:600;color:#111;cursor:pointer;transition:all .15s}
-.who-mini-btn:hover{border-color:#ec4899;color:#ec4899}
-.who-mini-btn.who-primary{background:linear-gradient(135deg,#ec4899,#8b5cf6);border-color:#ec4899;color:#fff}
-.who-mini-btn.who-danger{border-color:#fecaca;color:#b91c1c}
-.who-session-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:.85rem 1rem;background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;margin-bottom:1rem;flex-wrap:wrap}
-.who-session-user{display:flex;align-items:center;gap:10px;min-width:0}
-.who-avatar,.who-avatar-fallback{width:32px;height:32px;border-radius:50%;flex-shrink:0}
-.who-avatar{object-fit:cover}
-.who-avatar-fallback{display:grid;place-items:center;background:#111;color:#fff;font-size:.7rem;font-weight:700}
-.who-session-name{font-weight:700;color:#111;font-size:.9rem}
-.who-session-email{font-size:.75rem;color:#6b7280}
-.who-session-pill{display:inline-flex;align-items:center;padding:.28rem .65rem;border-radius:999px;font-size:.75rem;font-weight:700;background:#ede9fe;color:#6b21a8}
-.who-session-pill.remote{background:#dcfce7;color:#166534}
-.who-session-pill.guest{background:#e0f2fe;color:#075985}
-.who-session-text{font-size:.82rem;color:#374151}
-.who-session-link{display:inline-flex;align-items:center;justify-content:center;padding:.38rem .7rem;border-radius:999px;background:#fff;color:#9d174d;border:1px solid #fbcfe8;font-size:.78rem;font-weight:700;text-decoration:none}
-.who-subhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:.75rem;flex-wrap:wrap}
-.who-mini-badge{display:inline-flex;align-items:center;padding:.3rem .65rem;border-radius:999px;background:#fce7f3;color:#9d174d;font-size:.75rem;font-weight:700}
-.who-child-list{display:grid;gap:10px;margin-bottom:1rem}
-.who-child-item{position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;flex-wrap:wrap}
-.who-child-item.active{border-color:#ec4899;box-shadow:0 0 0 1px rgba(236,72,153,.14);background:#fdf2f8}
-.who-child-main{min-width:0}
-.who-child-name{font-weight:700;color:#111}
-.who-child-meta{font-size:.78rem;color:#6b7280;margin-top:4px}
-.who-child-actions{display:flex;gap:6px;flex-wrap:wrap}
-.who-active-badge{position:absolute;top:10px;right:12px;font-size:.72rem;font-weight:700;color:#9d174d;background:#fce7f3;padding:.22rem .55rem;border-radius:999px}
-.who-form-top{margin-bottom:12px}
-.who-age-preview{margin-top:12px;padding:10px 12px;border-radius:10px;background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;font-size:.85rem;line-height:1.5}
-.who-empty{padding:12px;border:1px dashed #d1d5db;border-radius:12px;color:#6b7280;font-size:.86rem;background:#fafafa}
 .who-muted{font-size:.82rem;color:#6b7280}
-.who-form-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.who-profile-hint{display:none;margin:-.25rem 0 1rem;padding:.8rem 1rem;border-radius:12px;background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12;font-size:.86rem;line-height:1.55}
+.who-profile-hint a{font-weight:700;color:#9d174d}
 .tool-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;margin-bottom:1rem}
 .tool-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:500px){.tool-row{grid-template-columns:1fr}}
@@ -91,10 +60,6 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 .prediction-box{background:#fdf4ff;border:1px solid #e9d5ff;border-radius:8px;padding:.75rem 1rem;margin-top:.75rem;font-size:.875rem;color:#6b21a8}
 .ref-note{font-size:.75rem;color:#6b7280;margin:.35rem 0 0;line-height:1.5}
 @media(max-width:640px){
-  .who-profile-head,.who-session-bar,.who-child-item{flex-direction:column}
-  .who-session-bar{align-items:flex-start}
-  .who-auth-actions,.who-child-actions,.who-form-actions{width:100%}
-  .who-mini-btn{width:100%}
   .tool-card{padding:1rem}
   .chart-wrap{height:240px;margin:.85rem 0 .5rem}
   .section-tab{width:100%;gap:8px}
@@ -108,10 +73,9 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 }
 </style>
 
-<div id="who-profile"></div>
-
 <div class="tool-card">
   <h2 style="margin:0 0 1rem;font-size:1.1rem;color:#111">Thông tin của bé</h2>
+  <div id="who-profile-hint" class="who-profile-hint"></div>
   <div style="margin-bottom:1rem">
     <div class="tool-label">Giới tính</div>
     <div class="radio-group">
@@ -121,15 +85,15 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
   </div>
   <div class="tool-row">
     <div>
-      <div class="tool-label">Tuổi bé (tháng, tự tính từ ngày sinh)</div>
-      <input class="tool-input" id="age" type="number" min="0" max="24" placeholder="Sẽ tự điền từ hồ sơ" />
+      <div class="tool-label">Tuổi bé (tháng)</div>
+      <input class="tool-input" id="age" type="number" min="0" max="24" placeholder="VD: 6" />
     </div>
     <div>
       <div class="tool-label">Cân nặng (kg)</div>
       <input class="tool-input" id="weight" type="number" step="0.1" placeholder="VD: 6.8" />
     </div>
   </div>
-  <div id="who-age-helper" class="who-muted" style="margin-top:8px">Nếu mẹ đã lưu hồ sơ bé ở phía trên, tuổi sẽ tự điền theo ngày sinh.</div>
+  <div id="who-age-helper" class="who-muted" style="margin-top:8px">Nếu mẹ đã đăng nhập và có hồ sơ bé đang dùng, tuổi và giới tính sẽ tự điền. Nếu chưa, mẹ nhập tay tại đây.</div>
   <div style="margin-top:12px">
     <div class="tool-label">Chiều cao (cm) — không bắt buộc</div>
     <input class="tool-input" id="height" type="number" step="0.1" placeholder="VD: 65.5" />
@@ -197,7 +161,7 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
   (function () {
     var script = document.createElement("script");
     script.defer = true;
-    script.src = "/js/who-tool-app.js?v=20260710-account-polish";
+    script.src = "/js/who-tool-app.js?v=20260710-child-profile-page";
     document.currentScript.after(script);
   })();
 </script>
