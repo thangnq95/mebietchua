@@ -34,6 +34,27 @@
     window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
   }
 
+  function getSafeReturnTo() {
+    var params = new URLSearchParams(window.location.search || "");
+    var value = params.get("returnTo") || "";
+    if (value && value.charAt(0) === "/" && value.indexOf("//") !== 0) return value;
+    return "";
+  }
+
+  function updateReturnLink() {
+    var returnTo = getSafeReturnTo();
+    if (!ui.returnLink) return;
+    if (!returnTo || returnTo === "/tai-khoan/") {
+      ui.returnLink.hidden = true;
+      return;
+    }
+    ui.returnLink.hidden = false;
+    ui.returnLink.setAttribute("href", returnTo);
+    ui.returnLink.textContent = returnTo.indexOf("/cong-cu/tang-truong-who/") === 0
+      ? "Quay lại hồ sơ bé"
+      : "Quay lại trang vừa mở";
+  }
+
   function getDisplayName(user) {
     if (!user) return "Mẹ";
     var meta = user.user_metadata || {};
@@ -57,6 +78,7 @@
     ui.login = document.getElementById("account-login");
     ui.logout = document.getElementById("account-logout");
     ui.profile = document.getElementById("account-profile-link");
+    ui.returnLink = document.getElementById("account-return-link");
   }
 
   function renderConfigMissing() {
@@ -75,6 +97,7 @@
     if (ui.login) ui.login.hidden = true;
     if (ui.logout) ui.logout.hidden = true;
     if (ui.profile) ui.profile.hidden = false;
+    updateReturnLink();
   }
 
   function renderLoading() {
@@ -92,6 +115,7 @@
     }
     if (ui.login) ui.login.hidden = true;
     if (ui.logout) ui.logout.hidden = true;
+    updateReturnLink();
   }
 
   function renderGuest() {
@@ -115,6 +139,7 @@
     if (ui.login) ui.login.hidden = false;
     if (ui.logout) ui.logout.hidden = true;
     if (ui.profile) ui.profile.hidden = false;
+    updateReturnLink();
   }
 
   function renderUser() {
@@ -146,6 +171,7 @@
     if (ui.login) ui.login.hidden = true;
     if (ui.logout) ui.logout.hidden = false;
     if (ui.profile) ui.profile.hidden = false;
+    updateReturnLink();
   }
 
   function render() {

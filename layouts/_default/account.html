@@ -48,6 +48,16 @@
     .account-side-list{display:grid;gap:.8rem;margin:0;padding:0;list-style:none}
     .account-side-list li{padding:.9rem;border-radius:16px;background:#fff8f4;border:1px solid #f3dfd6;color:#58463f;line-height:1.55}
     .account-side-list strong{display:block;color:#2f201c;margin-bottom:.2rem}
+    :root[data-theme="dark"] .account-hero{border-color:#4b3d36;background:linear-gradient(135deg,#2a221d 0,#332720 62%,#3a2922 100%);box-shadow:0 24px 60px rgba(0,0,0,.24)}
+    :root[data-theme="dark"] .account-hero h1,:root[data-theme="dark"] .account-card h2,:root[data-theme="dark"] .account-empty h2,:root[data-theme="dark"] .account-user-card h2,:root[data-theme="dark"] .account-side-list strong{color:#f6ebe5}
+    :root[data-theme="dark"] .account-hero p,:root[data-theme="dark"] .account-card p,:root[data-theme="dark"] .account-checklist li,:root[data-theme="dark"] .account-side-list li{color:#d4c3bb}
+    :root[data-theme="dark"] .account-card,:root[data-theme="dark"] .account-secondary{border-color:#4b3d36;background:#2a221d;color:#f2ddd2}
+    :root[data-theme="dark"] .account-user-card{border-color:#4b3d36;background:#332720}
+    :root[data-theme="dark"] .account-user-card p{color:#d2b8ab}
+    :root[data-theme="dark"] .account-next-box{border-color:#314334;background:#1f2a21}
+    :root[data-theme="dark"] .account-next-box strong{color:#a7e0b2}
+    :root[data-theme="dark"] .account-next-box p{color:#cce7d1}
+    :root[data-theme="dark"] .account-side-list li{border-color:#4b3d36;background:#241d19}
     @media(max-width:760px){
       .account-shell{margin-inline:.25rem}
       .account-hero{padding:1.35rem;border-radius:22px}
@@ -86,6 +96,7 @@
             <button class="account-primary" type="button" id="account-login">Đăng nhập bằng Google</button>
             <button class="account-secondary" type="button" id="account-logout" hidden>Đăng xuất</button>
             <a class="account-secondary" id="account-profile-link" href="/cong-cu/tang-truong-who/">Mở hồ sơ bé</a>
+            <a class="account-secondary" id="account-return-link" href="/" hidden>Quay lại trang vừa mở</a>
           </div>
         </section>
 
@@ -100,7 +111,7 @@
       </div>
     </section>
 
-    <script defer src="/js/account-page.js?v=20260709-account-page"></script>
+    <script defer src="/js/account-page.js?v=20260710-account-polish"></script>
   </div>
 </article>
 

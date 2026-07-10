@@ -193,12 +193,11 @@ tags: ["cong-cu", "tang-truong", "can-nang", "who"]
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-{{< who-supabase-config >}}
 <script>
   (function () {
     var script = document.createElement("script");
     script.defer = true;
-    script.src = "/js/who-tool-app.js?v=20260709-account-page";
+    script.src = "/js/who-tool-app.js?v=20260710-account-polish";
     document.currentScript.after(script);
   })();
 </script>
