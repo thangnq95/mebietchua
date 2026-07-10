@@ -50,9 +50,7 @@
     }
     ui.returnLink.hidden = false;
     ui.returnLink.setAttribute("href", returnTo);
-    ui.returnLink.textContent = returnTo.indexOf("/cong-cu/tang-truong-who/") === 0
-      ? "Quay lại công cụ WHO"
-      : "Quay lại trang vừa mở";
+    ui.returnLink.textContent = "Quay lại trang trước";
   }
 
   function getDisplayName(user) {
@@ -89,8 +87,8 @@
     if (ui.body) {
       ui.body.innerHTML = [
         '<div class="account-empty">',
-        '<h2>Đăng nhập chưa sẵn sàng</h2>',
-        '<p>Supabase chưa được cấu hình nên website chỉ lưu dữ liệu trên trình duyệt hiện tại.</p>',
+        '<h2>Chế độ khách</h2>',
+        '<p>Chưa bật đăng nhập.</p>',
         '</div>'
       ].join("");
     }
@@ -108,8 +106,8 @@
     if (ui.body) {
       ui.body.innerHTML = [
         '<div class="account-empty">',
-        '<h2>Đang đồng bộ...</h2>',
-        '<p>Mẹ chờ vài giây để hệ thống kiểm tra phiên đăng nhập hiện tại.</p>',
+        '<h2>Đang kiểm tra...</h2>',
+        '<p>Vui lòng chờ vài giây.</p>',
         '</div>'
       ].join("");
     }
@@ -126,13 +124,8 @@
     if (ui.body) {
       ui.body.innerHTML = [
         '<div class="account-empty">',
-        '<h2>Đăng nhập để đồng bộ hồ sơ bé</h2>',
-        '<p>Mẹ vẫn dùng được các công cụ ở chế độ khách. Khi đăng nhập, hồ sơ bé sẽ được lưu an toàn hơn và có thể mở lại trên thiết bị khác.</p>',
-        '<ul class="account-checklist">',
-        '<li>Không bắt buộc đăng nhập mới dùng được công cụ.</li>',
-        '<li>Chỉ lưu tên bé, ngày sinh và giới tính để tự tính tuổi.</li>',
-        '<li>Có thể đăng xuất bất cứ lúc nào.</li>',
-        '</ul>',
+        '<h2>Chưa đăng nhập</h2>',
+        '<p>Đăng nhập để lưu thông tin tài khoản.</p>',
         '</div>'
       ].join("");
     }
@@ -161,10 +154,6 @@
         '<h2>' + getDisplayName(user) + '</h2>',
         '<p>' + (user.email || "Tài khoản Google") + '</p>',
         '</div>',
-        '</div>',
-        '<div class="account-next-box">',
-        '<strong>Gợi ý tiếp theo</strong>',
-        '<p>Mẹ có thể mở trang hồ sơ bé để thêm ngày sinh, sau đó công cụ WHO sẽ tự tính tháng tuổi mỗi lần quay lại.</p>',
         '</div>'
       ].join("");
     }

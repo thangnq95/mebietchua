@@ -183,21 +183,21 @@
       ui.status.className = "child-status synced";
       ui.status.textContent = "Đồng bộ đám mây";
       ui.summary.textContent = state.children.length
-        ? "Đang lưu " + state.children.length + " hồ sơ bé trong tài khoản " + (state.user.email || "Mẹ Biết Chưa") + "."
-        : "Chưa có hồ sơ bé nào trong tài khoản. Mẹ thêm bé đầu tiên ở khung bên phải.";
+        ? "Đang lưu " + state.children.length + " hồ sơ bé."
+        : "Chưa có hồ sơ bé nào.";
       return;
     }
     ui.status.className = "child-status";
     ui.status.textContent = "Chỉ lưu trên máy này";
     ui.summary.textContent = state.children.length
-      ? "Mẹ đang có " + state.children.length + " hồ sơ lưu trên trình duyệt hiện tại. Đăng nhập để đồng bộ giữa các thiết bị."
-      : "Chưa có hồ sơ bé nào. Mẹ có thể thêm hồ sơ tạm trên trình duyệt này hoặc đăng nhập để đồng bộ.";
+      ? "Đang lưu " + state.children.length + " hồ sơ trên máy này."
+      : "Chưa có hồ sơ bé nào.";
   }
 
   function renderList() {
     if (!ui.list) return;
     if (!state.children.length) {
-      ui.list.innerHTML = '<div class="child-empty">Chưa có hồ sơ bé nào. Mẹ nhập tên, ngày sinh và giới tính ở khung bên phải để tạo hồ sơ đầu tiên.</div>';
+      ui.list.innerHTML = '<div class="child-empty">Chưa có hồ sơ bé nào.</div>';
       return;
     }
     ui.list.innerHTML = state.children.map(function (child) {
@@ -224,14 +224,14 @@
     var editing = state.editingChildId ? state.children.find(function (child) { return child.id === state.editingChildId; }) : null;
     if (editing) {
       ui.title.textContent = "Sửa hồ sơ bé";
-      ui.hint.textContent = "Cập nhật xong, hồ sơ này sẽ được chọn làm bé đang dùng.";
+      ui.hint.textContent = "Cập nhật thông tin của bé.";
       ui.save.textContent = "Cập nhật hồ sơ";
       ui.name.value = editing.name || "";
       ui.dob.value = editing.dob || "";
       setGenderValue(editing.gender || "boy");
     } else {
       ui.title.textContent = "Thêm bé mới";
-      ui.hint.textContent = "Tạo hồ sơ riêng cho từng bé để dễ chuyển đổi.";
+      ui.hint.textContent = "Nhập thông tin cơ bản của bé.";
       ui.save.textContent = "Lưu hồ sơ bé";
       if (!ui.name.value && !ui.dob.value) setGenderValue("boy");
     }

@@ -55,10 +55,11 @@ body {
 .header {
   position: sticky;
   top: 0;
-  z-index: 30;
+  z-index: 1000;
   background: rgba(255, 248, 244, 0.92);
   border-bottom: 1px solid rgba(239, 216, 207, 0.85);
   backdrop-filter: blur(18px);
+  transform: translateZ(0);
 }
 
 :root[data-theme="dark"] .header {
@@ -694,9 +695,14 @@ body {
 
 @media (max-width: 768px) {
   body { font-size: 16px; overflow-x: hidden; }
-  .main { padding: 10px; overflow-x: hidden; }
+  .main { padding: 74px 10px 10px; overflow-x: hidden; }
 
   .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     background: rgba(255, 248, 244, 0.96);
   }
 
