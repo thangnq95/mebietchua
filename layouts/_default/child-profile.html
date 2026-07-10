@@ -31,7 +31,7 @@
     .child-name{font-weight:900;color:#2f201c}
     .child-meta{margin-top:.25rem;color:#7d655c;font-size:.86rem}
     .child-actions{display:flex;gap:.45rem;flex-wrap:wrap;justify-content:flex-end}
-    .child-btn{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:.45rem .75rem;border:1px solid #efd8cf;border-radius:999px;background:#fff;color:#7c443c;font-weight:900;font-size:.82rem;cursor:pointer;text-decoration:none}
+    .child-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.6rem .85rem;border:1px solid #efd8cf;border-radius:999px;background:#fff;color:#7c443c;font-weight:900;font-size:.88rem;cursor:pointer;text-decoration:none;text-align:center}
     .child-btn.primary{border-color:#e23f98;color:#fff;background:linear-gradient(135deg,#e23f98,#ff8f70)}
     .child-btn.danger{border-color:#fecaca;color:#b91c1c}
     .child-active-badge{position:absolute;top:.75rem;right:.8rem;padding:.22rem .55rem;border-radius:999px;background:#fce7f3;color:#9d174d;font-size:.72rem;font-weight:900}
@@ -41,8 +41,9 @@
     .child-input{width:100%;box-sizing:border-box;padding:.68rem .8rem;border:1.5px solid #d1d5db;border-radius:12px;font-size:1rem;background:#fff;color:#111;outline:none}
     .child-input:focus{border-color:#e23f98}
     .child-radio{display:flex;gap:.8rem;flex-wrap:wrap}
-    .child-radio label{display:flex;align-items:center;gap:.4rem;color:#47362f;font-weight:700}
-    .child-radio input{accent-color:#e23f98}
+    .child-radio label{display:flex;align-items:center;gap:.5rem;min-height:44px;padding:.55rem .75rem;border:1px solid #efd8cf;border-radius:14px;color:#47362f;font-weight:800;background:#fff}
+    .child-radio label:has(input:checked){border-color:#f9a8d4;background:#fdf2f8;color:#9d174d}
+    .child-radio input{accent-color:#e23f98;width:18px;height:18px}
     .child-preview{padding:.75rem .9rem;border-radius:14px;background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;font-size:.9rem;line-height:1.55}
     .child-actions-bar{display:flex;gap:.65rem;flex-wrap:wrap}
     :root[data-theme="dark"] .child-hero{border-color:#4b3d36;background:linear-gradient(135deg,#2a221d 0,#332720 62%,#3a2922 100%);box-shadow:0 24px 60px rgba(0,0,0,.24)}
@@ -52,13 +53,19 @@
     :root[data-theme="dark"] .child-item.active{background:#33202a;border-color:#e89180}
     :root[data-theme="dark"] .child-input{border-color:#4b3d36;background:#241d19;color:#f6ebe5}
     @media(max-width:760px){
-      .child-shell{margin-inline:.25rem}
-      .child-hero{padding:1.35rem;border-radius:22px}
+      .child-shell{margin-inline:0}
+      .child-hero{padding:1.25rem;border-radius:22px}
+      .child-hero h1{font-size:clamp(1.9rem,8vw,2.35rem);letter-spacing:-.05em}
+      .child-hero p{font-size:.98rem;line-height:1.65}
       .child-layout,.child-row{grid-template-columns:1fr}
-      .child-card{border-radius:20px}
+      .child-card{border-radius:20px;padding:1rem}
       .child-top,.child-item{flex-direction:column}
       .child-actions,.child-actions-bar,.child-btn{width:100%}
       .child-active-badge{position:static;align-self:flex-start}
+      .child-item{gap:.75rem}
+      .child-radio{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}
+      .child-radio label{justify-content:center}
+      .child-input{min-height:50px}
     }
     </style>
 
